@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+      font-family: 'Arya';
+      src: url('/fonts/Arya/Arya-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Arya';
+      src: url('/fonts/Arya/Arya-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+        font-family: 'Bitter';
+        src: url('/fonts/Bitter/Bitter-VariableFont_wght.ttf') format('truetype');
+      }
+    @font-face {
+      font-family: 'Bitter-italic';
+      src: url('/fonts/Bitter/Bitter-Italic-VariableFont_wght.ttf') format('truetype');
+    }
+}
+
+@import '@glidejs/glide/dist/css/glide.core.min.css'; 
+@import '@glidejs/glide/dist/css/glide.theme.min.css'; 

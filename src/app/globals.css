@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -16,18 +10,148 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  @font-face {
+    font-family: 'Arya';
+    src: url('/fonts/Arya/Arya-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Arya';
+    src: url('/fonts/Arya/Arya-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+  @font-face {
+      font-family: 'Bitter';
+      src: url('/fonts/Bitter/Bitter-VariableFont_wght.ttf') format('truetype');
+    }
+  @font-face {
+    font-family: 'Bitter-italic';
+    src: url('/fonts/Bitter/Bitter-Italic-VariableFont_wght.ttf') format('truetype');
+  }
+}
+
+.h-screen {
+height: 100vh;
+height: calc(var(--vh, 1vh) * 100);
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+display: block; /* Show scrollbar */
+width: 12px;
+height: 12px;
+}
+
+/* Optional: Customize the appearance of the scrollbar */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+background-color: rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+background-color: rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+
+.custom-border-row::after {
+content: '';
+position: absolute;
+left: 0;
+right: 20px; 
+bottom: 0;
+height: 1px;
+background-color: #006400; 
+opacity: 0.2;
+}
+
+.dot-container {
+  position: fixed; 
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px; 
+  z-index: 1000;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.title {
+    position: relative;
+    font-size: 19vw;
+    line-height: 67%;
+}
+
+#full-screen-message {
+    z-index: 30;
+    pointer-events: none;
+}
+
+.flower {
+    position: absolute;
+    transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
+    background-size: contain;            
+    background-repeat: no-repeat;                              
+}
+
+.grow:hover {
+    transform: scale(1.2);
+}
+
+@media (orientation: landscape) {    
+    .flower-1 { width: 14vw; height: 14vw; top: 53vh; left: -3vw; }
+    .flower-2 { width: 7vw; height: 7vw; top: 53vh; left: 16vw; }
+    .flower-3 { width: 8vw; height: 8vw; top: 56vh; left: 29vw; }
+    .flower-4 { width: 15vw; height: 15vw; top: 53.5vh; left: 42.5vw; }
+    .flower-5 { width: 7vw; height: 7vw; top: 59.5vh; left: 62vw; }
+    .flower-6 { width: 14vw; height: 14vw; top: 30vh; left: 64vw; }
+    .flower-7 { width: 11vw; height: 11vw; top: 32vh; left: 82vw; }
+    .flower-8 { width: 15vw; height: 15vw; top: 14vh; right: -9.5vw; }
+    .flower-9 { width: 8vw; height: 8vw; top: 83vh; left: 1vw; }
+    .flower-10 { width: 16vw; height: 16vw; top: 67vh; left: 13vw; }
+    .flower-11 { width: 11vw; height: 11vw; top: 78vh; left: 33vw; }
+    .flower-12 { width: 5.5vw; height: 5.5vw; top: 87.5vh; left: 49.5vw; }
+    .flower-13 { width: 12vw; height: 12vw; top: 75.5vh; left: 58.5vw; }
+    .flower-14 { width: 14vw; height: 14vw; top: 56vh; left: 74vw; }
+    .flower-15 { width: 12vw; height: 12vw; top: 46vh; right: -5vw; }
+    .flower-16 { width: 6vw; height: 6vw; top: 87vh; left: 75vw; }
+    .flower-17 { width: 13vw; height: 13vw; top: 73vh; left: 87.5vw; }
+}
+
+@media (orientation: portrait) {   
+    .flower-1 { width: 14vh; height: 14vh; top: 30vh; left: -3vw; }
+    .flower-2 { width: 7vh; height: 7vh; top: 46vh; left: 1vw; }
+    .flower-3 { width: 8vh; height: 8vh; top: 53vh; left: 5vw; }
+    .flower-4 { width: 15vh; height: 15vh; top: 30vh; left: 50vw; }
+    .flower-5 { width: 7vh; height: 7vh; top: 80vh; left: 70vw; }
+    .flower-6 { width: 14vh; height: 14vh; top: 40vh; left: 60vw; }
+    .flower-7 { width: 11vh; height: 11vh; top: 35vh; left: 85vw; }
+    .flower-8 { width: 15vh; height: 15vh; top: 25vh; left: 10vw; }
+    .flower-9 { width: 8vh; height: 8vh; top: 90vh; left: 5vw; }
+    .flower-10 { width: 16vh; height: 16vh; top: 80vh; left: 20vw; }
+    .flower-11 { width: 11vh; height: 11vh; top: 90vh; left: 40vw; }
+    .flower-12 { width: 5.5vh; height: 5.5vh; top: 95vh; left: 50vw; }
+    .flower-13 { width: 12vh; height: 12vh; top: 85vh; left: 65vw; }
+    .flower-14 { width: 14vh; height: 14vh; top: 70vh; left: 80vw; }
+    .flower-15 { width: 12vh; height: 12vh; top: 60vh; right: 10vw; }
+    .flower-16 { width: 6vh; height: 6vh; top: 95vh; left: 75vw; }
+    .flower-17 { width: 13vh; height: 13vh; top: 85vh; left: 90vw; }
+}
+

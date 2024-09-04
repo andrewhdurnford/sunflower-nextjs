@@ -1,20 +1,33 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/**/*.{js,ts,jsx,tsx}', // Adjust the paths according to your project structure
+    './public/index.html',
   ],
   theme: {
+    fontFamily: {
+      'arya': ['Arya', 'system-ui'],
+      'bitter': ['Bitter', 'system-ui'],
+      'bitter-italic': ['Bitter-italic', 'system-ui']
+    },
+    colors: {
+      'offwhite': '#FFF9DE',
+      'offblack': '#010101',
+      'dark-brown': '#4F3A26',
+      'dark-green': '#03351A',
+      'white': '#FFFFFF',
+      'darkish-brown': '#704F38',
+      'light-grey': '#B9A89A',
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      animation: {
+        'spin': 'spin 3s linear infinite',
       },
+      transitionDuration: {
+        '2000': '2000ms',
+      }
     },
   },
   plugins: [],
-};
-export default config;
+}
+
