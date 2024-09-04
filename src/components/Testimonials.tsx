@@ -38,7 +38,7 @@ const Testimonials: React.FC = () => {
         company: "Hadrian"
     },
     {
-        quote: "Liu has been an invaluable investor for Warp, going way beyond just investing money, to investing a bunch of her time helping us with GTM, Growth and Product. She brings deep expertise in the developer space, and we've learned a lot working with her. She is more willing and able than most investors to roll up her sleeves and help the leadership team operate.",
+        quote: "Liu has been an invaluable investor for Warp, going way beyond just investing money, to investing a bunch of her time helping us with GTM, Growth, and Product. She brings deep expertise in the developer space, and we've learned a lot working with her. She is more willing and able than most investors to roll up her sleeves and help the leadership team operate.",
         author: "Zach Lloyd",
         company: "Warp"
     },
@@ -83,7 +83,7 @@ const Testimonials: React.FC = () => {
         company: "Unkey"
     },
     {
-        quote: "Liu is always accessible and genuinely understands the challenges of early-stage companies. She has been crucial in helping us connect with the right customers and clearly define our target audience. Her insights and practical advice have been essential in refining our go-to-market strategy and product direction. Our sessions with her are focused and productive, tackling critical topics with depth.",
+        quote: "Liu is always accessible and genuinely understands the challenges of early stage companies. She has been crucial in helping us connect with the right customers and clearly define our target audience. Her insights and practical advice have been essential in refining our GTM strategy and product direction. Our sessions with her are focused and productive, and we tackle critical topics with depth.",
         author: "Aamir Shakir",
         company: "Mixedbread"
     },
@@ -93,7 +93,7 @@ const Testimonials: React.FC = () => {
         company: "ConductorAI"
     },
     {
-        quote: "Liu has made many an intro to her amazing network of executives, many of whom have made great advisors as we bootstrapped our GTM functions. Liu is also available but not overbearing — if you need help, she is just a text away.",
+        quote: "Liu has made many an intro to her amazing network of executives, many of whom have made great advisors as we bootstrapped our GTM functions. Liu is always available but not overbearing — if you need help, she is just a text away.",
         author: "Apurva Mehta",
         company: "Responsive"
     },
@@ -103,7 +103,7 @@ const Testimonials: React.FC = () => {
         company: "OpenMeter"
     },
     {
-        quote: "Working with Liu has been one of the best decisions we have made! She helped us on strategically planning out our roadmap, securing key hires, navigating partnerships, and building community and ecosystem.",
+        quote: "Working with Liu has been one of the best decisions we have made! She has helped us on strategically planning out our roadmap, securing key hires, navigating partnerships, and building community and ecosystem.",
         author: "Yoland Yan",
         company: "Comfy"
     }

@@ -152,9 +152,9 @@ opacity: 0.2;
 
 @media (orientation: portrait) {   
     .title { font-size: 20vw; }
-    .flower-2 { width: 7vh; height: 7vh; top: 38vh; left: 8vw; }
+    /* .flower-2 { width: 7vh; height: 7vh; top: 38vh; left: 8vw; } */
     .flower-4 { width: 15vh; height: 15vh; top: 40vh; left: 35vw; }
-    .flower-5 { width: 9vh; height: 9vh; top: 15vh; left: 70vw; }
+    /* .flower-5 { width: 9vh; height: 9vh; top: 15vh; left: 70vw; }
     .flower-8 { width: 15vh; height: 15vh; top: 20vh; left: 10vw; }
     .flower-9 { width: 8vh; height: 8vh; top: 50vh; left: 5vw; }
     .flower-12 { width: 5.5vh; height: 5.5vh; top: 60vh; left: 30vw; }
@@ -162,6 +162,6 @@ opacity: 0.2;
     .flower-14 { width: 14vh; height: 14vh; top: 70vh; left: 10vw; }
     .flower-15 { width: 12vh; height: 12vh; top: 27vh; right: -5vh; }
     .flower-16 { width: 6vh; height: 6vh; top: 90vh; left: 40vw; }
-    .flower-17 { width: 13vh; height: 13vh; top: 78vh; left: 60vw; }
+    .flower-17 { width: 13vh; height: 13vh; top: 78vh; left: 60vw; } */
 }
 
