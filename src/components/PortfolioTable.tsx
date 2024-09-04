@@ -97,7 +97,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
   }, []);
 
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center gap-3 px-4">
+    <div className="w-full h-screen flex flex-col justify-center items-center gap-3 px-4 pb-24 sm:pb-0">
       <div className="flex flex-row justify-between items-center w-full">
         <h1 className="font-arya text-dark-green text-6xl sm:text-5xl md:text-6xl lg:text-7xl">Our Portfolio</h1>
       </div>
