@@ -64,7 +64,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     { company: 'Xata', industry: 'Infra', description: 'Serverless data platform for PostgreSQL', link: 'https://xata.io/' },
     { company: 'Mixedbread', industry: 'AI/ML', description: 'End-to-end search pipeline ', link: 'https://www.mixedbread.ai/' },
     { company: 'Slingshot AI', industry: 'Healthcare', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' }
-  ];
+  ].sort((a, b) => a.company.localeCompare(b.company));
   const [displayCompanies, setDisplayCompanies] = useState<Company[]>(companies);
   const tableBodyRef = useRef<HTMLDivElement>(null);
 
