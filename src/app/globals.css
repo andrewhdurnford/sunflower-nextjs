@@ -4,9 +4,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 249, 222;
+    --background-start-rgb: 255, 249, 222;
+    --background-end-rgb: 255, 249, 222;
   }
 }
 
@@ -35,6 +35,10 @@
     font-family: 'Bitter-italic';
     src: url('/fonts/Bitter/Bitter-Italic-VariableFont_wght.ttf') format('truetype');
   }
+}
+
+body {
+  overflow-y: hidden;
 }
 
 .h-screen {
