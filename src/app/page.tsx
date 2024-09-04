@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import PortfolioTable from "@/components/PortfolioTable"; 
 import Testimonials from '@/components/Testimonials';
 import ReactPageScroller from 'react-page-scroller';
@@ -70,39 +71,175 @@ const App: React.FC = () => {
                 id="hero"
                 className={`w-full h-full relative overflow-hidden bg-dark-green`}
             >
-                <div
-                id="center-flower"
-                onClick={expandFlower}
-                className={`z-10 flower flower-4 bg-[url('/images/outline/flower-4.svg')] transition-all duration-2000
-                ${loaded ? '' : 'opacity-0'}`}
-                ></div>
-                <div
-                    id="full-screen-message"
-                    className="z-10 fixed inset-0 flex items-center justify-center bg-[#FFDF22] font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000"
-                >
-                    GROW WITH SUNFLOWER CAPITAL
-                </div>
-                <div
-                    className={`title font-arya font-bold text-offwhite transition-all duration-1000  ${loaded ? 'top-0' : '-top-full'}`} 
-                    >
-                    SUNFLOWER CAPITAL
-                </div>
-                <div className={`flower flower-1 bg-[url('/images/flower-1.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-2 bg-[url('/images/outline/flower-2.svg')] ${loaded ? '' : 'opacity-0'} grow`}></div>
-                <div className={`flower flower-3 bg-[url('/images/outline/flower-3.svg')] ${loaded ? '' : 'opacity-0'} grow`}></div>
-                <div className={`flower flower-5 bg-[url('/images/outline/flower-5.svg')] ${loaded ? '' : 'opacity-0'} grow`}></div>
-                <div className={`flower flower-6 bg-[url('/images/flower-6.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-7 bg-[url('/images/outline/flower-7.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-8 bg-[url('/images/flower-8.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-9 bg-[url('/images/flower-9.svg')] ${loaded ? '' : 'opacity-0'} grow`}></div>
-                <div className={`flower flower-10 bg-[url('/images/flower-10.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-11 bg-[url('/images/outline/flower-11.svg')] ${loaded ? '' : 'opacity-0'} grow`}></div>
-                <div className={`flower flower-12 bg-[url('/images/outline/flower-12.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-13 bg-[url('/images/flower-13.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-14 bg-[url('/images/outline/flower-14.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-15 bg-[url('/images/flower-15.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
-                <div className={`flower flower-16 bg-[url('/images/flower-16.svg')] ${loaded ? '' : 'opacity-0'} grow`}></div>
-                <div className={`flower flower-17 bg-[url('/images/outline/flower-17.svg')] ${loaded ? '' : 'opacity-0'} hover:animate-spin`}></div>
+      <div
+        id="center-flower"
+        onClick={expandFlower}
+        className={`z-10 flower flower-4 transition-all duration-2000 ${loaded ? '' : 'opacity-0'}`}
+      >
+        <Image
+          src="/images/outline/flower-4.svg"
+          alt="Center Flower"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div
+        id="full-screen-message"
+        className="z-10 fixed inset-0 flex items-center justify-center bg-[#FFDF22] font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000"
+      >
+        GROW WITH SUNFLOWER CAPITAL
+      </div>
+
+      <div
+        className={`title font-arya font-bold text-offwhite transition-all duration-1000 ${loaded ? 'top-0' : '-top-full'}`}
+      >
+        SUNFLOWER CAPITAL
+      </div>
+
+      <div className={`flower flower-1 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/flower-1.svg"
+          alt="Flower 1"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-2 ${loaded ? '' : 'opacity-0'} grow`}>
+        <Image
+          src="/images/outline/flower-2.svg"
+          alt="Flower 2"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-3 ${loaded ? '' : 'opacity-0'} grow`}>
+        <Image
+          src="/images/outline/flower-3.svg"
+          alt="Flower 3"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-5 ${loaded ? '' : 'opacity-0'} grow`}>
+        <Image
+          src="/images/outline/flower-5.svg"
+          alt="Flower 5"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-6 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/flower-6.svg"
+          alt="Flower 6"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-7 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/outline/flower-7.svg"
+          alt="Flower 7"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-8 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/flower-8.svg"
+          alt="Flower 8"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-9 ${loaded ? '' : 'opacity-0'} grow`}>
+        <Image
+          src="/images/flower-9.svg"
+          alt="Flower 9"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-10 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/flower-10.svg"
+          alt="Flower 10"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-11 ${loaded ? '' : 'opacity-0'} grow`}>
+        <Image
+          src="/images/outline/flower-11.svg"
+          alt="Flower 11"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-12 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/outline/flower-12.svg"
+          alt="Flower 12"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-13 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/flower-13.svg"
+          alt="Flower 13"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-14 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/outline/flower-14.svg"
+          alt="Flower 14"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-15 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/flower-15.svg"
+          alt="Flower 15"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-16 ${loaded ? '' : 'opacity-0'} grow`}>
+        <Image
+          src="/images/flower-16.svg"
+          alt="Flower 16"
+          fill
+          quality={100}
+        />
+      </div>
+
+      <div className={`flower flower-17 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+        <Image
+          src="/images/outline/flower-17.svg"
+          alt="Flower 17"
+          fill
+          quality={100}
+        />
+      </div>
             </div>
             <div
                 id="statement1"
