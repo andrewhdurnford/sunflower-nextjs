@@ -97,7 +97,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
   }, []);
 
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center gap-3 px-4 py-8">
+    <div className="w-full h-screen flex flex-col justify-center items-center gap-3 px-4">
       <div className="flex flex-row justify-between items-center w-full">
         <h1 className="font-arya text-dark-green text-6xl sm:text-5xl md:text-6xl lg:text-7xl">Our Portfolio</h1>
       </div>
@@ -140,8 +140,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
           </button>
         ))}
       </div>
-      <div
-        className="flex flex-col w-full h-3/4 overflow-y-auto custom-scrollbar"
+      <div className="flex flex-col flex-shrink w-full h-1/2 sm:h-3/4 overflow-y-auto custom-scrollbar"
         onMouseEnter={() => setScrollEnabled(false)} // Disable page scroll when mouse enters
         onMouseLeave={() => setScrollEnabled(true)}  // Re-enable page scroll when mouse leaves
         onTouchStart={() => setScrollEnabled(false)} // Disable page scroll when touch starts on mobile
