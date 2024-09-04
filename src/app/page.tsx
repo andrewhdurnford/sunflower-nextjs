@@ -68,7 +68,7 @@ const App: React.FC = () => {
         >
             <div
                 id="hero"
-                className={`w-full h-screen relative overflow-hidden bg-dark-green`}
+                className={`w-full h-full relative overflow-hidden bg-dark-green`}
             >
                 <div
                 id="center-flower"
@@ -106,7 +106,7 @@ const App: React.FC = () => {
             </div>
             <div
                 id="statement1"
-                className={`h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-10 xl:gap-14 bg-offwhite`}
+                className={`h-full w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-10 xl:gap-14 bg-offwhite`}
             >
                 <div className="flex flex-col items-center gap-5 lg:gap-8">
                     <img src="/images/sunflower-logo.svg" alt="Sunflower" className="h-24 sm:h-28 w-auto" />
@@ -119,7 +119,7 @@ const App: React.FC = () => {
             </div>
             <div
                 id="statement2"
-                className="h-screen w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
+                className="h-full w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
             >
                 <div className="w-11/12 font-bitter text-dark-green text-center">
                     <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-[1.85vw] sm:leading-relaxed text-dark-green">
@@ -131,13 +131,13 @@ const App: React.FC = () => {
             </div>
             <div
                 id="portfolio"
-                className="bg-offwhite text-dark-green w-full min-h-screen flex justify-center items-center px-4 sm:px-8 lg:px-32"
+                className="bg-offwhite text-dark-green w-full min-h-full flex justify-center items-center px-4 sm:px-8 lg:px-32"
             >
-                <PortfolioTable proxyData={filter.current} setFilter={setFilter} setScrollEnabled={setScrollEnabled} />
+                <PortfolioTable proxyData={filter.current} setFilter={setFilter} setScrollEnabled={setScrollEnabled}  />
             </div>
             <div
                 id="testimonials"
-                className="bg-offwhite text-dark-green w-full h-screen flex flex-col overflow-hidden"
+                className="bg-offwhite text-dark-green w-full h-full flex flex-col overflow-hidden"
             >
                 <Testimonials />
                 <Footer setCurrentPage={setCurrentPage} />

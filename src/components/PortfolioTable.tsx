@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 
 interface Company {
   company: string;
@@ -10,7 +10,7 @@ interface Company {
 interface PortfolioTableProps {
   proxyData: { filter: string };
   setFilter: (filter: string) => void;
-  setScrollEnabled: (enabled: boolean) => void; 
+  setScrollEnabled: (enabled: boolean) => void;
 }
 
 const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, setScrollEnabled }) => {
@@ -66,8 +66,8 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     { company: 'Mixedbread', industry: 'AI/ML', description: 'End-to-end search pipeline ', link: 'https://www.mixedbread.ai/' },
     { company: 'Slingshot AI', industry: 'Healthcare', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' }
   ];
-  companies.sort((a, b) => a.company.localeCompare(b.company));
   const [displayCompanies, setDisplayCompanies] = useState<Company[]>(companies);
+  const tableBodyRef = useRef<HTMLDivElement>(null);
 
   const industries = useMemo(() => {
     return Array.from(new Set(companies.map(company => company.industry))).sort();
@@ -79,6 +79,23 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
       : companies.filter(company => company.industry === filter);
     setDisplayCompanies(filteredCompanies);
   };
+
+  useEffect(() => {
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault(); 
+    };
+
+    const tableBody = tableBodyRef.current;
+    if (tableBody) {
+      tableBody.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
+
+    return () => {
+      if (tableBody) {
+        tableBody.removeEventListener('touchmove', handleTouchMove);
+      }
+    };
+  }, []);
 
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center gap-3">
@@ -126,8 +143,11 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
       </div>
       <div
         className="flex flex-col w-full h-[24rem] xl:h-[28rem] overflow-y-auto custom-scrollbar"
-        onMouseEnter={() => setScrollEnabled(false)}
-        onMouseLeave={() => setScrollEnabled(true)}
+        onMouseEnter={() => setScrollEnabled(false)} // Disable page scroll when mouse enters
+        onMouseLeave={() => setScrollEnabled(true)}  // Re-enable page scroll when mouse leaves
+        onTouchStart={() => setScrollEnabled(false)} // Disable page scroll when touch starts on mobile
+        onTouchEnd={() => setScrollEnabled(true)}    // Re-enable page scroll when touch ends
+        onTouchMove={handleTouchMove}                // Prevent touch scrolling on the table
       >
         <table className="min-w-full border-collapse">
           <tbody className="font-bitter-italic text-sm sm:text-xl md:text-2xl" id="table-body">
