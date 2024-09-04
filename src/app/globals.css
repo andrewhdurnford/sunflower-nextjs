@@ -97,7 +97,6 @@ opacity: 0.2;
 
 .title {
     position: relative;
-    font-size: 19vw;
     line-height: 67%;
 }
 
@@ -118,6 +117,7 @@ opacity: 0.2;
 }
 
 @media (orientation: landscape) {    
+    .title { font-size: 19vw; }
     .flower-1 { width: 14vw; height: 14vw; top: 53vh; left: -3vw; }
     .flower-2 { width: 7vw; height: 7vw; top: 53vh; left: 16vw; }
     .flower-3 { width: 8vw; height: 8vw; top: 56vh; left: 29vw; }
@@ -138,22 +138,17 @@ opacity: 0.2;
 }
 
 @media (orientation: portrait) {   
-    .flower-1 { width: 14vh; height: 14vh; top: 30vh; left: -3vw; }
-    .flower-2 { width: 7vh; height: 7vh; top: 46vh; left: 1vw; }
-    .flower-3 { width: 8vh; height: 8vh; top: 53vh; left: 5vw; }
-    .flower-4 { width: 15vh; height: 15vh; top: 30vh; left: 50vw; }
-    .flower-5 { width: 7vh; height: 7vh; top: 80vh; left: 70vw; }
-    .flower-6 { width: 14vh; height: 14vh; top: 40vh; left: 60vw; }
-    .flower-7 { width: 11vh; height: 11vh; top: 35vh; left: 85vw; }
-    .flower-8 { width: 15vh; height: 15vh; top: 25vh; left: 10vw; }
-    .flower-9 { width: 8vh; height: 8vh; top: 90vh; left: 5vw; }
-    .flower-10 { width: 16vh; height: 16vh; top: 80vh; left: 20vw; }
-    .flower-11 { width: 11vh; height: 11vh; top: 90vh; left: 40vw; }
-    .flower-12 { width: 5.5vh; height: 5.5vh; top: 95vh; left: 50vw; }
-    .flower-13 { width: 12vh; height: 12vh; top: 85vh; left: 65vw; }
-    .flower-14 { width: 14vh; height: 14vh; top: 70vh; left: 80vw; }
-    .flower-15 { width: 12vh; height: 12vh; top: 60vh; right: 10vw; }
-    .flower-16 { width: 6vh; height: 6vh; top: 95vh; left: 75vw; }
-    .flower-17 { width: 13vh; height: 13vh; top: 85vh; left: 90vw; }
+    .title { font-size: 20vw; }
+    .flower-2 { width: 7vh; height: 7vh; top: 38vh; left: 8vw; }
+    .flower-4 { width: 15vh; height: 15vh; top: 40vh; left: 35vw; }
+    .flower-5 { width: 9vh; height: 9vh; top: 15vh; left: 70vw; }
+    .flower-8 { width: 15vh; height: 15vh; top: 20vh; left: 10vw; }
+    .flower-9 { width: 8vh; height: 8vh; top: 50vh; left: 5vw; }
+    .flower-12 { width: 5.5vh; height: 5.5vh; top: 60vh; left: 30vw; }
+    .flower-13 { width: 12vh; height: 12vh; top: 55vh; left: 65vw; }
+    .flower-14 { width: 14vh; height: 14vh; top: 70vh; left: 10vw; }
+    .flower-15 { width: 12vh; height: 12vh; top: 27vh; right: -5vh; }
+    .flower-16 { width: 6vh; height: 6vh; top: 90vh; left: 40vw; }
+    .flower-17 { width: 13vh; height: 13vh; top: 78vh; left: 60vw; }
 }
 
