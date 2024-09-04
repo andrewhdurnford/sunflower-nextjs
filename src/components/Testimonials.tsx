@@ -107,20 +107,23 @@ const Testimonials: React.FC = () => {
         author: "Yoland Yan",
         company: "Comfy"
     }
-    ];
+  ];
 
   useEffect(() => {
-    const newGlide = new Glide('.glide', {
+    // Initialize Glide only once
+    const glide = new Glide('.glide', {
       type: 'carousel',
       startAt: 0,
-      perView: 1,
+      perView: 1,  // Display only one slide at a time
       autoplay: false,
     });
 
-    newGlide.mount();
+    // Mount the Glide instance
+    glide.mount();
 
+    // Clean up: Destroy the Glide instance when the component unmounts
     return () => {
-      newGlide.destroy();
+      glide.destroy();
     };
   }, []); 
 
@@ -132,30 +135,30 @@ const Testimonials: React.FC = () => {
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 
           text-2xl md:text-3xl lg:text-4xl xl:text-5xl`} data-glide-el="controls">
-        <div className="glide__arrow--left font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" data-glide-dir="<">
-          <div className="arrow-container">
-            <Image
-              src="/images/left-arrow.svg"
-              alt="left arrow"
-              layout="responsive"
-              width={100} 
-              height={100} 
-              quality={100}
-            />
+          <div className="glide__arrow--left font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" data-glide-dir="<">
+            <div className="arrow-container">
+              <Image
+                src="/images/left-arrow.svg"
+                alt="left arrow"
+                layout="responsive"
+                width={100} 
+                height={100} 
+                quality={100}
+              />
+            </div>
           </div>
-        </div>
-        <div className="glide__arrow--right font-semibold font-bitter w-6 h-6 sm:w-10 sm:h-10" data-glide-dir=">">
-          <div className="arrow-container">
-            <Image
-              src="/images/right-arrow.svg"
-              alt="right arrow"
-              layout="responsive"
-              width={100}
-              height={100}
-              quality={100}
-            />
+          <div className="glide__arrow--right font-semibold font-bitter w-6 h-6 sm:w-10 sm:h-10" data-glide-dir=">">
+            <div className="arrow-container">
+              <Image
+                src="/images/right-arrow.svg"
+                alt="right arrow"
+                layout="responsive"
+                width={100}
+                height={100}
+                quality={100}
+              />
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
