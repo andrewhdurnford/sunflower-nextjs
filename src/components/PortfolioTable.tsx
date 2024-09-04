@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 
 interface Company {
   company: string;
@@ -147,7 +147,6 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
         onMouseLeave={() => setScrollEnabled(true)}  // Re-enable page scroll when mouse leaves
         onTouchStart={() => setScrollEnabled(false)} // Disable page scroll when touch starts on mobile
         onTouchEnd={() => setScrollEnabled(true)}    // Re-enable page scroll when touch ends
-        onTouchMove={handleTouchMove}                // Prevent touch scrolling on the table
       >
         <table className="min-w-full border-collapse">
           <tbody className="font-bitter-italic text-sm sm:text-xl md:text-2xl" id="table-body">
