@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Glide from '@glidejs/glide';
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
@@ -126,13 +127,35 @@ const Testimonials: React.FC = () => {
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
       <div className='w-2/3 flex justify-between items-center'>
-        <div className={`font-arya text-dark-green text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-opacity duration-1000`}>
+        <div className={`font-arya text-dark-green text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none transition-opacity duration-1000`}>
           Our Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 
           text-2xl md:text-3xl lg:text-4xl xl:text-5xl`} data-glide-el="controls">
-          <button className="glide__arrow--left font-semibold font-bitter leading-none" data-glide-dir="<">&#9001;</button>
-          <button className="glide__arrow--right font-semibold font-bitter" data-glide-dir=">">&#9002;</button>
+        <div className="glide__arrow--left font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" data-glide-dir="<">
+          <div className="arrow-container">
+            <Image
+              src="/images/left-arrow.svg"
+              alt="left arrow"
+              layout="responsive"
+              width={100} 
+              height={100} 
+              quality={100}
+            />
+          </div>
+        </div>
+        <div className="glide__arrow--right font-semibold font-bitter w-6 h-6 sm:w-10 sm:h-10" data-glide-dir=">">
+          <div className="arrow-container">
+            <Image
+              src="/images/right-arrow.svg"
+              alt="right arrow"
+              layout="responsive"
+              width={100}
+              height={100}
+              quality={100}
+            />
+          </div>
+        </div>
         </div>
       </div>
 
@@ -140,7 +163,7 @@ const Testimonials: React.FC = () => {
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
             <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
-              <div className="font-bitter text-base sm:text-xl xl:text-2xl w-full text-center sm:leading-relaxed xl:leading-relaxed">
+              <div className="font-bitter text-base sm:text-xl xl:text-2xl w-full text-center sm:leading-loose md:leading-loose lg:leading-loose xl:leading-loose">
                 {quote.quote}
               </div>
               <div className="font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-center w-full">

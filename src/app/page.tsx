@@ -11,6 +11,7 @@ import DotNavigator from '@/components/DotNavigator';
 const App: React.FC = () => {
     const [loaded, setLoaded] = useState(false);
     const [scrollEnabled, setScrollEnabled] = useState(true);
+    const [breatheEnabled, setBreatheEnabled] = useState(true);
 
     const filter = useRef({ filter: 'All' });
     const [_, forceUpdate] = useState(0);
@@ -35,28 +36,31 @@ const App: React.FC = () => {
     });
 
     const expandFlower = () => {
-
-        console.log('called')
+        setBreatheEnabled(false); 
         const message = document.getElementById('full-screen-message');
         const centerflower = document.getElementById('center-flower');
         if (!(currentPage === 0) || !message || !centerflower) return;
-
-
-        centerflower.style.transition = 'transform 2s ease-in-out';
-        if (window.innerHeight > window.innerWidth) {
-            centerflower.style.transform = 'scale(160)';
-        } else {
-            centerflower.style.transform = 'scale(80)';
-        }
+    
+        setTimeout(() => {        
+            centerflower.style.transition = 'transform 2s ease-in-out';
+            if (window.innerHeight > window.innerWidth) {
+                centerflower.style.transform = 'scale(160)';
+            } else {
+                centerflower.style.transform = 'scale(80)';
+            }
+        }, 10);
+    
         setTimeout(() => {
             message.classList.add('opacity-100');
         }, 1000);
-
+    
         setTimeout(() => {
             if (centerflower) centerflower.style.transform = 'scale(1)';
             message.classList.remove('opacity-100');
+            setBreatheEnabled(true); 
         }, 2000);
     };
+    
 
     return (
       <>
@@ -71,22 +75,21 @@ const App: React.FC = () => {
                 id="hero"
                 className={`w-full h-full relative overflow-hidden bg-dark-green`}
             >
-      <div
+        <div
         id="center-flower"
         onClick={expandFlower}
-        className={`z-10 flower flower-4 transition-all duration-2000 ${loaded ? '' : 'opacity-0'}`}
-      >
+        className={`z-10 flower flower-4 transition-all duration-1000 ${loaded ? '' : 'opacity-0'} ${breatheEnabled ? 'breathe' : ''}`}
+        >
         <Image
-          src="/images/outline/flower-4.svg"
-          alt="Center Flower"
-          fill
-          quality={100}
+            src="/images/outline/flower-4.svg"
+            alt="Center Flower"
+            fill
+            quality={100}
         />
-      </div>
-
+        </div>
       <div
         id="full-screen-message"
-        className="z-10 fixed inset-0 flex items-center justify-center bg-[#FFDF22] font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000"
+        className="z-10 fixed inset-0 flex items-center justify-center bg-[#f6de5a] font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000"
       >
         GROW WITH SUNFLOWER CAPITAL
       </div>
@@ -258,8 +261,8 @@ const App: React.FC = () => {
                 id="statement2"
                 className="h-full w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
             >
-                <div className="w-11/12 font-bitter text-dark-green text-center">
-                    <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-[1.85vw] sm:leading-relaxed text-dark-green">
+                <div className="font-bitter text-dark-green text-center">
+                    <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.1vw] leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
                         We partner with missionary founders who are indefatigable, decisive, and self-aware. <br /> <br />
                         We believe in forging highly personal, deep-rooted relationships that stand the test of time. <br /> <br />
                         We develop distinct theses on markets and how they will unfold.
