@@ -89,7 +89,9 @@ const App: React.FC = () => {
         </div>
       <div
         id="full-screen-message"
-        className="z-10 fixed inset-0 flex items-center justify-center bg-[#f6de5a] font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000"
+        className="z-10 fixed inset-0 flex items-center justify-center  font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000
+        bg-offwhite"
+        // #f6de5a
       >
         GROW WITH SUNFLOWER CAPITAL
       </div>
@@ -263,8 +265,8 @@ const App: React.FC = () => {
             >
                 <div className="font-bitter text-dark-green text-center">
                     <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.1vw] leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
-                        We partner with missionary founders who are indefatigable, decisive, and self-aware. <br /> <br />
-                        We believe in forging highly personal, deep-rooted relationships that stand the test of time. <br /> <br />
+                        We partner with missionary founders who are indefatigable, decisive, and self-aware. <br /> <br /> <br />
+                        We believe in forging highly personal, deep-rooted relationships that stand the test of time. <br /> <br /> <br />
                         We develop distinct theses on markets and how they will unfold.
                     </div>
                 </div>

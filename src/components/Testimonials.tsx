@@ -166,7 +166,7 @@ const Testimonials: React.FC = () => {
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
             <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
-              <div className="font-bitter text-base sm:text-xl xl:text-2xl w-full text-center sm:leading-loose md:leading-loose lg:leading-loose xl:leading-loose">
+              <div className="font-bitter text-base sm:text-xl xl:text-2xl w-full text-center sm:leading-extra-loose md:leading-extra-loose lg:leading-extra-loose xl:leading-extra-loose">
                 {quote.quote}
               </div>
               <div className="font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-center w-full">

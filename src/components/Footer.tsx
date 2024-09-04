@@ -22,18 +22,18 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                     <Image
                         src="/images/linkedin.svg"
                         alt="LinkedIn"
-                        width={20} 
-                        height={20} 
+                        width={16} 
+                        height={16} 
                         className="hover:opacity-80 transition-opacity duration-300"
                     />
                 </a>
                 
-                <a href="mailto:info@sunflowercapital.com" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:liu@sunflowercapital.co" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/images/email.svg"
                         alt="Email"
-                        width={30} 
-                        height={30}  
+                        width={20} 
+                        height={20}  
                         className="hover:opacity-80 transition-opacity duration-300"
                     />
                 </a>

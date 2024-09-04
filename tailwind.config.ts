@@ -25,6 +25,9 @@ export default {
       },
       transitionDuration: {
         '2000': '2000ms',
+      },
+      lineHeight: {
+        'extra-loose': '2.5',
       }
     },
   },

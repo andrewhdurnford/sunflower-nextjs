@@ -97,7 +97,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
   }, []);
 
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center gap-3">
+    <div className="w-full h-screen flex flex-col justify-center items-center gap-3 px-4 py-8">
       <div className="flex flex-row justify-between items-center w-full">
         <h1 className="font-arya text-dark-green text-6xl sm:text-5xl md:text-6xl lg:text-7xl">Our Portfolio</h1>
       </div>
@@ -107,12 +107,12 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
           onClick={() => {
             setFilter("All");
             changeTable("All");
-          }}  
-          className={`flex flex-row items-center justify-center font-bitter text-xs sm:text-lg filter`}
+          }}
+          className="flex flex-row items-center justify-center font-bitter text-xs sm:text-lg filter"
         >
           <div
             className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
-              proxyData.filter === 'All' ? 'bg-offblack' : 'bg-[#6D8A54] opacity-20'
+              proxyData.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
             }`}
           >
             &nbsp;
@@ -127,11 +127,11 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
               setFilter(industry);
               changeTable(industry);
             }}
-            className={`flex flex-row items-center justify-center font-bitter text-xs sm:text-lg filter`}
+            className="flex flex-row items-center justify-center font-bitter text-xs sm:text-lg filter"
           >
             <div
               className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
-                proxyData.filter === industry ? 'bg-offblack' : 'bg-[#6D8A54] opacity-20'
+                proxyData.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
               }`}
             >
               &nbsp;
@@ -141,7 +141,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
         ))}
       </div>
       <div
-        className="flex flex-col w-full h-[24rem] xl:h-[28rem] overflow-y-auto custom-scrollbar"
+        className="flex flex-col w-full h-3/4 overflow-y-auto custom-scrollbar"
         onMouseEnter={() => setScrollEnabled(false)} // Disable page scroll when mouse enters
         onMouseLeave={() => setScrollEnabled(true)}  // Re-enable page scroll when mouse leaves
         onTouchStart={() => setScrollEnabled(false)} // Disable page scroll when touch starts on mobile
@@ -167,7 +167,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
                 <td className="text-dark-green px-2 sm:px-4 font-bitter font-light text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
                   {company.description}
                 </td>
-                {proxyData.filter === 'All' && (
+                {proxyData.filter === "All" && (
                   <td
                     className="text-dark-green px-2 sm:px-4 font-bitter-italic font-light hidden sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
                   >
