@@ -111,13 +111,6 @@ opacity: 0.2;
     pointer-events: none;
 }
 
-.flower {
-    position: absolute;
-    transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
-    background-size: contain;            
-    background-repeat: no-repeat;                              
-}
-
 .grow:hover {
     transform: scale(1.2);
 }
@@ -133,6 +126,13 @@ opacity: 0.2;
 
 .breathe {
   animation: breathe 3s ease-in-out infinite; /* Adjust timing as needed */
+}
+
+.flower {
+  position: absolute;
+  transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
+  background-size: contain;            
+  background-repeat: no-repeat;                              
 }
 
 @media (orientation: landscape) {    
@@ -157,7 +157,7 @@ opacity: 0.2;
 }
 
 @media (orientation: portrait) {   
-    .title { font-size: 20vw; }
+    .title { font-size: 18vw; }
     /* .flower-2 { width: 7vh; height: 7vh; top: 38vh; left: 8vw; } */
     .flower-4 { width: 15vh; height: 15vh; top: 40vh; left: 35vw; }
     /* .flower-5 { width: 9vh; height: 9vh; top: 15vh; left: 70vw; }

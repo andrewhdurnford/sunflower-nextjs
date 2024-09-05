@@ -73,12 +73,22 @@ const App: React.FC = () => {
         >
             <div
                 id="hero"
-                className={`w-full h-[calc(100dvh)] relative overflow-hidden bg-dark-green`}
+                className={`w-full h-[calc(100dvh)] relative overflow-hidden bg-dark-green 
+                  portrait:flex portrait:flex-col portrait:justify-center portrait:items-center portrait:gap-10`}
             >
+        <div
+          className={`title font-arya font-bold text-offwhite transition-all duration-1000 
+            portrait:w-11/12 portrait:text-center
+            ${loaded ? 'top-0' : '-top-full'}`}
+        >
+          SUNFLOWER CAPITAL
+        </div>
+
         <div
         id="center-flower"
         onClick={expandFlower}
-        className={`z-10 flower flower-4 transition-all duration-1000 ${loaded ? '' : 'opacity-0'} ${breatheEnabled ? 'breathe' : ''}`}
+        className={`z-10 flower-4 transition-all duration-1000 portrait:flower
+          ${loaded ? '' : 'opacity-0'} ${breatheEnabled ? 'breathe' : ''}`}
         >
         <Image
             src="/images/outline/flower-4.svg"
@@ -94,12 +104,6 @@ const App: React.FC = () => {
         // #f6de5a
       >
         GROW WITH SUNFLOWER CAPITAL
-      </div>
-
-      <div
-        className={`title font-arya font-bold text-offwhite transition-all duration-1000 ${loaded ? 'top-0' : '-top-full'}`}
-      >
-        SUNFLOWER CAPITAL
       </div>
 
       <div className={`flower flower-1 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
