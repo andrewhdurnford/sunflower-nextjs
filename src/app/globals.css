@@ -37,25 +37,14 @@
   }
 }
 
-/* :root {
-  background: #03351A;
-}
-*/
-
 html, body {
+  background: #FFF9DE;
   overflow: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
 }
-/*
-html {
-  background: #03351A;
-}
 
-body {
-  background: #FFF9DE;
-} */
 
 ::-webkit-scrollbar {
 display: none;
