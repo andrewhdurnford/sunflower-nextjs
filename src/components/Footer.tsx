@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
     };
 
     return (
-        <div className="flex flex-row justify-center items-center w-full gap-6 h-20 sm:h-24 bg-offwhite px-4 sm:px-8 pb-[6vh] sm:pb-0" id="footer">
+        <div className="flex flex-row justify-center items-center w-full gap-6 h-20 sm:h-24 bg-offwhite px-4 sm:px-8" id="footer">
             <div onClick={scroll} className="flex items-center space-x-4 text-center cursor-pointer">
                 <h1 className="font-bitter text-darkish-brown text-sm sm:text-base lg:text-lg xl:text-xl">
                 © Sunflower Capital 2024 
