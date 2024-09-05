@@ -87,7 +87,7 @@ const App: React.FC = () => {
         <div
         id="center-flower"
         onClick={expandFlower}
-        className={`z-10 flower-4 transition-all duration-1000 landscape:flower
+        className={`z-10 flower-4 transition-all duration-1000 centerflower
           ${loaded ? '' : 'opacity-0'} ${breatheEnabled ? 'breathe' : ''}`}
         >
         <Image
@@ -99,7 +99,7 @@ const App: React.FC = () => {
         </div>
       <div
         id="full-screen-message"
-        className="z-10 fixed inset-0 flex items-center justify-center  font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000
+        className="z-10 fixed inset-0 flex items-center justify-center font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000
         bg-offwhite"
         // #f6de5a
       >

@@ -60,9 +60,8 @@ width: 12px;
 height: 12px;
 }
 
-/* Optional: Customize the appearance of the scrollbar */
 .custom-scrollbar::-webkit-scrollbar-thumb {
-background-color: rgba(0, 0, 0, 0.2);
+background-color: rgba(0, 0, 0, 0.8);
 border-radius: 10px;
 }
 
@@ -128,15 +127,14 @@ opacity: 0.2;
   animation: breathe 3s ease-in-out infinite; /* Adjust timing as needed */
 }
 
-.flower {
-  position: absolute;
-  transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
-  background-size: contain;            
-  background-repeat: no-repeat;                              
-}
-
 @media (orientation: landscape) {    
     .title { font-size: 19vw; }
+    .flower, .centerflower {
+      position: absolute;
+      transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
+      background-size: contain;            
+      background-repeat: no-repeat;                              
+    }
     .flower-1 { width: 14vw; height: 14vw; top: 53vh; left: -3vw; }
     .flower-2 { width: 7vw; height: 7vw; top: 53vh; left: 16vw; }
     .flower-3 { width: 8vw; height: 8vw; top: 56vh; left: 29vw; }
@@ -158,8 +156,11 @@ opacity: 0.2;
 
 @media (orientation: portrait) {   
     .title { font-size: 18vw; }
+    .flower {
+      display: none;                           
+    }
     /* .flower-2 { width: 7vh; height: 7vh; top: 38vh; left: 8vw; } */
-    .flower-4 { width: 15vh; height: 15vh; top: 40vh; left: 35vw; }
+    .flower-4 { width: 15vh; height: 15vh; top: 40vh; left: 35vw; display: block; }
     /* .flower-5 { width: 9vh; height: 9vh; top: 15vh; left: 70vw; }
     .flower-8 { width: 15vh; height: 15vh; top: 20vh; left: 10vw; }
     .flower-9 { width: 8vh; height: 8vh; top: 50vh; left: 5vw; }
