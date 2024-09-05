@@ -87,7 +87,7 @@ const App: React.FC = () => {
         <div
         id="center-flower"
         onClick={expandFlower}
-        className={`z-10 flower-4 transition-all duration-1000 portrait:flower
+        className={`z-10 flower-4 transition-all duration-1000 landscape:flower
           ${loaded ? '' : 'opacity-0'} ${breatheEnabled ? 'breathe' : ''}`}
         >
         <Image
