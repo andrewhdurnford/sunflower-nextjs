@@ -37,7 +37,7 @@
   }
 }
 
-:root {
+/* :root {
   background: #03351A;
 }
 
@@ -54,7 +54,7 @@ html {
 
 body {
   background: #FFF9DE;
-}
+} */
 
 ::-webkit-scrollbar {
 display: none;
