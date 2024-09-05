@@ -18,7 +18,7 @@ const Testimonials: React.FC = () => {
         company: "Tabular"
     },
     {
-        quote: "Liu invested in our seed and then doubled down in subsequent rounds. She helped us with positioning and messaging on our website and customer materials, refining our key product use cases, and thinking through developer ubiquity.",
+        quote: "Liu invested in our seed and then doubled down in subsequent rounds. She helped us with initial positioning and messaging on our website and customer materials, discussing our key product use cases, and thinking through developer ubiquity.",
         author: "Maxim Fateev",
         company: "Temporal"
     },
@@ -66,6 +66,11 @@ const Testimonials: React.FC = () => {
         quote: "Liu was one of the first investors we started working with at Knock. Not only was she an instrumental part of our early fundraising, she also helped introduce us to many potential customers. Even now, several years after her initial investment in Knock, Liu continues to respond to our investor updates, offering ways to help. I'm grateful she's been a part of our journey.",
         author: "Sam Seely",
         company: "Knock"
+    },
+    {
+        quote: "Since the pre-seed, Liu has been a great resource for tldraw as a design technology company. She’s a familiar name in the industry, generous with introductions, and has delivered timely advice for our GTM, hiring, and financing strategy.",
+        author: "Steve Ruiz",
+        company: "Tldraw"
     },
     {
         quote: "Liu was the investor I spoke to most frequently. As a solo founder, I appreciated her being a sounding board. She joined customer calls, helped us figure out pricing and business model, and introduced us to and interviewed potential hires.",
