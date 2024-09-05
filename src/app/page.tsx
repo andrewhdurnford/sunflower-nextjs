@@ -192,7 +192,7 @@ const App: React.FC = () => {
         />
       </div>
 
-      <div className={`flower flower-12 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+      <div className={`flower flower-12 ${loaded ? '' : 'opacity-0'} grow`}>
         <Image
           src="/images/outline/flower-12.svg"
           alt="Flower 12"
