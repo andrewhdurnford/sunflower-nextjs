@@ -37,7 +37,12 @@
   }
 }
 
+:root {
+  background: #FFF9DE;
+}
+
 html, body {
+  background: #FFF9DE;
   overflow: hidden;
   height: 100%;
   margin: 0;
