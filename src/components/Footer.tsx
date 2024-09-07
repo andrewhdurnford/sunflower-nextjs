@@ -1,19 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface FooterProps {
-    setCurrentPage: (page: number) => void;
-}
-
-const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
-
-    const scroll = () => {
-        setCurrentPage(0);
-    };
+const Footer: React.FC = () => {
 
     return (
         <div className="flex flex-row justify-center items-center w-full gap-6 h-20 sm:h-24 bg-offwhite px-4 sm:px-8" id="footer">
-            <div onClick={scroll} className="flex items-center space-x-4 text-center cursor-pointer">
+            <div className="flex items-center space-x-4 text-center">
                 <h1 className="font-bitter text-darkish-brown text-sm sm:text-base lg:text-lg xl:text-xl">
                 © Sunflower Capital 2024 
                 </h1>

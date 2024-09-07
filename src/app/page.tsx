@@ -103,7 +103,7 @@ const App: React.FC = () => {
         bg-offwhite"
         // #f6de5a
       >
-        GROW WITH SUNFLOWER CAPITAL
+        From Seed to Sunflower
       </div>
 
       <div className={`flower flower-1 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
@@ -268,7 +268,7 @@ const App: React.FC = () => {
                 className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
             >
                 <div className="font-bitter text-dark-green text-center">
-                    <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.1vw] leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
+                    <div className="text-[2.1vw] portrait:text-base leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
                         We partner with missionary founders who are indefatigable, decisive, and self-aware. <br /> <br /> <br />
                         We believe in forging highly personal, deep-rooted relationships that stand the test of time. <br /> <br /> <br />
                         We develop distinct theses on markets and how they will unfold.
@@ -286,7 +286,7 @@ const App: React.FC = () => {
                 className="bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
             >
                 <Testimonials />
-                <Footer setCurrentPage={setCurrentPage} />
+                <Footer />
             </div>
         </ReactPageScroller>
       </>

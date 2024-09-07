@@ -135,23 +135,23 @@ opacity: 0.2;
       background-size: contain;            
       background-repeat: no-repeat;                              
     }
-    .flower-1 { width: 14vw; height: 14vw; top: 53vh; left: -3vw; }
-    .flower-2 { width: 7vw; height: 7vw; top: 53vh; left: 16vw; }
+    /* .flower-1 { width: 14vw; height: 14vw; top: 53vh; left: -3vw; } */
+    .flower-2 { width: 7vw; height: 7vw; top: 55vh; left: 3vw; }
     .flower-3 { width: 8vw; height: 8vw; top: 56vh; left: 29vw; }
-    .flower-4 { width: 15vw; height: 15vw; top: 53.5vh; left: 42.5vw; }
+    .flower-4 { width: 18vw; height: 18vw; top: 53.5vh; left: 41vw; }
     .flower-5 { width: 7vw; height: 7vw; top: 59.5vh; left: 62vw; }
-    .flower-6 { width: 14vw; height: 14vw; top: 30vh; left: 64vw; }
+    .flower-6 { width: 10vw; height: 10vw; top: 58vh; left: 73vw; }
     .flower-7 { width: 11vw; height: 11vw; top: 32vh; left: 82vw; }
-    .flower-8 { width: 15vw; height: 15vw; top: 14vh; right: -9.5vw; }
-    .flower-9 { width: 8vw; height: 8vw; top: 83vh; left: 1vw; }
-    .flower-10 { width: 16vw; height: 16vw; top: 67vh; left: 13vw; }
-    .flower-11 { width: 11vw; height: 11vw; top: 78vh; left: 33vw; }
-    .flower-12 { width: 5.5vw; height: 5.5vw; top: 87.5vh; left: 49.5vw; }
-    .flower-13 { width: 12vw; height: 12vw; top: 75.5vh; left: 58.5vw; }
-    .flower-14 { width: 14vw; height: 14vw; top: 56vh; left: 74vw; }
-    .flower-15 { width: 12vw; height: 12vw; top: 46vh; right: -5vw; }
-    .flower-16 { width: 6vw; height: 6vw; top: 87vh; left: 75vw; }
-    .flower-17 { width: 13vw; height: 13vw; top: 73vh; left: 87.5vw; }
+    /* .flower-8 { width: 15vw; height: 15vw; top: 14vh; right: -9.5vw; } */
+    .flower-9 { width: 8vw; height: 8vw; top: 76vh; left: 3vw; }
+    .flower-10 { width: 16vw; height: 16vw; top: 58vh; left: 12vw; }
+    .flower-11 { width: 10vw; height: 10vw; top: 76vh; left: 30vw; }
+    .flower-12 { width: 5.5vw; height: 5.5vw; top: 80vh; left: 60vw; }
+    /* .flower-13 { width: 12vw; height: 12vw; top: 75.5vh; left: 59.5vw; } */
+    .flower-14 { width: 14vw; height: 14vw; top: 30vh; left: 64vw; }
+    /* .flower-15 { width: 12vw; height: 12vw; top: 46vh; right: -5vw; } */
+    .flower-16 { width: 6vw; height: 6vw; top: 81vh; left: 70vw; }
+    .flower-17 { width: 13vw; height: 13vw; top: 67vh; left: 83vw; }
 }
 
 @media (orientation: portrait) {   
@@ -160,7 +160,7 @@ opacity: 0.2;
       display: none;                           
     }
     /* .flower-2 { width: 7vh; height: 7vh; top: 38vh; left: 8vw; } */
-    .flower-4 { width: 15vh; height: 15vh; top: 40vh; left: 35vw; display: block; }
+    .flower-4 { width: 50vw; height: 50vw; top: 40vh; left: 25vw; display: block; }
     /* .flower-5 { width: 9vh; height: 9vh; top: 15vh; left: 70vw; }
     .flower-8 { width: 15vh; height: 15vh; top: 20vh; left: 10vw; }
     .flower-9 { width: 8vh; height: 8vh; top: 50vh; left: 5vw; }
