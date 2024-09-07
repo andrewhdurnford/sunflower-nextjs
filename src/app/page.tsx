@@ -78,7 +78,7 @@ const App: React.FC = () => {
             >
         <div
           className={`title font-arya font-bold text-offwhite transition-all duration-1000 
-            portrait:w-11/12 portrait:text-center
+            w-11/12 portrait:text-center pl-
             ${loaded ? 'top-0' : '-top-full'}`}
         >
           SUNFLOWER CAPITAL
@@ -268,7 +268,7 @@ const App: React.FC = () => {
                 className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
             >
                 <div className="font-bitter text-dark-green text-center">
-                    <div className="text-[2.1vw] portrait:text-base leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
+                    <div className="text-xl md:text-[2.1vw] portrait:text-base leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
                         We partner with missionary founders who are indefatigable, decisive, and self-aware. <br /> <br /> <br />
                         We believe in forging highly personal, deep-rooted relationships that stand the test of time. <br /> <br /> <br />
                         We develop distinct theses on markets and how they will unfold.
