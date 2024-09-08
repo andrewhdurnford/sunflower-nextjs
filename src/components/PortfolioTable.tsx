@@ -151,9 +151,9 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
             {displayCompanies.map((company) => (
               <tr
                 key={company.company}
-                className="relative h-12 sm:h-16 py-2 sm:py-4 custom-border-row table-row transition-all duration-300"
+                className="relative h-12 sm:h-16 custom-border-row table-row transition-all duration-300"
               >
-                <td className="px-2 sm:px-4 font-bitter font-normal">
+                <td className="font-bitter font-normal">
                   <a
                     href={company.link}
                     target="_blank"
