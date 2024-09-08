@@ -74,14 +74,14 @@ const App: React.FC = () => {
             <div
                 id="hero"
                 className={`w-full h-[calc(100dvh)] relative overflow-hidden bg-dark-green 
-                  portrait:flex portrait:flex-col portrait:justify-center portrait:items-center portrait:gap-10`}
+                  flex portrait:flex-col justify-center portrait:items-center portrait:gap-10`}
             >
         <div
           className={`title font-arya font-bold text-offwhite transition-all duration-1000 
-            portrait:w-11/12 portrait:text-center
+            landscape:pt-6 w-11/12 portrait:text-center 
             ${loaded ? 'top-0' : '-top-full'}`}
         >
-          SUNFLOWER CAPITAL
+          SUNFLOWER <br/> CAPITAL
         </div>
 
         <div
@@ -100,10 +100,9 @@ const App: React.FC = () => {
       <div
         id="full-screen-message"
         className="z-10 fixed inset-0 flex items-center justify-center font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000
-        bg-offwhite"
-        // #f6de5a
+        bg-[#f1c027]"
       >
-        GROW WITH SUNFLOWER CAPITAL
+        From Seed to Sunflower
       </div>
 
       <div className={`flower flower-1 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
@@ -268,7 +267,7 @@ const App: React.FC = () => {
                 className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
             >
                 <div className="font-bitter text-dark-green text-center">
-                    <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.1vw] leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
+                    <div className="text-xl md:text-[2.1vw] portrait:text-base leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
                         We partner with missionary founders who are indefatigable, decisive, and self-aware. <br /> <br /> <br />
                         We believe in forging highly personal, deep-rooted relationships that stand the test of time. <br /> <br /> <br />
                         We develop distinct theses on markets and how they will unfold.
@@ -286,7 +285,7 @@ const App: React.FC = () => {
                 className="bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
             >
                 <Testimonials />
-                <Footer setCurrentPage={setCurrentPage} />
+                <Footer />
             </div>
         </ReactPageScroller>
       </>
