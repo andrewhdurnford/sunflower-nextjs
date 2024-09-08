@@ -74,14 +74,14 @@ const App: React.FC = () => {
             <div
                 id="hero"
                 className={`w-full h-[calc(100dvh)] relative overflow-hidden bg-dark-green 
-                  portrait:flex portrait:flex-col portrait:justify-center portrait:items-center portrait:gap-10`}
+                  flex portrait:flex-col justify-center portrait:items-center portrait:gap-10`}
             >
         <div
           className={`title font-arya font-bold text-offwhite transition-all duration-1000 
-            w-11/12 portrait:text-center pl-
+            landscape:pt-6 w-11/12 portrait:text-center 
             ${loaded ? 'top-0' : '-top-full'}`}
         >
-          SUNFLOWER CAPITAL
+          SUNFLOWER <br/> CAPITAL
         </div>
 
         <div
@@ -100,8 +100,7 @@ const App: React.FC = () => {
       <div
         id="full-screen-message"
         className="z-10 fixed inset-0 flex items-center justify-center font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000
-        bg-offwhite"
-        // #f6de5a
+        bg-[#f1c027]"
       >
         From Seed to Sunflower
       </div>

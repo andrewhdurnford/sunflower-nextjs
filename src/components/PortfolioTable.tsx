@@ -101,7 +101,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
       <div className="flex flex-row justify-between items-center w-full">
         <h1 className="font-arya text-dark-green text-6xl sm:text-5xl md:text-6xl lg:text-7xl">Our Portfolio</h1>
       </div>
-      <div className="w-full flex flex-wrap items-center justify-start gap-2 sm:gap-4 py-4">
+      <div className="w-full flex flex-wrap items-center justify-start gap-2 sm:gap-4 py-4 pl-2">
         <button
           id="All"
           onClick={() => {
@@ -153,12 +153,12 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
                 key={company.company}
                 className="relative h-12 sm:h-16 py-2 sm:py-4 custom-border-row table-row transition-all duration-300"
               >
-                <td className="px-2 sm:px-4 font-bitter font-normal text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem]">
+                <td className="px-2 sm:px-4 font-bitter font-normal">
                   <a
                     href={company.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-inherit hover:cursor-pointer text-dark-green"
+                    className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] hover:cursor-pointer text-dark-green"
                   >
                     {company.company}
                   </a>

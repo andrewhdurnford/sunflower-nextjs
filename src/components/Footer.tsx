@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     return (
         <div className="flex flex-row justify-center items-center w-full gap-6 h-20 sm:h-24 bg-offwhite px-4 sm:px-8" id="footer">
             <div className="flex items-center space-x-4 text-center">
-                <h1 className="font-bitter text-darkish-brown text-sm sm:text-base lg:text-lg xl:text-xl">
+                <h1 className="font-bitter text-dark-green text-sm sm:text-base lg:text-lg xl:text-xl">
                 © Sunflower Capital 2024 
                 </h1>
 

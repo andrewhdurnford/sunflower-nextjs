@@ -28,6 +28,11 @@ const Testimonials: React.FC = () => {
         company: "Verkada"
     },
     {
+        quote: "Liu has been part of the Athelas journey since founding. She wrote the first check into Athelas through Dorm Room Fund, and she then helped champion and lead our seed round in 2016. She's seen us evolve the product surface area, refine GTM, and expand the team over the years.",
+        author: "Tanay Tandon",
+        company: "Athelas and Commure"
+    },
+    {
         quote: "Liu is the best kind of investor: she is technical, understands product, and can quickly understand the big picture. She's really well connected with top talent and investors. She'll help when she's needed and give you space to operate otherwise. Highly recommend working with her.",
         author: "Kareem Amin",
         company: "Clay"
@@ -171,11 +176,11 @@ const Testimonials: React.FC = () => {
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
             <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
-              <div className="font-bitter text-base sm:text-xl xl:text-2xl w-full text-center sm:leading-extra-loose md:leading-extra-loose lg:leading-extra-loose xl:leading-extra-loose">
-                {quote.quote}
+              <div className="font-bitter text-base sm:text-xl xl:text-2xl w-full text-left sm:leading-extra-loose md:leading-extra-loose lg:leading-extra-loose xl:leading-extra-loose">
+                "{quote.quote}"
               </div>
-              <div className="font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-center w-full">
-                — {quote.author}, <span className="font-bitter-italic">{quote.company}</span>
+              <div className="font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full">
+              &emsp;— {quote.author}, <span className="font-bitter-italic">{quote.company}</span>
               </div>
             </li>
           ))}
