@@ -30,7 +30,7 @@ const Testimonials: React.FC = () => {
     {
         quote: "Liu has been part of the Athelas journey since founding. She wrote the first check into Athelas through Dorm Room Fund, and she then helped champion and lead our seed round in 2016. She's seen us evolve the product surface area, refine GTM, and expand the team over the years.",
         author: "Tanay Tandon",
-        company: "Athelas and Commure"
+        company: "Athelas & Commure"
     },
     {
         quote: "Liu is the best kind of investor: she is technical, understands product, and can quickly understand the big picture. She's really well connected with top talent and investors. She'll help when she's needed and give you space to operate otherwise. Highly recommend working with her.",
