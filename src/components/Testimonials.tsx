@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Glide from '@glidejs/glide';
@@ -119,27 +120,30 @@ const Testimonials: React.FC = () => {
     }
   ];
 
+  const [isSwiped, setIsSwiped] = useState(false);
+
   useEffect(() => {
-    // Initialize Glide only once
     const glide = new Glide('.glide', {
       type: 'carousel',
       startAt: 0,
-      perView: 1,  // Display only one slide at a time
-      autoplay: 5000,
+      perView: 1,
+      autoplay: false,
     });
 
-    // Mount the Glide instance
+    glide.on('run.after', () => {
+      setIsSwiped(true); 
+    });
+
     glide.mount();
 
-    // Clean up: Destroy the Glide instance when the component unmounts
     return () => {
       glide.destroy();
     };
-  }, []); 
+  }, []);
 
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
-      <div className='w-2/3 flex justify-between items-center'>
+      <div className='w-2/3 flex portrait:flex-col gap-6 justify-between items-center'>
         <div className={`font-arya text-dark-green text-6xl lg:text-7xl leading-none transition-opacity duration-1000`}>
           Our Founders
         </div>
@@ -170,6 +174,7 @@ const Testimonials: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className={`landscape:hidden font-bitter ${isSwiped ? 'hidden' : ''}`}>Swipe to see more →</div>
       </div>
 
       <div className={`glide__track w-2/3 transition-opacity duration-1000`} data-glide-el="track">
