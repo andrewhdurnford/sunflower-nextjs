@@ -17,9 +17,9 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick }
                     key={index}
                     className={`dot ${
                         index === currentScreen ? 
-                        currentScreen === 0 ? 'bg-offwhite' : 'bg-offblack' 
+                        currentScreen === 0 ? 'bg-offwhite' : 'bg-dark-green' 
                         : 
-                        currentScreen === 0 ? 'bg-offwhite opacity-20' : 'bg-offblack opacity-20' 
+                        currentScreen === 0 ? 'bg-offwhite opacity-20' : 'bg-dark-green opacity-20' 
                     }`}
                     onClick={() => onDotClick(index)}
                 ></div>

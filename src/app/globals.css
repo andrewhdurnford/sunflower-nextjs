@@ -127,10 +127,6 @@ opacity: 0.2;
   animation: breathe 3s ease-in-out infinite; /* Adjust timing as needed */
 }
 
-.sm-title {
-  line-height: 0;
-}
-
 @media (orientation: landscape) {    
     .title { font-size: 18.4vw; line-height: 13vw; }
     .flower, .centerflower {
