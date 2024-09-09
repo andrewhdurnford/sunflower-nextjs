@@ -166,7 +166,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     </div>
     </div>
 
-      <div className="flex flex-col flex-shrink w-full h-1/2 sm:h-2/3 overflow-y-auto custom-scrollbar"
+      <div className="flex flex-col flex-shrink w-full h-3/5 sm:h-2/3 overflow-y-auto custom-scrollbar"
         onMouseEnter={() => setScrollEnabled(false)}
         onMouseLeave={() => setScrollEnabled(true)}  
         onTouchStart={() => setScrollEnabled(false)} 
