@@ -132,7 +132,7 @@ const App: React.FC = () => {
         />
       </div>
 
-      <div className={`flower flower-5 ${loaded ? '' : 'opacity-0'} grow`}>
+      <div className={`flower flower-5 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
         <Image
           src="/images/outline/flower-5.svg"
           alt="Flower 5"
@@ -254,9 +254,10 @@ const App: React.FC = () => {
                 className={`h-[calc(100dvh)] w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-10 xl:gap-14 bg-offwhite`}
             >
                 <div className="flex flex-col items-center gap-5 lg:gap-8">
-                    <img src="/images/sunflower-logo.svg" alt="Sunflower" className="h-24 sm:h-28 w-auto" />
-                    <div className="w-11/12 sm:w-4/5 font-bitter text-dark-green text-center">
-                        <div className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl leading-loose sm:leading-loose lg:leading-loose xl:leading-loose">
+                    <img src="/images/sunflower-logo.svg" alt="Sunflower" className={`h-24 sm:h-28 w-auto transition-opacity duration-300 ${currentPage === 1 ? 'opacity-100' : 'opacity-0'}`} />
+                    <div className="w-4/5 font-bitter text-dark-green text-center">
+                    <div className={`text-2xl sm:text-4xl lg:text-5xl xl:text-6xl leading-loose sm:leading-loose lg:leading-loose xl:leading-loose 
+                      transition-opacity duration-300 ${currentPage === 1 ? 'opacity-100' : 'opacity-0'}`}>
                             We invest at the earliest stage in companies building foundational picks and shovels infrastructure.
                         </div>
                     </div>
@@ -266,12 +267,10 @@ const App: React.FC = () => {
                 id="statement2"
                 className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
             >
-                <div className="font-bitter text-dark-green text-center">
-                    <div className="text-xl md:text-[2.1vw] portrait:text-base leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
+                    <div className="font-bitter text-center w-4/5 sm:w-full text-xl md:text-[2.1vw] portrait:text-base leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
                         We partner with missionary founders who are indefatigable, decisive, and self-aware. <br /> <br /> <br />
                         We believe in forging highly personal, deep-rooted relationships that stand the test of time. <br /> <br /> <br />
                         We develop distinct theses on markets and how they will unfold.
-                    </div>
                 </div>
             </div>
             <div
@@ -285,7 +284,7 @@ const App: React.FC = () => {
                 className="bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
             >
                 <Testimonials />
-                <Footer />
+                <Footer setCurrentPage={setCurrentPage} />
             </div>
         </ReactPageScroller>
       </>

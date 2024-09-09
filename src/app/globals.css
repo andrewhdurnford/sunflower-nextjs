@@ -97,6 +97,7 @@ opacity: 0.2;
   height: 12px;
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .title {
@@ -126,8 +127,12 @@ opacity: 0.2;
   animation: breathe 3s ease-in-out infinite; /* Adjust timing as needed */
 }
 
+.sm-title {
+  line-height: 0;
+}
+
 @media (orientation: landscape) {    
-    .title { font-size: 18.5vw; line-height: 13vw; }
+    .title { font-size: 18.4vw; line-height: 13vw; }
     .flower, .centerflower {
       position: absolute;
       transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
@@ -139,21 +144,21 @@ opacity: 0.2;
     }
     /* .flower-1 { width: 14vw; height: 14vw; top: 53vh; left: -3vw; } */
     .flower-2 { width: 7vw; height: 7vw; top: 57vh; left: 5vw; }
-    .flower-3 { width: 8vw; height: 8vw; top: 56vh; left: 29vw; }
+    .flower-3 { width: 8vw; height: 8vw; top: 56vh; left: 30vw; }
     .flower-4 { width: 20vw; height: 20vw; top: 55vh; left: 40vw; }
-    .flower-5 { width: 14vw; height: 14vw; top: 34vh; left: 66vw; }
+    .flower-5 { width: 15vw; height: 15vw; top: 36vh; left: 67vw; }
     /* .flower-6 { width: 10vw; height: 10vw; top: 58vh; left: 73vw; } */
-    .flower-7 { width: 13vw; height: 13vw; top: 32vh; left: 82vw; }
+    .flower-7 { width: 12vw; height: 12vw; top: 33vh; left: 84vw; }
     /* .flower-8 { width: 15vw; height: 15vw; top: 14vh; right: -9.5vw; } */
     .flower-9 { width: 8vw; height: 8vw; top: 77vh; left: 4vw; }
     .flower-10 { width: 16vw; height: 16vw; top: 58vh; left: 12vw; }
     .flower-11 { width: 10vw; height: 10vw; top: 76vh; left: 30vw; }
     .flower-12 { width: 7vw; height: 7vw; top: 59vh; left: 61vw; }
     /* .flower-13 { width: 12vw; height: 12vw; top: 75.5vh; left: 59.5vw; } */
-    .flower-14 { width: 11vw; height: 11vw; top: 68vh; left: 68vw; }
+    .flower-14 { width: 11vw; height: 11vw; top: 69vh; left: 68vw; }
     /* .flower-15 { width: 12vw; height: 12vw; top: 46vh; right: -5vw; } */
-    .flower-16 { width: 6vw; height: 6vw; top: 80vh; left: 61vw; }
-    .flower-17 { width: 16vw; height: 16vw; top: 60vh; left: 80vw; }
+    .flower-16 { width: 6vw; height: 6vw; top: 82vh; left: 60vw; }
+    .flower-17 { width: 16vw; height: 16vw; top: 61vh; left: 81vw; }
 }
 
 @media (orientation: portrait) {   
