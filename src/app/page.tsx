@@ -100,7 +100,8 @@ const App: React.FC = () => {
       <div
         id="full-screen-message"
         className="z-10 fixed inset-0 flex items-center justify-center font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000
-        bg-[#f1c027]"
+        bg-[#ffdf5b]" 
+        // #f1c027
       >
         From Seed to Sunflower
       </div>
