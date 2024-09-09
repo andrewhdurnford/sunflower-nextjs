@@ -177,7 +177,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
             {displayCompanies.map((company) => (
               <tr
                 key={company.company}
-                className="relative h-12 sm:h-16 custom-border-row table-row transition-all duration-300"
+                className="relative h-12 sm:h-16 landscape:custom-border-row table-row transition-all duration-300"
               >
                 <td className="font-bitter font-normal">
                   <a
