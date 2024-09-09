@@ -99,16 +99,16 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center gap-3 sm:gap-6 px-4">
       <div className="flex flex-row justify-between items-center w-full">
-        <h1 className="font-arya text-dark-green text-6xl sm:text-5xl md:text-6xl lg:text-7xl">Our Portfolio</h1>
+        <h1 className="font-arya text-dark-green text-6xl lg:text-7xl">Our Portfolio</h1>
       </div>
-      <div className="w-full flex flex-wrap items-center justify-start gap-2 sm:gap-4 py-4 pl-2">
+      <div className="w-full flex flex-wrap items-center justify-start gap-2 sm:gap-4 py-4 pl-1">
         <button
           id="All"
           onClick={() => {
             setFilter("All");
             changeTable("All");
           }}
-          className="flex flex-row items-center justify-center font-bitter text-xs sm:text-lg filter"
+          className="flex flex-row items-center justify-leftnpm font-bitter text-xs sm:text-lg filter"
         >
           <div
             className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${

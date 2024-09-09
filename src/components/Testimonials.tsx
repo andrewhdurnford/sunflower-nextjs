@@ -125,7 +125,7 @@ const Testimonials: React.FC = () => {
       type: 'carousel',
       startAt: 0,
       perView: 1,  // Display only one slide at a time
-      autoplay: false,
+      autoplay: 5000,
     });
 
     // Mount the Glide instance
@@ -140,11 +140,11 @@ const Testimonials: React.FC = () => {
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
       <div className='w-2/3 flex justify-between items-center'>
-        <div className={`font-arya text-dark-green text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none transition-opacity duration-1000`}>
+        <div className={`font-arya text-dark-green text-6xl lg:text-7xl leading-none transition-opacity duration-1000`}>
           Our Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 
-          text-2xl md:text-3xl lg:text-4xl xl:text-5xl`} data-glide-el="controls">
+           portrait:hidden`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" data-glide-dir="<">
             <div className="arrow-container">
               <Image
@@ -180,7 +180,9 @@ const Testimonials: React.FC = () => {
               &ldquo;{quote.quote}&rdquo;
               </div>
               <div className="font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full">
-              &emsp;— {quote.author}, <span className="font-bitter-italic">{quote.company}</span>
+              <span className='portrait:hidden'>&emsp;</span> {quote.author},  
+              <span className='landscape:hidden'><br/></span>
+              <span className="font-bitter-italic">{quote.company}</span>
               </div>
             </li>
           ))}
