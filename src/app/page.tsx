@@ -57,8 +57,11 @@ const App: React.FC = () => {
         setTimeout(() => {
             if (centerflower) centerflower.style.transform = 'scale(1)';
             message.classList.remove('opacity-100');
-            setBreatheEnabled(true); 
         }, 2000);
+
+        setTimeout(() => {
+          setBreatheEnabled(true); 
+        }, 4000);
     };
     
 
@@ -85,12 +88,11 @@ const App: React.FC = () => {
 
         <div className='flowerbox'>
                 <div
-          id="full-screen-message"
-          className="z-10 fixed inset-0 flex items-center justify-center font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000
-          bg-[#ffdf5b]"
-          // #f1c027
+                  id="full-screen-message"
+                  className="z-10 fixed inset-0 flex items-center justify-center font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000"
+                  // bg-[#ffe27c]
                 >
-          From Seed to Sunflower
+                  From Seed to Sunflower
                 </div>
           
                 <div className={`flower flower-1 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
@@ -217,7 +219,7 @@ const App: React.FC = () => {
           />
                 </div>
           
-                <div className={`flower flower-14 ${loaded ? '' : 'opacity-0'} hover:animate-spin`}>
+                <div className={`flower flower-14 ${loaded ? '' : 'opacity-0'} grow`}>
           <Image
             src="/images/outline/flower-14.svg"
             alt="Flower 14"
