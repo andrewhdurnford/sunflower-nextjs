@@ -177,7 +177,7 @@ const Testimonials: React.FC = () => {
         <div className={`landscape:hidden font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div>
       </div>
 
-      <div className={`glide__track w-4/5 sm:w-2/3 transition-opacity duration-1000`} data-glide-el="track">
+      <div className={`glide__track w-4/5 transition-opacity duration-1000`} data-glide-el="track">
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
             <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
