@@ -39,6 +39,11 @@ const Testimonials: React.FC = () => {
         company: "Clay"
     },
     {
+        quote: "We really enjoyed working with Liu in the early years of Semgrep. She was always a thoughtful and insightful voice on early product and GTM questions in the painful pre-PMF days!",
+        author: "Isaac Evans",
+        company: "Semgrep"
+    },
+    {
         quote: "Liu was one of the first investors and believers in Hadrian. She helped us settle into Los Angeles, and guided us through Hadrian’s rapid growth, expansion, and fundraising journey.",
         author: "Chris Power",
         company: "Hadrian"
@@ -144,7 +149,7 @@ const Testimonials: React.FC = () => {
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green portrait:gap-3 landscape:gap-6 xl:gap-12">
       <div className='w-4/5 flex portrait:flex-col portrait:gap-3 landscape:gap-6 justify-between items-center'>
-        <div className={`font-arya text-dark-green text-[14vw] sm:text-6xl lg:text-7xl leading-none transition-opacity duration-1000`}>
+        <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none`}>
           Our Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 
@@ -185,7 +190,7 @@ const Testimonials: React.FC = () => {
               &ldquo;{quote.quote}&rdquo;
               </div>
               <div className="font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full">
-              <span className='portrait:hidden'>&emsp;- </span>{quote.author},&nbsp;
+              <span className='portrait:hidden'>&emsp;</span>- {quote.author},&nbsp;
               <span className='landscape:hidden'><br/></span>
               <span className="font-bitter-italic">{quote.company}</span>
               </div>

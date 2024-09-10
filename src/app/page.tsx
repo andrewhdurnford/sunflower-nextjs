@@ -281,7 +281,7 @@ const App: React.FC = () => {
             </div>
             <div
                 id="portfolio"
-                className="bg-offwhite text-dark-green w-full min-h-[calc(100dvh)] flex justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-32"
+                className="bg-offwhite text-dark-green w-full min-h-[calc(100dvh)] flex justify-center items-center overflow-hidden"
             >
                 <PortfolioTable proxyData={filter.current} setFilter={setFilter} setScrollEnabled={setScrollEnabled}  />
             </div>
