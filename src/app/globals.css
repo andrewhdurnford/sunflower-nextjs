@@ -130,7 +130,7 @@ opacity: 0.2;
 }
 
 @media (orientation: landscape) {    
-  @media (max-aspect-ratio: 2) {    
+  @media (max-aspect-ratio: 2.05) {    
     .title { font-size: 18.4vw; line-height: 13vw; padding-top: 1.5rem; }
     .flower, .centerflower {
       position: absolute;
@@ -182,7 +182,7 @@ opacity: 0.2;
     .flower-17 { width: 13vh; height: 13vh; top: 78vh; left: 60vw; } */
 }
 
-@media (min-aspect-ratio: 2) {    
+@media (min-aspect-ratio: 2.05) {    
   @media (max-aspect-ratio:2.5) {
     .title { 
       font-size: 18.4vw; 
