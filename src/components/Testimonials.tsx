@@ -148,8 +148,8 @@ const Testimonials: React.FC = () => {
 
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green portrait:gap-3 landscape:gap-6 xl:gap-12">
-      <div className='w-4/5 flex portrait:flex-col portrait:gap-3 landscape:gap-6 justify-between items-center'>
-        <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none`}>
+      <div className='w-4/5 flex portrait:flex-col portrait:gap-3 landscape:gap-6 landscape:justify-between justify-start items-center'>
+        <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none text-left`}>
           Our Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 
@@ -179,7 +179,7 @@ const Testimonials: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className={`landscape:hidden font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div>
+        <div className={`landscape:hidden text-dark-green font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div>
       </div>
 
       <div className={`glide__track w-4/5 transition-opacity duration-1000`} data-glide-el="track">

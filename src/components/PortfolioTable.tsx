@@ -110,7 +110,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
               setFilter(e.target.value);
               changeTable(e.target.value);
             }}
-            className="font-bitter text-base sm:text-lg w-1/4 p-2 border border-dark-green rounded bg-offwhite selection:border-dark-green focus:border-dark-green"
+            className="font-bitter text-base sm:text-lg w-28 p-2 border border-dark-green rounded bg-offwhite selection:border-dark-green focus:border-dark-green"
             value={proxyData.filter}
           >
             <option value="All">All</option>
