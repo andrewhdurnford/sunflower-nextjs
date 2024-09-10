@@ -124,14 +124,14 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     </div>
 
     {/* Button group for landscape devices */}
-    <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 sm:gap-4">
+    <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 md:gap-4">
       <button
         id="All"
         onClick={() => {
           setFilter("All");
           changeTable("All");
         }}
-        className="flex flex-row items-center justify-left font-bitter text-xs sm:text-lg filter"
+        className="flex flex-row items-center justify-left font-bitter text-xs md:text-lg filter"
       >
         <div
           className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
@@ -151,7 +151,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
             setFilter(industry);
             changeTable(industry);
           }}
-          className="flex flex-row items-center justify-center font-bitter text-xs sm:text-lg filter"
+          className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
         >
           <div
             className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${

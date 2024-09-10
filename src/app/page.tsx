@@ -259,7 +259,7 @@ const App: React.FC = () => {
                 className={`h-[calc(100dvh)] w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-10 xl:gap-14 bg-offwhite`}
             >
                 <div className="flex flex-col items-center gap-5 lg:gap-8">
-                    <img src="/images/sunflower-logo.svg" alt="Sunflower" className={`h-24 sm:h-28 w-auto`} />
+                    <img src="/images/sunflower-logo.svg" alt="Sunflower" className={`h-24 sm:h-28 w-auto logoflower`} />
                     <div className="w-4/5 font-bitter text-dark-green text-center">
                     <div className={`text-2xl sm:text-4xl lg:text-5xl xl:text-6xl leading-loose sm:leading-loose lg:leading-loose xl:leading-loose`}>
                             We invest at the earliest stage in companies building foundational picks and shovels infrastructure.

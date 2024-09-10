@@ -183,52 +183,105 @@ opacity: 0.2;
 }
 
 @media (min-aspect-ratio: 2.05) {    
+  @media (max-aspect-ratio:2.5) {
+    .title { 
+      font-size: 18.4vw; 
+      line-height: 13vw; 
+      padding-top: 0;
+    }
+    
+    .flower, .centerflower {
+      position: absolute;
+      transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
+      background-size: contain;            
+      background-repeat: no-repeat;                              
+    }
+
+    .dot-container {
+      right: 20px;
+    }
+
+      .flower-2 { width: 7vw; height: 7vw; top: 80vh; left: 5vw; }
+      .flower-3 { width: 8vw; height: 8vw; top: 68vh; left: 17vw; }
+      .flower-4 { width: 15vw; height: 15vw; top: 62vh; left: 42.5vw; }
+      .flower-5 { width: 12vw; height: 12vw; top: 66vh; left: 80vw; }
+      .flower-7 { width: 10vw; height: 10vw; top: 39vh; left: 85vw; }
+      /* .flower-9 { width: 8vw; height: 8vw; top: 77vh; left: 4vw; } */
+      /* .flower-10 { width: 16vw; height: 16vw; top: 58vh; left: 12vw; } */
+      .flower-11 { width: 10vw; height: 10vw; top: 76vh; left: 30vw; }
+      .flower-12 { width: 7vw; height: 7vw; top: 50vh; left: 70vw; }
+      .flower-14 { width: 10vw; height: 10vw; top: 70vh; left: 63vw; }
+      /* .flower-16 { width: 6vw; height: 6vw; top: 82vh; left: 60vw; } */
+      /* .flower-17 { width: 16vw; height: 16vw; top: 62vh; left: 79vw; } */
+  }
+}
+
+@media (min-aspect-ratio:2.5) {
+  @media (max-aspect-ratio: 3) {
+    .title { 
+      font-size: 12vw; 
+      line-height: 9vw; 
+      padding-top: 0;
+    }
+    
+    .flower, .centerflower {
+      position: absolute;
+      transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
+      background-size: contain;            
+      background-repeat: no-repeat;                              
+    }
+
+    .dot-container {
+      right: 20px;
+    }
+
+    .logoflower {
+      display: none;
+    }
+
+      .flower-2 { width: 7vw; height: 7vw; top: 70vh; left: 5vw; }
+      .flower-3 { width: 8vw; height: 8vw; top: 55vh; left: 17vw; }
+      .flower-4 { width: 15vw; height: 15vw; top: 46vh; left: 42.5vw; }
+      .flower-5 { width: 12vw; height: 12vw; top: 55vh; left: 80vw; }
+      .flower-7 { width: 10vw; height: 10vw; top: 10vh; left: 85vw; }
+      .flower-11 { width: 10vw; height: 10vw; top: 62vh; left: 30vw; }
+      .flower-12 { width: 7vw; height: 7vw; top: 20vh; left: 70vw; }
+      .flower-14 { width: 10vw; height: 10vw; top: 50vh; left: 63vw; }
+  }
+}
+
+@media (min-aspect-ratio: 3) {
   .title { 
-    font-size: 18.4vw; 
-    line-height: 13vw; 
-    padding-top: 0;
-    flex-shrink: 3;
+    font-size: 12vw; 
+    line-height: 9vw; 
+    width: 66%;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: left;
+  }
+
+  .flowerbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .flower, .centerflower {
     position: relative;
-    flex-grow: 1; 
-    flex-shrink: 3; 
     transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
     background-size: contain;            
-    background-repeat: no-repeat;
-    max-width: 100%;
-    max-height: 100%;
+    background-repeat: no-repeat;                              
   }
 
   .dot-container {
     right: 20px;
   }
 
-  .hero {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .flowerbox {
+  .logoflower {
     display: none;
   }
 
-  .flower-1 { display: none; }
-  .flower-2 { display: none; }
-  .flower-3 { display: none; }
-  .flower-4 { display: none; }
-  .flower-5 { display: none;  }
-  .flower-6 { display: none; }
-  .flower-7 { display: none; }
-  .flower-8 { display: none; }
-  .flower-9 { display: none; }
-  .flower-10 { display: none; }
-  .flower-11 { display: none; }
-  .flower-12 { display: none; }
-  .flower-13 { display: none; }
-  .flower-14 { display: none; }
-  .flower-15 { display: none; }
-  .flower-16 { display: none; }
-  .flower-17 { display: none; }
+    .flower-4 { width: 66vh; height: 66vh; }
 }
