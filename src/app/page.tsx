@@ -273,7 +273,7 @@ const App: React.FC = () => {
                 id="statement2"
                 className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
             >
-                    <div className="font-bitter text-center w-4/5 sm:w-full text-xl md:text-[2.1vw] portrait:text-base leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
+                    <div className="font-bitter text-center w-4/5 sm:w-full md:text-[2.1vw] portrait:text-lg leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
                         We partner with missionary founders who are indefatigable, decisive, and self-aware. <br /> <br /> <br />
                         We believe in forging highly personal, deep-rooted relationships that stand the test of time. <br /> <br /> <br />
                         We develop distinct theses on markets and how they will unfold.
@@ -289,7 +289,7 @@ const App: React.FC = () => {
                 id="testimonials"
                 className="bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
             >
-                <Testimonials />
+                <Testimonials setScrollEnabled={setScrollEnabled} />
                 <Footer setCurrentPage={setCurrentPage} />
             </div>
         </ReactPageScroller>

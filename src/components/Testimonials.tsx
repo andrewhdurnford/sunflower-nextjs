@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Glide from '@glidejs/glide';
 import '@glidejs/glide/dist/css/glide.core.min.css';
@@ -11,7 +11,11 @@ interface Quote {
   company: string;
 }
 
-const Testimonials: React.FC = () => {
+interface TestimonialProps {
+  setScrollEnabled: (enabled: boolean) => void;
+}
+
+const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   const quotes = [
     {
         quote: "Quality is really what really sets Liu apart from other investors. Working with Liu was unique because she was extremely proactive. She was always trying to find ways to help, not just relying on me to think about what I needed. We had regular discussions on topics ranging from customer negotiations to internal operations to creating a standard around Iceberg.",
@@ -131,6 +135,7 @@ const Testimonials: React.FC = () => {
   ];
 
   const [isSwiped, setIsSwiped] = useState(false);
+  const testimonialRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const glide = new Glide('.glide', {
@@ -146,9 +151,23 @@ const Testimonials: React.FC = () => {
 
     glide.mount();
 
-    return () => {
-      glide.destroy();
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault(); 
     };
+
+    const testimonial = testimonialRef.current;
+    if (testimonial) {
+      testimonial.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
+
+    return () => {
+      if (testimonial) {
+        testimonial.removeEventListener('touchmove', handleTouchMove);
+        glide.destroy();
+      }
+  };
+
   }, []);
 
   return (
@@ -157,8 +176,7 @@ const Testimonials: React.FC = () => {
         <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none text-left`}>
           Our Founders
         </div>
-        <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 
-           portrait:hidden`} data-glide-el="controls">
+        <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 portrait:hidden`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" data-glide-dir="<">
             <div className="arrow-container">
               <Image
@@ -187,7 +205,11 @@ const Testimonials: React.FC = () => {
         <div className={`landscape:hidden text-dark-green font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div>
       </div>
 
-      <div className={`glide__track w-4/5 transition-opacity duration-1000`} data-glide-el="track">
+      <div className={`glide__track w-4/5 transition-opacity duration-1000`} 
+        data-glide-el="track"
+        onTouchStart={() => setScrollEnabled(false)} 
+        onTouchEnd={() => setScrollEnabled(true)}    
+      >
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
             <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
