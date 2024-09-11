@@ -16,7 +16,7 @@ const Testimonials: React.FC = () => {
     {
         quote: "Quality is really what really sets Liu apart from other investors. Working with Liu was unique because she was extremely proactive. She was always trying to find ways to help, not just relying on me to think about what I needed. We had regular discussions on topics ranging from customer negotiations to internal operations to creating a standard around Iceberg.",
         author: "Ryan Blue",
-        company: "Tabular"
+        company: "Tabular (acquired by Databricks)"
     },
     {
         quote: "Liu invested in our seed and then doubled down in subsequent rounds. She helped us with initial positioning and messaging on our website and customer materials, discussing our key product use cases, and thinking through developer ubiquity.",
@@ -77,6 +77,11 @@ const Testimonials: React.FC = () => {
         quote: "Liu was one of the first investors we started working with at Knock. Not only was she an instrumental part of our early fundraising, she also helped introduce us to many potential customers. Even now, several years after her initial investment in Knock, Liu continues to respond to our investor updates, offering ways to help. I'm grateful she's been a part of our journey.",
         author: "Sam Seely",
         company: "Knock"
+    },
+    {
+        quote: "Working with Liu was an exceptional experience. Her strategic approach to GTM execution, combined with a focus on rapid expansion, was key in driving significant growth. Her ability to navigate fundraising rounds demonstrated strong leadership and commitment to success.",
+        author: "Benjamin Labra",
+        company: "Houm"
     },
     {
         quote: "Since the pre-seed, Liu has been a great resource for tldraw as a design technology company. She’s a familiar name in the industry, generous with introductions, and has delivered timely advice for our GTM, hiring, and financing strategy.",
