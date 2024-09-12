@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sunflower Capital",
-  description: "We invest at the earliest stages in companies building foundational picks and shovels infrastructure.",
+  description: "We invest at the earliest stage in companies building foundational picks and shovels infrastructure.",
 };
 
 export default function RootLayout({
