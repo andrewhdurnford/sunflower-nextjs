@@ -22,7 +22,6 @@ const App: React.FC = () => {
   };
 
   const beforePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
     const metaThemeColor = document.querySelector("meta[name=theme-color]");
     if (metaThemeColor) {
       if (newPage === 0) {
@@ -31,6 +30,7 @@ const App: React.FC = () => {
         metaThemeColor.setAttribute("content", "#FFF9DE");
       }
     }
+    setCurrentPage(newPage);
   };
 
   useEffect(() => {
