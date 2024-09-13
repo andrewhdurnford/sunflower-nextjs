@@ -76,7 +76,7 @@ const App: React.FC = () => {
         >
             <div
                 id="hero"
-                className={`hero w-full landscape:h-screen portrait:h-[calc(100vh)] relative overflow-hidden bg-dark-green 
+                className={`hero w-full landscape:h-screen portrait:h-[calc(100dvh)] relative overflow-hidden bg-dark-green 
                   flex portrait:flex-col justify-center portrait:items-center portrait:gap-10`}
             >
         <div
