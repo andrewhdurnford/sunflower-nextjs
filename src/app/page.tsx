@@ -82,6 +82,7 @@ const App: React.FC = () => {
         blockScrollUp={!scrollEnabled}
         blockScrollDown={!scrollEnabled}
         onBeforePageScroll={beforePageChange}
+        renderAllPagesOnFirstRender={true}
       >
         <div
           id="hero"
