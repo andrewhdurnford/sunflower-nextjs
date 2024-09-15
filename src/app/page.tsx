@@ -22,14 +22,14 @@ const App: React.FC = () => {
   };
 
   const beforePageChange = (newPage: number) => {
-    const metaThemeColor = document.querySelector("meta[name=theme-color]");
-    if (metaThemeColor) {
-      if (newPage === 0) {
-        metaThemeColor.setAttribute("content", "#03351A");
-      } else {
-        metaThemeColor.setAttribute("content", "#FFF9DE");
-      }
-    }
+    // const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    // if (metaThemeColor) {
+    //   if (newPage === 0) {
+    //     metaThemeColor.setAttribute("content", "#03351A");
+    //   } else {
+    //     metaThemeColor.setAttribute("content", "#FFF9DE");
+    //   }
+    // }
     setCurrentPage(newPage);
   };
 
