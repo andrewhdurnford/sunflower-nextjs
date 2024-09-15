@@ -218,7 +218,6 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               </div>
               <div className="font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full">
               <span className='portrait:hidden'>&emsp;</span>- {quote.author},&nbsp;
-              <span className='landscape:hidden'><br/></span>
               <span className="font-bitter-italic">{quote.company}</span>
               </div>
             </li>
