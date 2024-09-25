@@ -145,43 +145,29 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       autoplay: false,
     });
 
-    // When the slider finishes a transition, update state
     glide.on('run.after', () => {
       setIsSwiped(true); 
     });
 
-    // Mount the Glide carousel
     glide.mount();
 
-    // Handle preventing default behavior for touchmove
+
     const handleTouchMove = (e: TouchEvent) => {
-      e.preventDefault();
+      e.preventDefault(); 
     };
 
-    // Add event listener for touch move
     const testimonial = testimonialRef.current;
     if (testimonial) {
       testimonial.addEventListener('touchmove', handleTouchMove, { passive: false });
     }
 
-    const leftArrow = document.getElementById('left-arrow');
-    const rightArrow = document.getElementById('right-arrow');
-
-    if (leftArrow && rightArrow) {
-      leftArrow.addEventListener('click', () => glide.go('<'));
-      rightArrow.addEventListener('click', () => glide.go('>'));
-    }
-
     return () => {
       if (testimonial) {
         testimonial.removeEventListener('touchmove', handleTouchMove);
+        glide.destroy();
       }
-      if (leftArrow && rightArrow) {
-        leftArrow.removeEventListener('click', () => glide.go('<'));
-        rightArrow.removeEventListener('click', () => glide.go('>'));
-      }
-      glide.destroy();
-    };
+  };
+
   }, []);
 
   return (
@@ -190,9 +176,9 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none text-left`}>
           Our Founders
         </div>
-        <div className={`flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`}>
-          <div className="font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" >
-            <div className="">
+        <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
+          <div className="glide__arrow--left font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" data-glide-dir="<">
+            <button className="arrow-container">
               <Image
                 src="/images/left-arrow.svg"
                 alt="left arrow"
@@ -201,10 +187,10 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
                 height={100} 
                 quality={100}
               />
-            </div>
+            </button>
           </div>
-          <div className="font-semibold font-bitter w-6 h-6 sm:w-10 sm:h-10">
-            <div className="">
+          <div className="glide__arrow--right font-semibold font-bitter w-6 h-6 sm:w-10 sm:h-10" data-glide-dir=">">
+            <button className="arrow-container">
               <Image
                 src="/images/right-arrow.svg"
                 alt="right arrow"
@@ -213,7 +199,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
                 height={100}
                 quality={100}
               />
-            </div>
+            </button>
           </div>
         </div>
         {/* <div className={`landscape:hidden text-dark-green font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div> */}
