@@ -81,7 +81,7 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled}
         blockScrollDown={!scrollEnabled}
-        onBeforePageScroll={beforePageChange}
+        pageOnChange={beforePageChange}
         renderAllPagesOnFirstRender={true}
       >
         <div

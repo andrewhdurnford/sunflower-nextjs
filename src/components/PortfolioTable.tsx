@@ -33,7 +33,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     { company: 'Hadrian', industry: 'Defense and Hardware', description: 'Manufacturing the future', link: 'https://www.hadrian.co/' },
     { company: 'Houm', industry: 'Fintech', description: 'Real estate marketplace for Latin America', link: 'https://www.houm.com/' },
     { company: 'Knock', industry: 'Infra', description: 'Flexible, reliable notifications infrastructure', link: 'https://knock.app/' },
-    { company: 'MemGPT', industry: 'AI/ML', description: 'Long-term memory for AI agents', link: 'https://memgpt.ai/' },
+    { company: 'Letta', industry: 'AI/ML', description: 'Long-term memory for AI agents', link: 'https://memgpt.ai/' },
     { company: 'Modelbit', industry: 'AI/ML', description: 'ML engineering platform for deploying models', link: 'https://www.modelbit.com/' },
     { company: 'Monad', industry: 'Crypto', description: 'Extreme parallelized performance for EVM', link: 'https://www.monad.xyz/' },
     { company: 'Nebra', industry: 'Crypto', description: 'Universal proof aggregation that scales ZKP verification', link: 'https://www.nebra.one/' },
@@ -63,7 +63,10 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     { company: 'Warp', industry: 'Developer', description: 'The modern terminal, reimagined with AI', link: 'https://www.warp.dev/' },
     { company: 'Xata', industry: 'Infra', description: 'Serverless data platform for PostgreSQL', link: 'https://xata.io/' },
     { company: 'Mixedbread', industry: 'AI/ML', description: 'End-to-end search pipeline ', link: 'https://www.mixedbread.ai/' },
-    { company: 'Slingshot AI', industry: 'Healthcare', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' }
+    { company: 'Slingshot AI', industry: 'Healthcare', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' },
+    { company: 'Salient Motion', industry: 'Defense and Hardware', description: 'Motion control systems for aerospace and defense ', link: 'https://www.salientmotion.com/' },
+    { company: 'Zed', industry: 'Developer', description: 'High-performance, multiplayer code editor', link: 'https://zed.dev/' },
+    { company: 'Inscribe', industry: 'Fintech', description: 'AI-powered workforce for risk teams at financial services companies', link: 'https://www.inscribe.ai/' }
   ].sort((a, b) => a.company.localeCompare(b.company));
   const [displayCompanies, setDisplayCompanies] = useState<Company[]>(companies);
   const tableBodyRef = useRef<HTMLDivElement>(null);
