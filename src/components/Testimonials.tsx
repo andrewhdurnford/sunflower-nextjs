@@ -177,7 +177,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
           Our Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
-          <div className="glide__arrow--left font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" data-glide-dir="<">
+          <div className="glide__arrow--left font-semibold font-bitter leading-none w-10 h-10" data-glide-dir="<">
             <button className="arrow-container">
               <Image
                 src="/images/left-arrow.svg"
@@ -189,7 +189,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               />
             </button>
           </div>
-          <div className="glide__arrow--right font-semibold font-bitter w-6 h-6 sm:w-10 sm:h-10" data-glide-dir=">">
+          <div className="glide__arrow--right font-semibold font-bitter w-10 h-10" data-glide-dir=">">
             <button className="arrow-container">
               <Image
                 src="/images/right-arrow.svg"
