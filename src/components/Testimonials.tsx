@@ -145,38 +145,52 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       autoplay: false,
     });
 
+    // When the slider finishes a transition, update state
     glide.on('run.after', () => {
       setIsSwiped(true); 
     });
 
+    // Mount the Glide carousel
     glide.mount();
 
-
+    // Handle preventing default behavior for touchmove
     const handleTouchMove = (e: TouchEvent) => {
-      e.preventDefault(); 
+      e.preventDefault();
     };
 
+    // Add event listener for touch move
     const testimonial = testimonialRef.current;
     if (testimonial) {
       testimonial.addEventListener('touchmove', handleTouchMove, { passive: false });
     }
 
+    const leftArrow = document.getElementById('left-arrow');
+    const rightArrow = document.getElementById('right-arrow');
+
+    if (leftArrow && rightArrow) {
+      leftArrow.addEventListener('click', () => glide.go('<'));
+      rightArrow.addEventListener('click', () => glide.go('>'));
+    }
+
     return () => {
       if (testimonial) {
         testimonial.removeEventListener('touchmove', handleTouchMove);
-        glide.destroy();
       }
-  };
-
+      if (leftArrow && rightArrow) {
+        leftArrow.removeEventListener('click', () => glide.go('<'));
+        rightArrow.removeEventListener('click', () => glide.go('>'));
+      }
+      glide.destroy();
+    };
   }, []);
 
   return (
-    <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green portrait:gap-3 landscape:gap-6 xl:gap-12">
-      <div className='w-4/5 flex portrait:flex-col portrait:gap-3 landscape:gap-6 landscape:justify-between justify-start items-center'>
+    <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
+      <div className='w-4/5 flex gap-6 landscape:justify-between justify-start items-center'>
         <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none text-left`}>
           Our Founders
         </div>
-        <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 portrait:hidden`} data-glide-el="controls">
+        <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none w-6 h-6 sm:w-10 sm:h-10" data-glide-dir="<">
             <div className="arrow-container">
               <Image
@@ -202,13 +216,13 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
             </div>
           </div>
         </div>
-        <div className={`landscape:hidden text-dark-green font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div>
+        {/* <div className={`landscape:hidden text-dark-green font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div> */}
       </div>
 
       <div className={`glide__track w-4/5 transition-opacity duration-1000`} 
         data-glide-el="track"
         onTouchStart={() => setScrollEnabled(false)} 
-        onTouchEnd={() => setScrollEnabled(true)}    
+        onTouchEnd={() => setScrollEnabled(true)}
       >
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
