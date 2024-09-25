@@ -172,9 +172,9 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
 
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
-      <div className='w-4/5 flex gap-6 landscape:justify-between justify-start items-center'>
+      <div className='w-4/5 flex gap-6 justify-between items-center'>
         <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none text-left`}>
-          Our Founders
+          Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none w-8 h-8 sm:w-12 sm:h-12" data-glide-dir="<">
@@ -182,19 +182,17 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               <Image
                 src="/images/left-arrow.svg"
                 alt="left arrow"
-                layout="responsive"
                 width={100} 
                 height={100} 
                 quality={100}
               />
             </button>
           </div>
-          <div className="glide__arrow--right font-semibold font-bitter w-8 h-8 sm:w-12 sm:h-12" data-glide-dir=">">
+          <div className="glide__arrow--right w-8 h-8 sm:w-12 sm:h-12" data-glide-dir=">">
             <button className="arrow-container">
               <Image
                 src="/images/right-arrow.svg"
                 alt="right arrow"
-                layout="responsive"
                 width={100}
                 height={100}
                 quality={100}

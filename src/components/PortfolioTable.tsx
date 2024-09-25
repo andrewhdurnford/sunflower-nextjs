@@ -66,7 +66,8 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     { company: 'Slingshot AI', industry: 'Healthcare', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' },
     { company: 'Salient Motion', industry: 'Defense and Hardware', description: 'Motion control systems for aerospace and defense ', link: 'https://www.salientmotion.com/' },
     { company: 'Zed', industry: 'Developer', description: 'High-performance, multiplayer code editor', link: 'https://zed.dev/' },
-    { company: 'Inscribe', industry: 'Fintech', description: 'AI-powered workforce for risk teams at financial services companies', link: 'https://www.inscribe.ai/' }
+    { company: 'Inscribe', industry: 'Fintech', description: 'AI-powered workforce for risk teams at financial services companies', link: 'https://www.inscribe.ai/' },
+    { company: 'Exo', industry: 'Crypto', description: 'Unify your everyday devices into one powerful GPU', link: 'https://github.com/exo-explore/exo' }
   ].sort((a, b) => a.company.localeCompare(b.company));
   const [displayCompanies, setDisplayCompanies] = useState<Company[]>(companies);
   const tableBodyRef = useRef<HTMLDivElement>(null);
@@ -100,74 +101,74 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
   }, []);
 
   return (
-    <div className="w-11/12 sm:w-4/5 h-screen flex flex-col portrait:justify-start portrait:pt-10 landscape:justify-center items-center gap-4 sm:gap-6">
-      <div className="flex flex-row justify-between items-center w-full">
-        <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none portrait:text-center">Our Portfolio</h1>
-      </div>
-      <div className="w-full pl-1">
-        {/* Dropdown for portrait devices */}
-        <div className="block sm:hidden">
-          <select
-            id="industrySelect"
-            onChange={(e) => {
-              setFilter(e.target.value);
-              changeTable(e.target.value);
-            }}
-            className="font-bitter text-base sm:text-lg w-28 p-2 border border-dark-green rounded bg-offwhite selection:border-dark-green focus:border-dark-green"
-            value={proxyData.filter}
-          >
-            <option value="All">All</option>
-            {industries.map((industry) => (
-              <option key={industry} value={industry}>
-                {industry}
-              </option>
-            ))}
-          </select>
+    <div className="w-4/5 h-screen flex flex-col justify-center items-center gap-6 xl:gap-12">
+      <div className='w-full flex flex-row sm:flex-col sm:gap-6 xl:gap-12 justify-between sm:justify-center items-center'>
+        <div className="flex flex-row justify-between items-center w-full">
+          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none portrait:text-left">Portfolio</h1>
         </div>
-
-        {/* Button group for landscape devices */}
-        <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 md:gap-4">
-          <button
-            id="All"
-            onClick={() => {
-              setFilter("All");
-              changeTable("All");
-            }}
-            className="flex flex-row items-center justify-left font-bitter text-xs md:text-lg filter"
-          >
-            <div
-              className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
-                proxyData.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
-              }`}
-            >
-              &nbsp;
-            </div>
-            All
-          </button>
-
-          {industries.map((industry) => (
-            <button
-              key={industry}
-              id={industry}
-              onClick={() => {
-                setFilter(industry);
-                changeTable(industry);
+        <div className="sm:w-full pl-1">
+          {/* Dropdown for portrait devices */}
+          <div className="block sm:hidden pt-1">
+            <select
+              id="industrySelect"
+              onChange={(e) => {
+                setFilter(e.target.value);
+                changeTable(e.target.value);
               }}
-              className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
+              className="font-bitter text-base sm:text-lg w-24 p-2 border border-dark-green rounded bg-offwhite selection:border-dark-green focus:border-dark-green"
+              value={proxyData.filter}
+            >
+              <option value="All">All</option>
+              {industries.map((industry) => (
+                <option key={industry} value={industry}>
+                  {industry}
+                </option>
+              ))}
+            </select>
+          </div>
+          {/* Button group for landscape devices */}
+          <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 md:gap-4">
+            <button
+              id="All"
+              onClick={() => {
+                setFilter("All");
+                changeTable("All");
+              }}
+              className="flex flex-row items-center justify-left font-bitter text-xs md:text-lg filter"
             >
               <div
                 className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
-                  proxyData.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
+                  proxyData.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
                 }`}
               >
                 &nbsp;
               </div>
-              {industry}
+              All
             </button>
-          ))}
-        </div>
+            {industries.map((industry) => (
+              <button
+                key={industry}
+                id={industry}
+                onClick={() => {
+                  setFilter(industry);
+                  changeTable(industry);
+                }}
+                className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
+              >
+                <div
+                  className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
+                    proxyData.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
+                  }`}
+                >
+                  &nbsp;
+                </div>
+                {industry}
+              </button>
+            ))}
+          </div>
+      </div>
     </div>
-      <div className="flex flex-col flex-shrink w-full h-3/5 sm:h-2/3 overflow-y-auto custom-scrollbar px-2 sm:px-0"
+      <div className="flex flex-col flex-shrink w-full h-3/5 sm:h-2/3 overflow-y-auto custom-scrollbar"
         onMouseEnter={() => setScrollEnabled(false)}
         onMouseLeave={() => setScrollEnabled(true)}  
         onTouchStart={() => setScrollEnabled(false)} 
