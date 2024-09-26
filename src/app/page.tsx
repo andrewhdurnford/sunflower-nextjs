@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const [scrollEnabled, setScrollEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
 
   const filter = useRef({ filter: "All" });
   const [_, forceUpdate] = useState(0);
@@ -22,21 +23,13 @@ const App: React.FC = () => {
   };
 
   const beforePageChange = (newPage: number) => {
-    // const metaThemeColor = document.querySelector("meta[name=theme-color]");
-    // if (metaThemeColor) {
-    //   if (newPage === 0) {
-    //     metaThemeColor.setAttribute("content", "#03351A");
-    //   } else {
-    //     metaThemeColor.setAttribute("content", "#FFF9DE");
-    //   }
-    // }
     setCurrentPage(newPage);
   };
 
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 100);
+    }, 300);
 
     const storedScrollTop = parseInt(
       localStorage.getItem("lastScrollTop") || "0",
@@ -44,6 +37,15 @@ const App: React.FC = () => {
     );
     window.scrollTo(0, storedScrollTop);
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLandscape(window.innerWidth > window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const expandFlower = () => {
     setBreatheEnabled(false);
@@ -81,7 +83,8 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled}
         blockScrollDown={!scrollEnabled}
-        pageOnChange={beforePageChange}
+        onBeforePageScroll={isLandscape ? beforePageChange : undefined}
+        pageOnChange={!isLandscape ? beforePageChange : undefined}
         renderAllPagesOnFirstRender={true}
       >
         <div
