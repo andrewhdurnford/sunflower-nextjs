@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const [scrollEnabled, setScrollEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
+  const [isLandscape, setIsLandscape] = useState(true);
 
   const filter = useRef({ filter: "All" });
   const [_, forceUpdate] = useState(0);
@@ -29,6 +29,7 @@ const App: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
+      setIsLandscape(window.innerWidth > window.innerHeight);
     }, 300);
 
     const storedScrollTop = parseInt(
