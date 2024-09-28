@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="theme-color" content="#FFF9DE" />
+        {/* <meta name="theme-color" content="#FFF9DE" /> */}
         <meta
           name="viewport"
           content="initial-scale=0.9, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no"
