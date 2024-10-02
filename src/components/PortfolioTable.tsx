@@ -11,9 +11,11 @@ interface PortfolioTableProps {
   proxyData: { filter: string };
   setFilter: (filter: string) => void;
   setScrollEnabled: (enabled: boolean) => void;
+  setScrollUpEnabled: (enabled: boolean) => void;
+  setScrollDownEnabled: (enabled: boolean) => void;
 }
 
-const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, setScrollEnabled }) => {
+const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled }) => {
   const companies = [
     { company: 'Accrue Savings', industry: 'Fintech', description: 'Save now, buy later', link: 'https://www.accruesavings.com/' },
     { company: 'AgentSync', industry: 'Fintech', description: 'Automating insurance compliance', link: 'https://agentsync.io/' },
@@ -71,6 +73,8 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
   ].sort((a, b) => a.company.localeCompare(b.company));
   const [displayCompanies, setDisplayCompanies] = useState<Company[]>(companies);
   const tableBodyRef = useRef<HTMLDivElement>(null);
+  const lastRowRef = useRef<HTMLTableRowElement | null>(null);
+  const firstRowRef = useRef<HTMLTableRowElement | null>(null);
 
   const industries = useMemo(() => {
     return Array.from(new Set(companies.map(company => company.industry))).sort();
@@ -88,17 +92,41 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
       e.preventDefault(); 
     };
 
+    const handleScroll = () => {
+      if (lastRowRef.current && tableBodyRef.current&& firstRowRef.current) {
+        let firstRect = firstRowRef.current.getBoundingClientRect()
+        let lastRect = lastRowRef.current.getBoundingClientRect()
+        let tableRect = tableBodyRef.current.getBoundingClientRect()
+        if ((lastRect.bottom - 25) < tableRect.bottom) {
+          setTimeout(() => {
+            setScrollUpEnabled(false)
+            setScrollDownEnabled(true)
+          }, 50);
+        } else if (firstRect.top === tableRect.top) {
+          setTimeout(() => {
+            setScrollDownEnabled(false)
+            setScrollUpEnabled(true)
+          }, 50);
+        } else {
+          setScrollDownEnabled(false)
+          setScrollUpEnabled(false)
+        }
+      }
+    };
+
     const tableBody = tableBodyRef.current;
     if (tableBody) {
       tableBody.addEventListener('touchmove', handleTouchMove, { passive: false });
+      tableBody.addEventListener('scroll', handleScroll); 
     }
 
     return () => {
       if (tableBody) {
         tableBody.removeEventListener('touchmove', handleTouchMove);
+        tableBody.removeEventListener('scroll', handleScroll);
       }
     };
-  }, []);
+  }, [displayCompanies]);
 
   return (
     <div className="w-4/5 h-screen flex flex-col justify-center items-center gap-6 xl:gap-12 portrait:pb-24">
@@ -173,13 +201,18 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
         onMouseLeave={() => setScrollEnabled(true)}  
         onTouchStart={() => setScrollEnabled(false)} 
         onTouchEnd={() => setScrollEnabled(true)}    
+        ref={tableBodyRef}
       >
         <table className="min-w-full border-collapse">
           <tbody className="font-bitter-italic text-sm sm:text-xl md:text-2xl" id="table-body">
-            {displayCompanies.map((company) => (
+            {displayCompanies.map((company, index) => (
               <tr
                 key={company.company}
                 className="relative h-12 sm:h-16 landscape:custom-border-row table-row transition-all duration-300"
+                ref={(el) => {
+                  if (index === 0) firstRowRef.current = el;
+                  if (index === displayCompanies.length - 1) lastRowRef.current = el;
+                }}
               >
                 <td className="font-bitter font-normal">
                   <a

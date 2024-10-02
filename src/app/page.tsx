@@ -11,6 +11,8 @@ import DotNavigator from "@/components/DotNavigator";
 const App: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
   const [scrollEnabled, setScrollEnabled] = useState(true);
+  const [scrollUpEnabled, setScrollUpEnabled] = useState(true);
+  const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
   const [isLandscape, setIsLandscape] = useState(true);
@@ -25,6 +27,13 @@ const App: React.FC = () => {
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
+
+  useEffect(() => {
+    if (currentPage === 3) {
+      setScrollUpEnabled(false)
+      setScrollDownEnabled(false)
+    }
+  }, [currentPage]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -82,8 +91,8 @@ const App: React.FC = () => {
       <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} />
       <ReactPageScroller
         customPageNumber={currentPage}
-        blockScrollUp={!scrollEnabled}
-        blockScrollDown={!scrollEnabled}
+        blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
+        blockScrollDown={!scrollEnabled && !scrollDownEnabled}
         onBeforePageScroll={isLandscape ? beforePageChange : undefined}
         pageOnChange={!isLandscape ? beforePageChange : undefined}
         renderAllPagesOnFirstRender={true}
@@ -360,6 +369,8 @@ const App: React.FC = () => {
             proxyData={filter.current}
             setFilter={setFilter}
             setScrollEnabled={setScrollEnabled}
+            setScrollUpEnabled={setScrollUpEnabled}
+            setScrollDownEnabled={setScrollDownEnabled}
           />
         </div>
         <div
