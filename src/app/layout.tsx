@@ -24,7 +24,7 @@ export default function RootLayout({
           name="viewport"
           content="initial-scale=0.9, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no"
         />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className={inter.className}>

@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import ReactPageScroller from "react-page-scroller";
 import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
+import { isMobileDevice } from "@/libs/mobile";
 
 const App: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -15,8 +16,8 @@ const App: React.FC = () => {
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isLandscape, setIsLandscape] = useState(true);
-
+  
+  const isMobile = isMobileDevice();
   const filter = useRef({ filter: "All" });
   const [_, forceUpdate] = useState(0);
   const setFilter = (newFilter: string) => {
@@ -30,6 +31,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (currentPage === 3) {
+      console.log('none')
       setScrollUpEnabled(false)
       setScrollDownEnabled(false)
     }
@@ -38,7 +40,6 @@ const App: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-      setIsLandscape(window.innerWidth > window.innerHeight);
     }, 300);
 
     const storedScrollTop = parseInt(
@@ -47,15 +48,6 @@ const App: React.FC = () => {
     );
     window.scrollTo(0, storedScrollTop);
   });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLandscape(window.innerWidth > window.innerHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const expandFlower = () => {
     setBreatheEnabled(false);
@@ -93,8 +85,8 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
         blockScrollDown={!scrollEnabled && !scrollDownEnabled}
-        onBeforePageScroll={isLandscape ? beforePageChange : undefined}
-        pageOnChange={!isLandscape ? beforePageChange : undefined}
+        onBeforePageScroll={isMobile ? beforePageChange : undefined}
+        pageOnChange={!isMobile ? beforePageChange : undefined}
         renderAllPagesOnFirstRender={true}
       >
         <div
@@ -371,6 +363,7 @@ const App: React.FC = () => {
             setScrollEnabled={setScrollEnabled}
             setScrollUpEnabled={setScrollUpEnabled}
             setScrollDownEnabled={setScrollDownEnabled}
+            currentPage={currentPage}
           />
         </div>
         <div

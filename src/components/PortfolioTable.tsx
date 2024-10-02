@@ -13,9 +13,10 @@ interface PortfolioTableProps {
   setScrollEnabled: (enabled: boolean) => void;
   setScrollUpEnabled: (enabled: boolean) => void;
   setScrollDownEnabled: (enabled: boolean) => void;
+  currentPage: number;
 }
 
-const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled }) => {
+const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled, currentPage }) => {
   const companies = [
     { company: 'Accrue Savings', industry: 'Fintech', description: 'Save now, buy later', link: 'https://www.accruesavings.com/' },
     { company: 'AgentSync', industry: 'Fintech', description: 'Automating insurance compliance', link: 'https://agentsync.io/' },
@@ -87,42 +88,43 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     setDisplayCompanies(filteredCompanies);
   };
 
+  const handleScroll = () => {
+    if (lastRowRef.current && tableBodyRef.current&& firstRowRef.current) {
+      let firstRect = firstRowRef.current.getBoundingClientRect()
+      let lastRect = lastRowRef.current.getBoundingClientRect()
+      let tableRect = tableBodyRef.current.getBoundingClientRect()
+      if ((lastRect.bottom - 3) < tableRect.bottom) {
+        setTimeout(() => {
+          setScrollUpEnabled(false)
+          setScrollDownEnabled(true)
+        }, 50);
+      } else if (firstRect.top === tableRect.top) {
+        setTimeout(() => {
+          setScrollDownEnabled(false)
+          setScrollUpEnabled(true)
+        }, 50);
+      } else {
+        setScrollDownEnabled(false)
+        setScrollUpEnabled(false)
+      }
+    }
+  };
+
   useEffect(() => {
     const handleTouchMove = (e: TouchEvent) => {
       e.preventDefault(); 
     };
 
-    const handleScroll = () => {
-      if (lastRowRef.current && tableBodyRef.current&& firstRowRef.current) {
-        let firstRect = firstRowRef.current.getBoundingClientRect()
-        let lastRect = lastRowRef.current.getBoundingClientRect()
-        let tableRect = tableBodyRef.current.getBoundingClientRect()
-        if ((lastRect.bottom - 25) < tableRect.bottom) {
-          setTimeout(() => {
-            setScrollUpEnabled(false)
-            setScrollDownEnabled(true)
-          }, 50);
-        } else if (firstRect.top === tableRect.top) {
-          setTimeout(() => {
-            setScrollDownEnabled(false)
-            setScrollUpEnabled(true)
-          }, 50);
-        } else {
-          setScrollDownEnabled(false)
-          setScrollUpEnabled(false)
-        }
-      }
-    };
-
     const tableBody = tableBodyRef.current;
     if (tableBody) {
-      tableBody.addEventListener('touchmove', handleTouchMove, { passive: false });
+      tableBody.addEventListener('touchmove', handleScroll);
       tableBody.addEventListener('scroll', handleScroll); 
+      
     }
 
     return () => {
       if (tableBody) {
-        tableBody.removeEventListener('touchmove', handleTouchMove);
+        tableBody.removeEventListener('touchmove', handleScroll);
         tableBody.removeEventListener('scroll', handleScroll);
       }
     };
