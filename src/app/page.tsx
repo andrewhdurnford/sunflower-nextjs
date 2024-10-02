@@ -16,8 +16,8 @@ const App: React.FC = () => {
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  
-  const isMobile = isMobileDevice();
+  const [isMobile, setIsMobile] = useState(false);
+
   const filter = useRef({ filter: "All" });
   const [_, forceUpdate] = useState(0);
   const setFilter = (newFilter: string) => {
@@ -31,7 +31,6 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (currentPage === 3) {
-      console.log('none')
       setScrollUpEnabled(false)
       setScrollDownEnabled(false)
     }
@@ -40,6 +39,7 @@ const App: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
+      setIsMobile(isMobileDevice());
     }, 300);
 
     const storedScrollTop = parseInt(
