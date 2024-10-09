@@ -3,9 +3,10 @@ import React from 'react';
 interface DotNavigatorProps {
     currentScreen: number;
     onDotClick: (index: number) => void;
+    isMobile: boolean;
 }
 
-const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick }) => {
+const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, isMobile }) => {
     const totalScreens = 5;
 
 
@@ -15,7 +16,7 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick }
             {Array.from({ length: totalScreens }).map((_, index) => (
                 <div
                     key={index}
-                    className={`dot ${
+                    className={`${isMobile ? 'dot-mobile' : 'dot'} ${
                         index === currentScreen ? 
                         currentScreen === 0 ? 'bg-offwhite scale-125' : 'bg-dark-green scale-125' 
                         : 
