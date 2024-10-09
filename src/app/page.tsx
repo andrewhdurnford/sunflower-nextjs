@@ -47,7 +47,7 @@ const App: React.FC = () => {
       10
     );
     window.scrollTo(0, storedScrollTop);
-  });
+  }, []);
 
   const expandFlower = () => {
     setBreatheEnabled(false);
