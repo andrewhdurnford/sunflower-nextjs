@@ -97,12 +97,12 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
         setTimeout(() => {
           setScrollUpEnabled(false)
           setScrollDownEnabled(true)
-        }, 50);
+        }, 1000);
       } else if (firstRect.top === tableRect.top) {
         setTimeout(() => {
           setScrollDownEnabled(false)
           setScrollUpEnabled(true)
-        }, 50);
+        }, 1000);
       } else {
         setScrollDownEnabled(false)
         setScrollUpEnabled(false)
