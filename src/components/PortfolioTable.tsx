@@ -8,15 +8,13 @@ interface Company {
 }
 
 interface PortfolioTableProps {
-  proxyData: { filter: string };
-  setFilter: (filter: string) => void;
   setScrollEnabled: (enabled: boolean) => void;
   setScrollUpEnabled: (enabled: boolean) => void;
   setScrollDownEnabled: (enabled: boolean) => void;
   currentPage: number;
 }
 
-const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled, currentPage }) => {
+const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled, currentPage }) => {
   const companies = [
     { company: 'Accrue Savings', industry: 'Fintech', description: 'Save now, buy later', link: 'https://www.accruesavings.com/' },
     { company: 'AgentSync', industry: 'Fintech', description: 'Automating insurance compliance', link: 'https://agentsync.io/' },
@@ -72,6 +70,12 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     { company: 'Inscribe', industry: 'Fintech', description: 'AI-powered workforce for risk teams at financial services companies', link: 'https://www.inscribe.ai/' },
     { company: 'Exo', industry: 'Crypto', description: 'Unify your everyday devices into one powerful GPU', link: 'https://github.com/exo-explore/exo' }
   ].sort((a, b) => a.company.localeCompare(b.company));
+  const filter = useRef({ filter: "All" });
+  const [_, forceUpdate] = useState(0);
+  const setFilter = (newFilter: string) => {
+    filter.current.filter = newFilter;
+    forceUpdate((n) => n + 1);
+  };
   const [displayCompanies, setDisplayCompanies] = useState<Company[]>(companies);
   const tableBodyRef = useRef<HTMLDivElement>(null);
   const lastRowRef = useRef<HTMLTableRowElement | null>(null);
@@ -119,7 +123,13 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     if (tableBody) {
       tableBody.addEventListener('touchmove', handleScroll);
       tableBody.addEventListener('scroll', handleScroll); 
-      
+      tableBody.style.transition = 'opacity 0s';
+      tableBody.style.opacity = '0';
+      tableBody.offsetHeight; 
+      setTimeout(() => {
+        tableBody.style.transition = 'opacity 375ms';
+        tableBody.style.opacity = '1'; 
+      }, 0);
     }
 
     return () => {
@@ -146,7 +156,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
                 changeTable(e.target.value);
               }}
               className="font-bitter text-base sm:text-lg w-24 p-2 border border-dark-green rounded bg-offwhite selection:border-dark-green focus:border-dark-green"
-              value={proxyData.filter}
+              value={filter.current.filter}
             >
               <option value="All">All</option>
               {industries.map((industry) => (
@@ -168,7 +178,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
             >
               <div
                 className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
-                  proxyData.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
+                  filter.current.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
                 }`}
               >
                 &nbsp;
@@ -180,14 +190,20 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
                 key={industry}
                 id={industry}
                 onClick={() => {
-                  setFilter(industry);
-                  changeTable(industry);
+                  if (filter.current.filter === industry) {
+                    setFilter("All");
+                    changeTable("All");
+                  } else {
+                    setFilter(industry);
+                    changeTable(industry);
+                  }
+                  
                 }}
                 className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
               >
                 <div
                   className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
-                    proxyData.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
+                    filter.current.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
                   }`}
                 >
                   &nbsp;
@@ -229,7 +245,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
                 <td className="text-dark-green px-2 sm:px-4 font-bitter font-light text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
                   {company.description}
                 </td>
-                {proxyData.filter === "All" && (
+                {filter.current.filter === "All" && (
                   <td
                     className="text-dark-green px-2 sm:px-4 font-bitter-italic font-light hidden sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
                   >
