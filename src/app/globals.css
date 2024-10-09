@@ -186,10 +186,6 @@ opacity: 0.2;
       background-repeat: no-repeat;                              
     }
 
-    .dot-container {
-      right: 20px;
-    }
-
       .flower-2 { width: 7vw; height: 7vw; top: 80vh; left: 5vw; }
       .flower-3 { width: 8vw; height: 8vw; top: 68vh; left: 17vw; }
       .flower-4 { width: 15vw; height: 15vw; top: 62vh; left: 42.5vw; }
@@ -218,10 +214,6 @@ opacity: 0.2;
       transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
       background-size: contain;            
       background-repeat: no-repeat;                              
-    }
-
-    .dot-container {
-      right: 20px;
     }
 
     .logoflower {
@@ -262,10 +254,6 @@ opacity: 0.2;
     transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
     background-size: contain;            
     background-repeat: no-repeat;                              
-  }
-
-  .dot-container {
-    right: 20px;
   }
 
   .logoflower {
