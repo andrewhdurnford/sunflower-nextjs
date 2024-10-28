@@ -64,6 +64,7 @@ display: none;
   .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  height: 90%;
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
