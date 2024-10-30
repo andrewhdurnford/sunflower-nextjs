@@ -20,7 +20,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
   const companies = [
     { company: 'Accrue Savings', industry: 'Fintech', description: 'Save now, buy later', link: 'https://www.accruesavings.com/' },
     { company: 'AgentSync', industry: 'Fintech', description: 'Automating insurance compliance', link: 'https://agentsync.io/' },
-    { company: 'Commure (Athelas)', industry: 'Healthcare', description: 'Integrated healthcare operations platform', link: 'https://www.athelas.com/' },
+    { company: 'Commure (Athelas)', industry: 'Healthcare', description: 'Integrated healthcare operations platform', link: 'https://www.commure.com/' },
     { company: 'Cal', industry: 'Infra', description: 'Open source scheduling infrastructure', link: 'http://cal.com' },
     { company: 'Clay', industry: 'SaaS', description: 'Scaling GTM with data enrichment and personalized outreach', link: 'http://clay.com' },
     { company: 'Cohere', industry: 'AI/ML', description: 'LLMs and RAG capabilities for enterprises', link: 'https://cohere.com/' },
