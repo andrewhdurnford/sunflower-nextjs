@@ -33,7 +33,7 @@ const App: React.FC = () => {
     setTimeout(() => {
       setLoaded(true);
       setIsMobile(isMobileDevice());
-    }, 300);
+    }, 500);
 
     const storedScrollTop = parseInt(
       localStorage.getItem("lastScrollTop") || "0",
