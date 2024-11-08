@@ -8,15 +8,13 @@ interface Company {
 }
 
 interface PortfolioTableProps {
-  proxyData: { filter: string };
-  setFilter: (filter: string) => void;
   setScrollEnabled: (enabled: boolean) => void;
   setScrollUpEnabled: (enabled: boolean) => void;
   setScrollDownEnabled: (enabled: boolean) => void;
   currentPage: number;
 }
 
-const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled, currentPage }) => {
+const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled, currentPage }) => {
   const companies = [
     { company: 'Accrue Savings', industry: 'Fintech', description: 'Save now, buy later', link: 'https://www.accruesavings.com/' },
     { company: 'AgentSync', industry: 'Fintech', description: 'Automating insurance compliance', link: 'https://agentsync.io/' },
@@ -72,6 +70,12 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     { company: 'TipLink', industry: 'Crypto', description: 'The simplest Solana wallet', link: 'https://tiplink.io/' },
     { company: 'Pocket Protector', industry: 'Crypto', description: 'Discover, follow, and copy top traders', link: 'https://www.pocketprotector.xyz/' }
   ].sort((a, b) => a.company.localeCompare(b.company));
+  const filter = useRef({ filter: "All" });
+  const [_, forceUpdate] = useState(0);
+  const setFilter = (newFilter: string) => {
+    filter.current.filter = newFilter;
+    forceUpdate((n) => n + 1);
+  };
   const [displayCompanies, setDisplayCompanies] = useState<Company[]>(companies);
   const tableBodyRef = useRef<HTMLDivElement>(null);
   const lastRowRef = useRef<HTMLTableRowElement | null>(null);
@@ -119,7 +123,13 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
     if (tableBody) {
       tableBody.addEventListener('touchmove', handleScroll);
       tableBody.addEventListener('scroll', handleScroll); 
-      
+      tableBody.style.transition = 'opacity 0s';
+      tableBody.style.opacity = '0';
+      tableBody.offsetHeight; 
+      setTimeout(() => {
+        tableBody.style.transition = 'opacity 375ms';
+        tableBody.style.opacity = '1'; 
+      }, 0);
     }
 
     return () => {
@@ -131,118 +141,127 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ proxyData, setFilter, s
   }, [displayCompanies]);
 
   return (
-    <div className="w-4/5 h-screen flex flex-col justify-center items-center gap-6 xl:gap-12 portrait:pb-24">
-      <div className='w-full flex flex-row sm:flex-col sm:gap-6 xl:gap-12 justify-between sm:justify-center items-center'>
-        <div className="flex flex-row justify-between items-center w-full">
-          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none portrait:text-left">Portfolio</h1>
-        </div>
-        <div className="sm:w-full pl-1">
-          {/* Dropdown for portrait devices */}
-          <div className="block sm:hidden pt-1">
-            <select
-              id="industrySelect"
-              onChange={(e) => {
-                setFilter(e.target.value);
-                changeTable(e.target.value);
-              }}
-              className="font-bitter text-base sm:text-lg w-24 p-2 border border-dark-green rounded bg-offwhite selection:border-dark-green focus:border-dark-green"
-              value={proxyData.filter}
-            >
-              <option value="All">All</option>
-              {industries.map((industry) => (
-                <option key={industry} value={industry}>
-                  {industry}
-                </option>
-              ))}
-            </select>
+    <div className="w-4/5 h-screen flex flex-none justify-center items-center">
+      <div className='w-full h-5/6 flex flex-col justify-center items-center gap-6 xl:gap-12 portrait:pb-24'>
+        <div className="w-full flex flex-row sm:flex-col sm:gap-6 xl:gap-12 justify-between sm:justify-center items-center">
+          <div className="flex flex-row justify-between items-center w-full">
+            <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none portrait:text-left">Portfolio</h1>
           </div>
-          {/* Button group for landscape devices */}
-          <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 md:gap-4">
-            <button
-              id="All"
-              onClick={() => {
-                setFilter("All");
-                changeTable("All");
-              }}
-              className="flex flex-row items-center justify-left font-bitter text-xs md:text-lg filter"
-            >
-              <div
-                className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
-                  proxyData.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
-                }`}
-              >
-                &nbsp;
-              </div>
-              All
-            </button>
-            {industries.map((industry) => (
-              <button
-                key={industry}
-                id={industry}
-                onClick={() => {
-                  setFilter(industry);
-                  changeTable(industry);
+          <div className="sm:w-full pl-1">
+            {/* Dropdown for portrait devices */}
+            <div className="block sm:hidden pt-1">
+              <select
+                id="industrySelect"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                  changeTable(e.target.value);
                 }}
-                className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
+                className="font-bitter text-sm w-20 p-1 border border-dark-green rounded bg-offwhite selection:border-dark-green focus:border-dark-green"
+                value={filter.current.filter}
+              >
+                <option value="All">All</option>
+                {industries.map((industry) => (
+                  <option key={industry} value={industry}>
+                    {industry}
+                  </option>
+                ))}
+              </select>
+            </div>
+            {/* Button group for landscape devices */}
+            <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 md:gap-4">
+              <button
+                id="All"
+                onClick={() => {
+                  setFilter("All");
+                  changeTable("All");
+                }}
+                className="flex flex-row items-center justify-left font-bitter text-xs md:text-lg filter"
               >
                 <div
                   className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
-                    proxyData.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
+                    filter.current.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
                   }`}
                 >
                   &nbsp;
                 </div>
-                {industry}
+                All
               </button>
-            ))}
+              {industries.map((industry) => (
+                <button
+                  key={industry}
+                  id={industry}
+                  onClick={() => {
+                    if (filter.current.filter === industry) {
+                      setFilter("All");
+                      changeTable("All");
+                    } else {
+                      setFilter(industry);
+                      changeTable(industry);
+                    }
+        
+                  }}
+                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
+                >
+                  <div
+                    className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
+                      filter.current.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
+                    }`}
+                  >
+                    &nbsp;
+                  </div>
+                  {industry}
+                </button>
+              ))}
+            </div>
           </div>
-      </div>
-    </div>
-      <div className="flex flex-col flex-shrink w-full h-3/5 sm:h-2/3 overflow-y-auto custom-scrollbar"
-        onMouseEnter={() => setScrollEnabled(false)}
-        onMouseLeave={() => setScrollEnabled(true)}  
-        onTouchStart={() => setScrollEnabled(false)} 
-        onTouchEnd={() => setScrollEnabled(true)}    
-        ref={tableBodyRef}
-      >
-        <table className="min-w-full border-collapse">
-          <tbody className="font-bitter-italic text-sm sm:text-xl md:text-2xl" id="table-body">
-            {displayCompanies.map((company, index) => (
-              <tr
-                key={company.company}
-                className="relative h-12 sm:h-16 landscape:custom-border-row table-row transition-all duration-300"
-                ref={(el) => {
-                  if (index === 0) firstRowRef.current = el;
-                  if (index === displayCompanies.length - 1) lastRowRef.current = el;
-                }}
-              >
-                <td className="font-bitter font-normal">
-                  <a
-                    href={company.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] hover:cursor-pointer text-dark-green"
-                  >
-                    {company.company}
-                  </a>
-                </td>
-                <td className="text-dark-green px-2 sm:px-4 font-bitter font-light text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
-                  {company.description}
-                </td>
-                {proxyData.filter === "All" && (
-                  <td
-                    className="text-dark-green px-2 sm:px-4 font-bitter-italic font-light hidden sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
-                  >
-                    {company.industry}
+        </div>
+        <div className="flex-grow flex flex-col w-full max-h-[60vh] sm:max-h-[70vh] overflow-y-auto custom-scrollbar"
+          onMouseEnter={() => setScrollEnabled(false)}
+          onMouseLeave={() => setScrollEnabled(true)}
+          onTouchStart={() => setScrollEnabled(false)}
+          onTouchEnd={() => setScrollEnabled(true)}
+          ref={tableBodyRef}
+        >
+          <table className="min-w-full border-collapse">
+            <tbody className="font-bitter-italic text-sm sm:text-xl md:text-2xl" id="table-body">
+              {displayCompanies.map((company, index) => (
+                <tr
+                  key={company.company}
+                  className="relative h-12 sm:h-16 landscape:custom-border-row table-row transition-all duration-300"
+                  ref={(el) => {
+                    if (index === 0) firstRowRef.current = el;
+                    if (index === displayCompanies.length - 1) lastRowRef.current = el;
+                  }}
+                >
+                  <td className="font-bitter font-normal">
+                    <a
+                      href={company.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] hover:cursor-pointer text-dark-green"
+                    >
+                      {company.company}
+                    </a>
                   </td>
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  <td className="text-dark-green px-2 sm:px-4 font-bitter font-light text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
+                    {company.description}
+                  </td>
+                  {filter.current.filter === "All" && (
+                    <td
+                      className="text-dark-green px-2 sm:px-4 font-bitter-italic font-light hidden sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
+                    >
+                      {company.industry}
+                    </td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
+  
 };
 
 export default PortfolioTable;

@@ -64,6 +64,7 @@ display: none;
   .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  height: 90%;
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
@@ -110,6 +111,18 @@ opacity: 0.2;
   animation: breathe 3s ease-in-out infinite; /* Adjust timing as needed */
 }
 
+.dot-container {
+  right: 20px;
+  position: fixed; 
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; 
+  z-index: 1000;
+}
+
 @media (orientation: landscape) {    
   @media (max-aspect-ratio: 2.05) {    
     .title { font-size: 18.4vw; line-height: 13vw; padding-top: 1.5rem; }
@@ -119,9 +132,7 @@ opacity: 0.2;
       background-size: contain;            
       background-repeat: no-repeat;                              
     }
-    .dot-container {
-      right: 20px;
-    }
+
     .flower-2 { width: 7vw; height: 7vw; top: 57vh; left: 5vw; }
     .flower-3 { width: 8vw; height: 8vw; top: 56vh; left: 30vw; }
     .flower-4 { width: 20vw; height: 20vw; top: 55vh; left: 40vw; }
@@ -135,25 +146,14 @@ opacity: 0.2;
     .flower-16 { width: 6vw; height: 6vw; top: 82vh; left: 60vw; }
     .flower-17 { width: 16vw; height: 16vw; top: 62vh; left: 79vw; }
   }
+}
 
-  .dot-container {
-    position: fixed; 
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px; 
-    z-index: 1000;
-  }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-  }
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 @media (orientation: portrait) {   
@@ -161,29 +161,7 @@ opacity: 0.2;
     .flower {
       display: none;                           
     }
-    .dot-container {
-      right: 10px;
-    }
     .flower-4 { width: 55vw; height: 55vw; display: block; position: relative; transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out; }
-
-    .dot-container {
-      position: fixed; 
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px; 
-      z-index: 1000;
-    }
-    
-    .dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s ease, opacity 0.3s ease;
-    }
 }
 
 @media (min-aspect-ratio: 2.05) {    
@@ -199,10 +177,6 @@ opacity: 0.2;
       transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
       background-size: contain;            
       background-repeat: no-repeat;                              
-    }
-
-    .dot-container {
-      right: 20px;
     }
 
       .flower-2 { width: 7vw; height: 7vw; top: 80vh; left: 5vw; }
@@ -233,10 +207,6 @@ opacity: 0.2;
       transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
       background-size: contain;            
       background-repeat: no-repeat;                              
-    }
-
-    .dot-container {
-      right: 20px;
     }
 
     .logoflower {
@@ -277,10 +247,6 @@ opacity: 0.2;
     transition: transform 500ms ease-in-out, opacity 2000ms ease-in-out;
     background-size: contain;            
     background-repeat: no-repeat;                              
-  }
-
-  .dot-container {
-    right: 20px;
   }
 
   .logoflower {
