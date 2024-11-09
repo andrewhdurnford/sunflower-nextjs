@@ -66,7 +66,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Zed', industry: 'Developer', description: 'High-performance, multiplayer code editor', link: 'https://zed.dev/' },
     { company: 'Inscribe', industry: 'Fintech', description: 'AI-powered workforce for risk teams at financial services companies', link: 'https://www.inscribe.ai/' },
     { company: 'Exo', industry: 'Crypto', description: 'Unify your everyday devices into one powerful GPU', link: 'https://github.com/exo-explore/exo' },
-    { company: 'Pika', industry: 'Saas', description: 'Front office for residential services', link: 'https://withpika.com/' },
+    { company: 'Pika', industry: 'SaaS', description: 'Front office for residential services', link: 'https://withpika.com/' },
     { company: 'TipLink', industry: 'Crypto', description: 'The simplest Solana wallet', link: 'https://tiplink.io/' },
     { company: 'Pocket Protector', industry: 'Crypto', description: 'Discover, follow, and copy top traders', link: 'https://www.pocketprotector.xyz/' }
   ].sort((a, b) => a.company.localeCompare(b.company));
