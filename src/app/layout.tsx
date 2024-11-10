@@ -28,15 +28,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className={inter.className}>
-        <main>
-          <header>
-            <h1>Sunflower Capital</h1>
-            <p>
-              We invest at the earliest stage in companies building foundational picks and shovels infrastructure.
-            </p>
-          </header>
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );
