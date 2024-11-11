@@ -240,17 +240,17 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                       rel="noopener noreferrer"
                       className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] hover:cursor-pointer text-dark-green"
                     >
-                      {company.company}
+                      <h3>{company.company}</h3>
                     </a>
                   </td>
                   <td className="text-dark-green px-2 sm:px-4 font-bitter font-light text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
-                    {company.description}
+                    <h3>{company.description}</h3>
                   </td>
                   {filter.current.filter === "All" && (
                     <td
                       className="text-dark-green px-2 sm:px-4 font-bitter-italic font-light hidden sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
                     >
-                      {company.industry}
+                      <h3>{company.industry}</h3>
                     </td>
                   )}
                 </tr>

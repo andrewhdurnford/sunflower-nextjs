@@ -87,21 +87,21 @@ const App: React.FC = () => {
           className={`hero w-full landscape:h-screen portrait:h-[calc(100dvh)] relative overflow-hidden bg-dark-green 
                   flex portrait:flex-col justify-center portrait:items-center portrait:gap-10`}
         >
-          <div
+          <h1
             className={`title font-arya font-bold text-offwhite transition-all duration-1000 w-11/12 portrait:text-center 
             ${loaded ? "top-0" : "-top-full"}`}
           >
             SUNFLOWER <br /> CAPITAL
-          </div>
+          </h1>
 
           <div className="flowerbox">
-            <div
+            <h2
               id="full-screen-message"
               className="z-10 fixed inset-0 flex items-center justify-center font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000"
               // bg-[#ffe27c]
             >
               From Seed to Sunflower
-            </div>
+            </h2>
 
             <div
               className={`flower flower-1 ${
@@ -321,16 +321,16 @@ const App: React.FC = () => {
           <div className="flex flex-col items-center gap-5 lg:gap-8">
             <img
               src="/images/sunflower-logo.svg"
-              alt="Sunflower"
+              alt="Sunflower Capital Logo"
               className={`h-24 sm:h-28 w-auto logoflower`}
             />
             <div className="w-4/5 font-bitter text-dark-green text-center">
-              <div
+              <h2
                 className={`text-2xl sm:text-4xl lg:text-5xl xl:text-6xl leading-loose sm:leading-loose lg:leading-loose xl:leading-loose`}
               >
                 We invest at the earliest stage in companies building
                 foundational picks and shovels infrastructure.
-              </div>
+              </h2>
             </div>
           </div>
         </div>
@@ -338,14 +338,14 @@ const App: React.FC = () => {
           id="statement2"
           className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
         >
-          <div className="font-bitter text-center w-4/5 md:w-11/12 md:text-[1.97vw] portrait:text-lg 
+          <h2 className="font-bitter text-center w-4/5 md:w-11/12 md:text-[1.97vw] portrait:text-lg 
           leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
             We partner with missionary founders who are indefatigable, decisive,
             and self-aware. <br /> <br /> <br />
             We believe in forging highly personal, deep-rooted relationships
             that stand the test of time. <br /> <br /> <br />
             We develop distinct theses on markets and how they will unfold.
-          </div>
+          </h2>
         </div>
         <div
           id="portfolio"
