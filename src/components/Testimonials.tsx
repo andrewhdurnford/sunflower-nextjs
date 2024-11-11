@@ -214,7 +214,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               <h3 className="font-bitter text-base md:text-xl xl:text-2xl w-full text-left sm:leading-extra-loose md:leading-extra-loose lg:leading-extra-loose xl:leading-extra-loose">
               &ldquo;{quote.quote}&rdquo;
               </h3>
-              <div className="font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full">
+              <div className="flex flex-col font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full gap-2">
               <h3 className='font-semibold'>{quote.author}</h3>
               <h3 className="font-bitter-italic">{quote.company}</h3>
               </div>
