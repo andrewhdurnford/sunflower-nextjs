@@ -45,7 +45,7 @@ export default function RootLayout({
         <meta property="og:description" content="We invest at the earliest stage in companies building foundational picks and shovels infrastructure." />
         <meta property="og:site_name" content="Sunflower Capital" />
         <meta property="og:title" content="Sunflower Capital" />
-        <meta property="og:image" content="https://sunflowercapital.co/images/og-image.jpg" />
+        <meta property="og:image" content="https://sunflowercapital.co/images/og-image.png" />
         <meta name="og:image:alt" content="Sunflower Capital - Investing in Early-Stage Companies" />
         <meta property="og:url" content="https://sunflowercapital.co" />
         <meta property="og:type" content="website" />
