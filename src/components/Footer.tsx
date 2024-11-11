@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <a href="https://www.linkedin.com/in/liujiang1/" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/images/linkedin.svg"
-                        alt="LinkedIn"
+                        alt="Connect with Liu Jiang on LinkedIn"
                         width={18} 
                         height={18} 
                         className="hover:opacity-80 transition-opacity duration-300"
@@ -33,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <a href="mailto:liu@sunflowercapital.co" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/images/email.svg"
-                        alt="Email"
+                        alt="Contact Sunflower Capital via email"
                         width={18} 
                         height={18}
                         className="hover:opacity-80 transition-opacity duration-300"
