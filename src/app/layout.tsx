@@ -42,9 +42,9 @@ export default function RootLayout({
         <link rel="canonical" href="https://sunflowercapital.co" />
 
         {/* Open Graph Meta Tags for Social Sharing */}
-        <meta property="og:description" content="Sunflower Capital provides seed funding for innovative startups. Discover our portfolio and investment strategies." />
+        <meta property="og:description" content="We invest at the earliest stage in companies building foundational picks and shovels infrastructure." />
         <meta property="og:site_name" content="Sunflower Capital" />
-        <meta property="og:title" content="We invest in early-stage companies building foundational picks and shovels infrastructure" />
+        <meta property="og:title" content="Sunflower Capital" />
         <meta property="og:image" content="https://sunflowercapital.co/images/og-image.jpg" />
         <meta name="og:image:alt" content="Sunflower Capital - Investing in Early-Stage Companies" />
         <meta property="og:url" content="https://sunflowercapital.co" />
@@ -57,7 +57,7 @@ export default function RootLayout({
           name="twitter:description"
           content="We invest at the earliest stage in companies building foundational picks and shovels infrastructure."
         />
-        <meta name="twitter:image" content="https://sunflowercapital.co/images/og-image.jpg" />
+        <meta name="twitter:image" content="https://sunflowercapital.co/images/og-image.png" />
         <meta name="twitter:image:alt" content="Sunflower Capital - Investing in Early-Stage Infrastructure" />
 
         {/* Preload Fonts for Better Performance */}
