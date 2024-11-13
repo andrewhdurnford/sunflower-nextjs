@@ -328,8 +328,7 @@ const App: React.FC = () => {
               <h2
                 className={`text-2xl sm:text-4xl lg:text-5xl xl:text-6xl leading-loose sm:leading-loose lg:leading-loose xl:leading-loose`}
               >
-                We invest at the earliest stage in companies building
-                foundational picks and shovels infrastructure.
+                We invest at the earliest stage in companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.
               </h2>
             </div>
           </div>
