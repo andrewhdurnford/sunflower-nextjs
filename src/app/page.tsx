@@ -324,9 +324,9 @@ const App: React.FC = () => {
               alt="Sunflower Capital Logo"
               className={`h-24 sm:h-28 w-auto logoflower`}
             />
-            <div className="w-4/5 font-bitter text-dark-green text-center">
+            <div className="w-5/6 lg:w-[92%] font-bitter text-dark-green text-center">
               <h2
-                className={`text-2xl sm:text-4xl lg:text-5xl xl:text-6xl leading-loose sm:leading-loose lg:leading-loose xl:leading-loose`}
+                className={`text-2xl md:text-[3.04vw] leading-loose sm:leading-loose lg:leading-loose xl:leading-loose`}
               >
                 We invest at the earliest stage in companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.
               </h2>
@@ -335,13 +335,13 @@ const App: React.FC = () => {
         </div>
         <div
           id="statement2"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-20 xl:gap-28"
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-20 xl:gap-28"
         >
-          <h2 className="font-bitter text-center w-4/5 md:w-11/12 md:text-[1.97vw] portrait:text-lg 
+          <h2 className="font-bitter text-center w-4/5 md:text-[1.9vw] portrait:text-lg 
           leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
             We partner with missionary founders who are indefatigable, decisive,
             and self-aware. <br /> <br /> <br />
-            We believe in forging highly personal, deep-rooted relationships
+            We forge highly personal, deep-rooted relationships
             that stand the test of time. <br /> <br /> <br />
             We develop distinct theses on markets and how they will unfold.
           </h2>

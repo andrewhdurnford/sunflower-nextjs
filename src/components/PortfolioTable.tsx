@@ -18,7 +18,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
   const companies = [
     { company: 'Accrue Savings', industry: 'Fintech', description: 'Save now, buy later', link: 'https://www.accruesavings.com/' },
     { company: 'AgentSync', industry: 'Fintech', description: 'Automating insurance compliance', link: 'https://agentsync.io/' },
-    { company: 'Commure (Athelas)', industry: 'Healthcare', description: 'Integrated healthcare operations platform', link: 'https://www.commure.com/' },
+    { company: 'Commure (Athelas)', industry: 'Healthcare and Bio', description: 'Integrated healthcare operations platform', link: 'https://www.commure.com/' },
     { company: 'Cal', industry: 'Infra', description: 'Open source scheduling infrastructure', link: 'http://cal.com' },
     { company: 'Clay', industry: 'SaaS', description: 'Scaling GTM with data enrichment and personalized outreach', link: 'http://clay.com' },
     { company: 'Cohere', industry: 'AI/ML', description: 'LLMs and RAG capabilities for enterprises', link: 'https://cohere.com/' },
@@ -28,7 +28,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Deel', industry: 'SaaS', description: 'Powering the future of global HR', link: 'https://www.deel.com/' },
     { company: 'E2B', industry: 'AI/ML', description: 'Code interpreting for AI apps', link: 'https://e2b.dev/' },
     { company: 'Footprint', industry: 'Security', description: 'KYC and identity verification', link: 'http://onefootprint.com' },
-    { company: 'Freshpaint', industry: 'Healthcare', description: 'Enabling patient privacy and HIPAA compliance', link: 'https://www.freshpaint.io/' },
+    { company: 'Freshpaint', industry: 'Healthcare and Bio', description: 'Enabling patient privacy and HIPAA compliance', link: 'https://www.freshpaint.io/' },
     { company: 'Gem', industry: 'SaaS', description: 'Recruiting with speed and efficiency', link: 'https://www.gem.com/' },
     { company: 'Great Expectations', industry: 'Data', description: 'Open source data quality and collaboration', link: 'https://greatexpectations.io/' },
     { company: 'Hadrian', industry: 'Defense and Hardware', description: 'Manufacturing the future', link: 'https://www.hadrian.co/' },
@@ -61,14 +61,15 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Verkada', industry: 'Defense and Hardware', description: 'Integrated physical security platform', link: 'https://www.verkada.com/' },
     { company: 'Warp', industry: 'Developer', description: 'The modern terminal, reimagined with AI', link: 'https://www.warp.dev/' },
     { company: 'Xata', industry: 'Infra', description: 'Serverless data platform for PostgreSQL', link: 'https://xata.io/' },
-    { company: 'Slingshot AI', industry: 'Healthcare', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' },
+    { company: 'Slingshot AI', industry: 'Healthcare and Bio', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' },
     { company: 'Salient Motion', industry: 'Defense and Hardware', description: 'Motion control systems for aerospace and defense ', link: 'https://www.salientmotion.com/' },
     { company: 'Inscribe', industry: 'Fintech', description: 'AI-powered workforce for risk teams at financial services companies', link: 'https://www.inscribe.ai/' },
     { company: 'Exo', industry: 'Crypto', description: 'Unify your everyday devices into one powerful GPU', link: 'https://github.com/exo-explore/exo' },
     { company: 'Pika', industry: 'SaaS', description: 'Front office for residential services', link: 'https://withpika.com/' },
     { company: 'TipLink', industry: 'Crypto', description: 'The simplest Solana wallet', link: 'https://tiplink.io/' },
     { company: 'Pocket Protector', industry: 'Crypto', description: 'Discover, follow, and copy top traders', link: 'https://www.pocketprotector.xyz/' },
-    { company: 'StrongDM', industry: 'Security', description: 'Zero trust privileged access', link: 'https://www.strongdm.com/' }
+    { company: 'StrongDM', industry: 'Security', description: 'Zero trust privileged access', link: 'https://www.strongdm.com/' },
+    { company: 'Pendulum', industry: 'Healthcare and Bio', description: 'Next-generation probiotics', link: 'https://pendulumlife.com/' }
   ].sort((a, b) => a.company.localeCompare(b.company));
   const filter = useRef({ filter: "All" });
   const [_, forceUpdate] = useState(0);
