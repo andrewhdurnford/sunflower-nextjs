@@ -328,7 +328,7 @@ const App: React.FC = () => {
               <h2
                 className={`text-2xl md:text-[3.04vw] leading-loose sm:leading-loose lg:leading-loose xl:leading-loose`}
               >
-                We invest at the earliest stage in companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.
+                We partner at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.
               </h2>
             </div>
           </div>

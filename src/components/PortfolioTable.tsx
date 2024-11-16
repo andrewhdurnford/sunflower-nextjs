@@ -69,7 +69,8 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'TipLink', industry: 'Crypto', description: 'The simplest Solana wallet', link: 'https://tiplink.io/' },
     { company: 'Pocket Protector', industry: 'Crypto', description: 'Discover, follow, and copy top traders', link: 'https://www.pocketprotector.xyz/' },
     { company: 'StrongDM', industry: 'Security', description: 'Zero trust privileged access', link: 'https://www.strongdm.com/' },
-    { company: 'Pendulum', industry: 'Healthcare and Bio', description: 'Next-generation probiotics', link: 'https://pendulumlife.com/' }
+    { company: 'Pendulum', industry: 'Healthcare and Bio', description: 'Next-generation probiotics', link: 'https://pendulumlife.com/' },
+    { company: 'Rerun', industry: 'Data', description: 'The multimodal data stack', link: 'https://rerun.io/' }
   ].sort((a, b) => a.company.localeCompare(b.company));
   const filter = useRef({ filter: "All" });
   const [_, forceUpdate] = useState(0);
