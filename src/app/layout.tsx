@@ -88,7 +88,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} bg-white text-black`}>
+      <body className={`${inter.className} bg-offwhite`}>
         <main role="main" className="min-h-screen flex flex-col items-center justify-center">
           {children}
         </main>
