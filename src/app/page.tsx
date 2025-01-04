@@ -335,15 +335,16 @@ const App: React.FC = () => {
         </div>
         <div
           id="statement2"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-20 xl:gap-28"
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-16 xl:gap-20"
         >
-          <h2 className="font-bitter text-center w-4/5 md:text-[1.9vw] portrait:text-lg 
+          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl text-left w-4/5">Investment Philosophy</h1>
+          <h2 className="font-bitter text-base md:text-[1.82vw] w-4/5  text-left
           leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
-            We partner with missionary founders who are indefatigable, decisive,
-            and self-aware. <br /> <br /> <br />
-            We forge highly personal, deep-rooted relationships
-            that stand the test of time. <br /> <br /> <br />
-            We develop distinct theses on markets and how they will unfold.
+            We partner with missionary founders who are product artisans. <br /> <br />
+            We invest in N of 1 category creators and upstarts transforming legacy industries. <br /> <br />
+            We help companies validate their insights, hone their initial product, and close early customers.  <br /> <br />
+            We forge highly personal, deep-rooted relationships with founders in advance of incorporation. <br /> <br />
+            We nail market timing and develop distinct theses on markets and how they will unfold.
           </h2>
         </div>
         <div
