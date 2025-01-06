@@ -33,7 +33,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Great Expectations', industry: 'Data', description: 'Open source data quality and collaboration', link: 'https://greatexpectations.io/' },
     { company: 'Hadrian', industry: 'Defense and Hardware', description: 'Manufacturing the future', link: 'https://www.hadrian.co/' },
     { company: 'Houm', industry: 'Fintech', description: 'Real estate marketplace for Latin America', link: 'https://www.houm.com/' },
-    { company: 'Knock', industry: 'Infra', description: 'Flexible, reliable notifications infrastructure', link: 'https://knock.app/' },
+    { company: 'Knock', industry: 'Developer', description: 'Flexible, reliable notifications infrastructure', link: 'https://knock.app/' },
     { company: 'Letta', industry: 'AI/ML', description: 'Long-term memory for AI agents', link: 'https://www.letta.com/' },
     { company: 'Monad', industry: 'Crypto', description: 'Extreme parallelized performance for EVM', link: 'https://www.monad.xyz/' },
     { company: 'Nebra', industry: 'Crypto', description: 'Universal proof aggregation that scales ZKP verification', link: 'https://www.nebra.one/' },

@@ -335,16 +335,22 @@ const App: React.FC = () => {
         </div>
         <div
           id="statement2"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-16 xl:gap-20"
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
         >
-          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl text-left w-4/5">Investment Philosophy</h1>
-          <h2 className="font-bitter text-base md:text-[1.82vw] w-4/5  text-left
+          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl text-left w-4/5">Ethos</h1>
+          <h2 className="font-bitter text-sm xs:text-base md:text-[1.82vw] w-4/5  text-left
           leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
-            We partner with missionary founders who are product artisans. <br /> <br />
-            We invest in N of 1 category creators and upstarts transforming legacy industries. <br /> <br />
-            We help companies validate their insights, hone their initial product, and close early customers.  <br /> <br />
-            We forge highly personal, deep-rooted relationships with founders in advance of incorporation. <br /> <br />
-            We nail market timing and develop distinct theses on markets and how they will unfold.
+            We partner with indefatigable missionary founders who are product artisans.
+            We forge highly personal, deep-rooted relationships well in advance of incorporation.
+            <br /> <br />
+            We are often the first check in. 
+            We invest in N of 1 category creators with technical moats and upstarts transforming legacy industries with novel GTM. 
+            <br /> <br />
+            We have more than a decade of inside stories and insights on B2B that cannot be found online. 
+            We nail market timing and develop distinct theses on markets. 
+            <br /> <br />
+            We work with founders the way they want to work with us. 
+            We proactively help them hone initial product, close early customers, and connect with sales and marketing advisors.
           </h2>
         </div>
         <div
