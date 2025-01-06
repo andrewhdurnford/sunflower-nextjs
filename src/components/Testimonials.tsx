@@ -140,7 +140,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   useEffect(() => {
     const glide = new Glide('.glide', {
       type: 'carousel',
-      startAt: 2,
+      startAt: 0,
       perView: 1,
       autoplay: false,
     });
