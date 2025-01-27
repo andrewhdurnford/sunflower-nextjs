@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
             <div className="flex items-center space-x-4 text-center">
                 <div onClick={window.innerHeight > window.innerWidth ? scroll : undefined}>
                     <h1  className="font-bitter text-dark-green text-sm sm:text-base lg:text-lg xl:text-xl">
-                    <span className={window.innerHeight > window.innerWidth ? 'inline' : 'hidden'}>↑ Back to Top </span>© Sunflower Capital 2024
+                    <span className={window.innerHeight > window.innerWidth ? 'inline' : 'hidden'}>↑ Back to Top </span>© Sunflower Capital 2025
                     </h1>
                 </div>
 
