@@ -23,14 +23,14 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         company: "Tabular (acquired by Databricks)"
     },
     {
-      quote: "Liu had early conviction in Verkada. Her ability to quickly immerse herself in new markets is a real differentiator amongst early stage investors. I was very impressed by her deep knowledge of our industry, which led to insightful and strategic questions coupled with tailored advice and direction.",
-      author: "Raj Misra",
-      company: "Verkada"
-    },
-    {
       quote: "Liu is the best kind of investor: she is technical, understands product, and can quickly understand the big picture. She's really well connected with top talent and investors. She'll help when she's needed and give you space to operate otherwise. Highly recommend working with her.",
       author: "Kareem Amin",
       company: "Clay"
+    },
+    {
+      quote: "Liu had early conviction in Verkada. Her ability to quickly immerse herself in new markets is a real differentiator amongst early stage investors. I was very impressed by her deep knowledge of our industry, which led to insightful and strategic questions coupled with tailored advice and direction.",
+      author: "Raj Misra",
+      company: "Verkada"
     },
     {
         quote: "Liu invested in our seed and then doubled down in subsequent rounds. She helped us with initial positioning and messaging on our website and customer materials, discussing our key product use cases, and thinking through developer ubiquity.",
@@ -53,24 +53,19 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         company: "Hadrian"
     },
     {
+      quote: "Liu is the most energetic investor I've ever met. We raised our seed round during Covid, and Liu was one of the first to commit to investing. She made more intros and was more engaged than anyone else - without her enthusiasm I don't know how we'd have closed the round!",
+      author: "James Hawkins",
+      company: "Posthog"
+    },
+    {
         quote: "Liu has been an invaluable investor for Warp, going way beyond just investing money, to investing a bunch of her time helping us with GTM, Growth, and Product. She brings deep expertise in the developer space, and we've learned a lot working with her. She is more willing and able than most investors to roll up her sleeves and help the leadership team operate.",
         author: "Zach Lloyd",
         company: "Warp"
     },
     {
-        quote: "Liu is the most energetic investor I've ever met. We raised our seed round during Covid, and Liu was one of the first to commit to investing. She made more intros and was more engaged than anyone else - without her enthusiasm I don't know how we'd have closed the round!",
-        author: "James Hawkins",
-        company: "Posthog"
-    },
-    {
-        quote: "Liu built a relationship with us while we were still at Uber building Michelangelo. She had the conviction to colead our seed and Series A, and she was pivotal in helping us hire our early team and close our first few marquee customers.",
-        author: "Kevin Stumpf",
-        company: "Tecton"
-    },
-    {
-        quote: "Liu strikes the perfect balance of an early stage partner. She was one of the first to back us at the pre-seed, and she’s supported us consistently. She'll trail all your investor updates, ready to provide critical guidance immediately when called upon. Whether it's GTM, product, or just hard founder shit, she's got you.",
-        author: "Jake Cooper",
-        company: "Railway"
+      quote: "Liu strikes the perfect balance of an early stage partner. She was one of the first to back us at the pre-seed, and she’s supported us consistently. She'll trail all your investor updates, ready to provide critical guidance immediately when called upon. Whether it's GTM, product, or just hard founder shit, she's got you.",
+      author: "Jake Cooper",
+      company: "Railway"
     },
     {
         quote: "Even before leading our pre-seed, Liu impressed us with her spot-on perspectives on strategy. From the onset, it was clear she took the time to thoroughly understand our business on a deeper level. We’ve gotten a lot of value from her advice on scalable GTM plans and ensuring we are focusing our efforts on the right ICP and partners.",
@@ -83,6 +78,11 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       company: "E2B"
     },
     {
+      quote: "Liu is fantastic to work with. She’s easy to talk to and strategically astute. She happily makes intros to her excellent network, and she’s been a tremendous value add at helping us with customer intros.",
+      author: "Zach Long",
+      company: "ConductorAI"
+    },
+    {
         quote: "Liu was one of the first investors we started working with at Knock. Not only was she an instrumental part of our early fundraising, she also helped introduce us to many potential customers. Even now, several years after her initial investment in Knock, Liu continues to respond to our investor updates, offering ways to help. I'm grateful she's been a part of our journey.",
         author: "Sam Seely",
         company: "Knock"
@@ -91,6 +91,16 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       quote: "Working with Liu has been one of the best decisions we have made! She has helped us on strategically planning out our roadmap, securing key hires, navigating partnerships, and building community and ecosystem.",
       author: "Yoland Yan",
       company: "Comfy"
+    },
+    {
+      quote: "Since the pre-seed, Liu has been a great resource for tldraw as a design technology company. She’s a familiar name in the industry, generous with introductions, and has delivered timely advice for our GTM, hiring, and financing strategy.",
+      author: "Steve Ruiz",
+      company: "Tldraw"
+    },
+    {
+      quote: "Liu built a relationship with us while we were still at Uber building Michelangelo. She had the conviction to colead our seed and Series A, and she was pivotal in helping us hire our early team and close our first few marquee customers.",
+      author: "Kevin Stumpf",
+      company: "Tecton"
     },
     {
         quote: "Working with Liu was an exceptional experience. Her strategic approach to GTM execution, combined with a focus on rapid expansion, was key in driving significant growth. Her ability to navigate fundraising rounds demonstrated strong leadership and commitment to success.",
@@ -103,24 +113,14 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       company: "ReadySet"
     },
     {
-        quote: "Since the pre-seed, Liu has been a great resource for tldraw as a design technology company. She’s a familiar name in the industry, generous with introductions, and has delivered timely advice for our GTM, hiring, and financing strategy.",
-        author: "Steve Ruiz",
-        company: "Tldraw"
-    },
-    {
-      quote: "Liu is fantastic to work with. She’s easy to talk to and strategically astute. She happily makes intros to her excellent network, and she’s been a tremendous value add at helping us with customer intros.",
-      author: "Zach Long",
-      company: "ConductorAI"
-    },
-    {
         quote: "Liu has been an incredible partner for Unkey. Whenever we need a sounding board on GTM strategy, Liu is ready to jump in. We see Liu as an extension of our team — she really helps drive our success and growth.",
         author: "James Perkins",
         company: "Unkey"
     },
     {
-        quote: "Liu is always accessible and genuinely understands the challenges of early stage companies. She has been crucial in helping us connect with the right customers and clearly define our target audience. Her insights and practical advice have been essential in refining our GTM strategy and product direction. Our sessions with her are focused and productive, and we tackle critical topics with depth.",
-        author: "Aamir Shakir",
-        company: "Mixedbread"
+      quote: "Liu has been an invaluable partner to us. She is always readily available when we need her expertise, whether it's about hiring, product, or open source. She is sensitive to our time and proactively offers advice without pushing anything on us.",
+      author: "Peter Marton",
+      company: "OpenMeter"
     },
     {
         quote: "Liu has made many an intro to her amazing network of executives, many of whom have made great advisors as we bootstrapped our GTM functions. Liu is always available but not overbearing — if you need help, she is just a text away.",
@@ -128,9 +128,9 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         company: "Responsive"
     },
     {
-        quote: "Liu has been an invaluable partner to us. She is always readily available when we need her expertise, whether it's about hiring, product, or open source. She is sensitive to our time and proactively offers advice without pushing anything on us.",
-        author: "Peter Marton",
-        company: "OpenMeter"
+      quote: "Liu is always accessible and genuinely understands the challenges of early stage companies. She has been crucial in helping us connect with the right customers and clearly define our target audience. Her insights and practical advice have been essential in refining our GTM strategy and product direction. Our sessions with her are focused and productive, and we tackle critical topics with depth.",
+      author: "Aamir Shakir",
+      company: "Mixedbread"
     }
   ];
 
@@ -140,7 +140,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   useEffect(() => {
     const glide = new Glide('.glide', {
       type: 'carousel',
-      startAt: 0,
+      startAt: 2,
       perView: 1,
       autoplay: false,
     });
