@@ -88,6 +88,11 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         company: "Knock"
     },
     {
+      quote: "Liu immediately understood our business because of the market work Sunflower had done previously, and they moved quickly with an investment. We are a company with European roots, and they opened their deep network of potential US customers and partners to us. They are real hustlers, willing to do ground work to help their founders succeed. They’ve also advised us on executive hiring and on expanding our team. Brilliant to have Sunflower with us!",
+      author: "Moritz Schiebold",
+      company: "Rerun"
+    },
+    {
       quote: "Working with Liu has been one of the best decisions we have made! She has helped us on strategically planning out our roadmap, securing key hires, navigating partnerships, and building community and ecosystem.",
       author: "Yoland Yan",
       company: "Comfy"
