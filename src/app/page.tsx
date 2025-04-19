@@ -104,19 +104,6 @@ const App: React.FC = () => {
             </h2>
 
             <div
-              className={`flower flower-1 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-1.svg"
-                alt="Flower 1"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
               className={`flower flower-2 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
@@ -179,19 +166,6 @@ const App: React.FC = () => {
             </div>
 
             <div
-              className={`flower flower-6 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-6.svg"
-                alt="Flower 6"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
               className={`flower flower-7 ${
                 loaded ? "" : "opacity-0"
               } hover:animate-spin`}
@@ -199,19 +173,6 @@ const App: React.FC = () => {
               <Image
                 src="/images/outline/flower-7.svg"
                 alt="Flower 7"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
-              className={`flower flower-8 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-8.svg"
-                alt="Flower 8"
                 fill
                 quality={100}
               />
@@ -253,37 +214,11 @@ const App: React.FC = () => {
             </div>
 
             <div
-              className={`flower flower-13 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-13.svg"
-                alt="Flower 13"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
               className={`flower flower-14 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
                 src="/images/outline/flower-14.svg"
                 alt="Flower 14"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
-              className={`flower flower-15 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-15.svg"
-                alt="Flower 15"
                 fill
                 quality={100}
               />
