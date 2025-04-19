@@ -12,6 +12,6 @@ export const isMobileDevice = () => {
   const ua = get('user-agent')
 
   const device = new UAParser(ua || '').getDevice()
-
+  
   return device.type === 'mobile'
 }
