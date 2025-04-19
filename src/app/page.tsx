@@ -107,7 +107,7 @@ const App: React.FC = () => {
               className={`flower flower-2 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-2.svg"
+                src="/images/flower-2.svg"
                 alt="Flower 2"
                 fill
                 quality={100}
@@ -118,7 +118,7 @@ const App: React.FC = () => {
               className={`flower flower-3 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-3.svg"
+                src="/images/flower-3.svg"
                 alt="Flower 3"
                 fill
                 quality={100}
@@ -131,7 +131,7 @@ const App: React.FC = () => {
               } hover:animate-spin`}
             >
               <Image
-                src="/images/outline/flower-5.svg"
+                src="/images/flower-5.svg"
                 alt="Flower 5"
                 fill
                 quality={100}
@@ -142,7 +142,7 @@ const App: React.FC = () => {
               className={`flower flower-11 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-11.svg"
+                src="/images/flower-11.svg"
                 alt="Flower 11"
                 fill
                 quality={100}
@@ -158,7 +158,7 @@ const App: React.FC = () => {
               }`}
             >
               <Image
-                src="/images/outline/flower-4.svg"
+                src="/images/flower-4.svg"
                 alt="Center Flower"
                 fill
                 quality={100}
@@ -171,7 +171,7 @@ const App: React.FC = () => {
               } hover:animate-spin`}
             >
               <Image
-                src="/images/outline/flower-7.svg"
+                src="/images/flower-7.svg"
                 alt="Flower 7"
                 fill
                 quality={100}
@@ -206,7 +206,7 @@ const App: React.FC = () => {
               className={`flower flower-12 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-12.svg"
+                src="/images/flower-12.svg"
                 alt="Flower 12"
                 fill
                 quality={100}
@@ -217,7 +217,7 @@ const App: React.FC = () => {
               className={`flower flower-14 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-14.svg"
+                src="/images/flower-14.svg"
                 alt="Flower 14"
                 fill
                 quality={100}
@@ -241,7 +241,7 @@ const App: React.FC = () => {
               } hover:animate-spin`}
             >
               <Image
-                src="/images/outline/flower-17.svg"
+                src="/images/flower-17.svg"
                 alt="Flower 17"
                 fill
                 quality={100}
