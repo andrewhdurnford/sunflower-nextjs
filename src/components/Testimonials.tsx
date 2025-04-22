@@ -282,7 +282,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               </h3>
               <div className="flex flex-col font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full gap-2">
               <h3 className='font-semibold'>{quote.author}</h3>
-              <a href={quote.link} target="_blank" rel="noopener noreferrer" className="hover:underline block w-fit font-bitter-italic">
+              <a href={quote.link} target="_blank" rel="noopener noreferrer" className="hover:underline hover:cursor-pointer block w-fit font-bitter-italic">
                 <h3 className="font-bitter-italic">{quote.company}</h3>
               </a>
               </div>
