@@ -18,7 +18,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
   const companies = [
     { company: 'Accrue Savings', industry: 'Fintech', description: 'Save now, buy later', link: 'https://www.accruesavings.com/' },
     { company: 'AgentSync', industry: 'Fintech', description: 'Automating insurance compliance', link: 'https://agentsync.io/' },
-    { company: 'Commure (Athelas)', industry: 'Healthcare and Bio', description: 'Integrated healthcare operations platform', link: 'https://www.commure.com/' },
+    { company: 'Commure (Athelas)', industry: 'Healthcare & Bio', description: 'Integrated healthcare operations platform', link: 'https://www.commure.com/' },
     { company: 'Cal', industry: 'Infra', description: 'Open source scheduling infrastructure', link: 'http://cal.com' },
     { company: 'Clay', industry: 'SaaS', description: 'Scaling GTM with data enrichment and personalized outreach', link: 'http://clay.com' },
     { company: 'Cohere', industry: 'AI/ML', description: 'LLMs and RAG capabilities for enterprises', link: 'https://cohere.com/' },
@@ -28,7 +28,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Deel', industry: 'SaaS', description: 'Powering the future of global HR', link: 'https://www.deel.com/' },
     { company: 'E2B', industry: 'AI/ML', description: 'Code interpreting for AI apps', link: 'https://e2b.dev/' },
     { company: 'Footprint', industry: 'Security', description: 'KYC and identity verification', link: 'http://onefootprint.com' },
-    { company: 'Freshpaint', industry: 'Healthcare and Bio', description: 'Enabling patient privacy and HIPAA compliance', link: 'https://www.freshpaint.io/' },
+    { company: 'Freshpaint', industry: 'Healthcare & Bio', description: 'Enabling patient privacy and HIPAA compliance', link: 'https://www.freshpaint.io/' },
     { company: 'Gem', industry: 'SaaS', description: 'Recruiting with speed and efficiency', link: 'https://www.gem.com/' },
     { company: 'Hadrian', industry: 'Defense and Hardware', description: 'Manufacturing the future', link: 'https://www.hadrian.co/' },
     { company: 'Houm', industry: 'Fintech', description: 'Real estate marketplace for Latin America', link: 'https://www.houm.com/' },
@@ -57,13 +57,13 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Verkada', industry: 'Defense and Hardware', description: 'Integrated physical security platform', link: 'https://www.verkada.com/' },
     { company: 'Warp', industry: 'Developer', description: 'The modern terminal, reimagined with AI', link: 'https://www.warp.dev/' },
     { company: 'Xata', industry: 'Infra', description: 'Serverless data platform for PostgreSQL', link: 'https://xata.io/' },
-    { company: 'Slingshot AI', industry: 'Healthcare and Bio', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' },
+    { company: 'Slingshot AI', industry: 'Healthcare & Bio', description: 'Increasing global access to mental healthcare', link: 'https://www.slingshot.xyz/' },
     { company: 'Salient Motion', industry: 'Defense and Hardware', description: 'Motion control systems for aerospace and defense ', link: 'https://www.salientmotion.com/' },
     { company: 'Inscribe', industry: 'Fintech', description: 'AI-powered workforce for risk teams at financial services companies', link: 'https://www.inscribe.ai/' },
     { company: 'Exo', industry: 'Crypto', description: 'Unify your everyday devices into one powerful GPU', link: 'https://github.com/exo-explore/exo' },
     { company: 'TipLink', industry: 'Crypto', description: 'The simplest Solana wallet', link: 'https://tiplink.io/' },
     { company: 'StrongDM', industry: 'Security', description: 'Zero trust privileged access', link: 'https://www.strongdm.com/' },
-    { company: 'Pendulum', industry: 'Healthcare and Bio', description: 'Next-generation probiotics', link: 'https://pendulumlife.com/' },
+    { company: 'Pendulum', industry: 'Healthcare & Bio', description: 'Next-generation probiotics', link: 'https://pendulumlife.com/' },
     { company: 'Rerun', industry: 'Data', description: 'The multimodal data stack', link: 'https://rerun.io/' },
     { company: 'Omni', industry: 'Data', description: 'Next-generation business analytics', link: 'https://omni.co/' },
     { company: 'Fillout', industry: 'Developer', description: 'Build any form, without code', link: 'http://fillout.com/' },
@@ -73,7 +73,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Flock Homes', industry: 'Fintech', description: 'Retire from being a landlord.', link: 'https://flockhomes.com/' },  
     { company: 'Turnkey', industry: 'Crypto', description: 'Secure, flexible, and scalable key management infrastructure.', link: 'https://www.turnkey.com/' },        
     { company: 'VoidZero', industry: 'Developer', description: 'Unified toolchain for Javascript.', link: 'https://voidzero.dev/' },          
-    { company: 'Loyal', industry: 'Healthcare and Bio', description: 'Veterinary medicine for longevity', link: 'http://loyal.com/' }
+    { company: 'Loyal', industry: 'Healthcare & Bio', description: 'Veterinary medicine for longevity', link: 'http://loyal.com/' }
   ].sort((a, b) => a.company.localeCompare(b.company));
   const filter = useRef({ filter: "All" });
   const [_, forceUpdate] = useState(0);
@@ -180,7 +180,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                   setFilter("All");
                   changeTable("All");
                 }}
-                className="flex flex-row items-center justify-left font-bitter text-xs md:text-base filter"
+                className="flex flex-row items-center justify-left font-bitter text-xs md:text-base 2xl:text-lg filter"
               >
                 <div
                   className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
@@ -205,7 +205,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                     }
         
                   }}
-                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-base filter"
+                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-base 2xl:text-lg filter"
                 >
                   <div
                     className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
