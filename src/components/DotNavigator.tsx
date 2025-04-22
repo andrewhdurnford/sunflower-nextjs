@@ -16,14 +16,6 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, 
             {Array.from({ length: totalScreens }).map((_, index) => (
                 <div
                     key={index}
-<<<<<<< Updated upstream
-                    className={`dot
-                    ${
-                        index === currentScreen ? 
-                            currentScreen === 0 ? 'bg-offwhite scale-125' : 'bg-dark-green scale-125' 
-                        : 
-                            currentScreen === 0 ? 'bg-offwhite opacity-20 scale-75' : 'bg-dark-green opacity-20 scale-75' 
-=======
                     className={`dot ${
                         (() => {
                             if (index === currentScreen) {
@@ -48,7 +40,6 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, 
                                 }
                             }
                         })()
->>>>>>> Stashed changes
                     }`}
                     onClick={() => onDotClick(index)}
                 ></div>
