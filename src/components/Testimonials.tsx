@@ -170,10 +170,40 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
     }
   ];
 
-  const [leftHover, setLeftHover] = useState(false);
-  const [rightHover, setRightHover] = useState(false);
   const [isSwiped, setIsSwiped] = useState(false);
   const testimonialRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleArrow = (event: { key: String; }) => {
+        if (event.key === "ArrowLeft") {
+            const leftArrow = document.getElementById("left-arrow");
+            if (leftArrow) {
+              leftArrow.classList.add('scale-95');
+              leftArrow.classList.add('opacity-50');
+              setTimeout(() => {
+                leftArrow.classList.remove('scale-95');
+                leftArrow.classList.remove('opacity-50');
+              }, 300);
+            }
+        } else {
+            const rightArrow = document.getElementById("right-arrow");
+            if (rightArrow) {
+              rightArrow.classList.add('scale-95');
+              rightArrow.classList.add('opacity-50');
+              setTimeout(() => {
+                rightArrow.classList.remove('scale-95');
+                rightArrow.classList.remove('opacity-50');
+              }, 300);
+            }
+        }
+            
+    };
+    window.addEventListener('keydown', handleArrow);
+
+    return () => {
+        window.removeEventListener('keydown', handleArrow);
+    };
+}, []);
 
   useEffect(() => {
     const glide = new Glide('.glide', {
@@ -217,9 +247,8 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none w-8 h-8 sm:w-12 sm:h-12" data-glide-dir="<">
             <button 
+              id="left-arrow"
               className="arrow-container transform transition-transform duration-300"
-              onMouseEnter={() => setLeftHover(true)}
-              onMouseLeave={() => setLeftHover(false)}
               onClick={(e) => {
                 const button = e.currentTarget;
                 button.classList.add('scale-95');
@@ -242,9 +271,8 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
           </div>
           <div className="glide__arrow--right w-8 h-8 sm:w-12 sm:h-12" data-glide-dir=">">
             <button 
+              id="right-arrow"
               className="arrow-container"
-              onMouseEnter={() => setRightHover(true)}
-              onMouseLeave={() => setRightHover(false)}
               onClick={(e) => {
                 const button = e.currentTarget;
                 button.classList.add('scale-95');
@@ -256,7 +284,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               }}
             >
               <Image
-                className={`transition-opacity transition-scale duration-300 opacity-100`}
+                className="transition-opacity transition-scale duration-300 opacity-100"
                 src="/images/right-dark.svg"
                 alt="right arrow"
                 width={100}
