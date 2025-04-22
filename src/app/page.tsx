@@ -16,7 +16,6 @@ const App: React.FC = () => {
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  // const [isMobile, setIsMobile] = useState(false);
 
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -90,7 +89,7 @@ const App: React.FC = () => {
         <div
           id="hero"
           className={`hero w-full landscape:h-screen portrait:h-[calc(100dvh)] relative overflow-hidden bg-dark-green 
-                  flex portrait:flex-col justify-center portrait:items-center portrait:gap-10`}
+                  flex portrait:flex-col justify-center portrait:items-center portrait:gap-20`}
         >
           <h1
             className={`title font-arya font-bold text-offwhite transition-all duration-1000 w-11/12 portrait:text-center 
