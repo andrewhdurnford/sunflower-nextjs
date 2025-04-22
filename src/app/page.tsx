@@ -300,7 +300,7 @@ const App: React.FC = () => {
             setScrollEnabled={setScrollEnabled}
             setScrollUpEnabled={setScrollUpEnabled}
             setScrollDownEnabled={setScrollDownEnabled}
-            currentPage={currentPage}
+            isMobile={isMobile}
           />
         </div>
         <div
