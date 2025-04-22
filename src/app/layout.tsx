@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Sunflower Capital",
   description:
-    "We invest at the earliest stage in companies building foundational picks and shovels infrastructure.",
+    "We partner at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.",
 };
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
@@ -30,7 +30,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta
           name="description"
-          content="We invest at the earliest stage in companies building foundational picks and shovels infrastructure."
+          content="We partner at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world."
         />
         <meta
           name="keywords"
@@ -42,7 +42,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://sunflowercapital.co" />
 
         {/* Open Graph Meta Tags for Social Sharing */}
-        <meta property="og:description" content="We invest at the earliest stage in companies building foundational picks and shovels infrastructure." />
+        <meta property="og:description" content="We partner at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world." />
         <meta property="og:site_name" content="Sunflower Capital" />
         <meta property="og:title" content="Sunflower Capital" />
         <meta property="og:image" content="https://sunflowercapital.co/images/og-image.png" />
@@ -55,7 +55,7 @@ export default function RootLayout({
         <meta name="twitter:title" content="Sunflower Capital" />
         <meta
           name="twitter:description"
-          content="We invest at the earliest stage in companies building foundational picks and shovels infrastructure."
+          content="We partner at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world."
         />
         <meta name="twitter:image" content="https://sunflowercapital.co/images/og-image.png" />
         <meta name="twitter:image:alt" content="Sunflower Capital - Investing in Early-Stage Infrastructure" />
@@ -78,7 +78,7 @@ export default function RootLayout({
               url: "https://sunflowercapital.co",
               logo: "https://sunflowercapital.co/images/logo.png",
               description:
-                "We invest at the earliest stage in companies building foundational picks and shovels infrastructure.",
+                "We partner at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.",
               contactPoint: {
                 "@type": "ContactPoint",
                 email: "liu@sunflowercapital.co",

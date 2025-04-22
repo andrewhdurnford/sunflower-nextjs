@@ -30,18 +30,19 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+    handleResize();
+
     setTimeout(() => {
       setLoaded(true);
-      const handleResize = () => {
-        if (window.innerWidth <= 768) {
-          setIsMobile(true);
-        } else {
-          setIsMobile(false);
-        }
-      };
   
       window.addEventListener("resize", handleResize); 
-  
       return () => {
         window.removeEventListener("resize", handleResize); 
       };
