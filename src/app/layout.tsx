@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Sunflower Capital",
@@ -91,6 +92,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-offwhite`}>
         <main role="main" className="min-h-screen flex flex-col items-center justify-center">
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
