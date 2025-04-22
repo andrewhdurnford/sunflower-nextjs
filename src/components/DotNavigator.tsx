@@ -35,7 +35,7 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, 
                 key={`${isMobile}-${index}`}
                 src={'/images/dot.svg'}
                 alt={`dot ${index}`}
-                className={`dot transform ${dotClass} transition-transform duration-300 hover:cursor-pointer ${currentScreen === index ? 'scale-150' : 'hover:scale-125'}`}
+                className={`dot ${dotClass} transition-all duration-300 hover:cursor-pointer ${currentScreen === index ? 'scale-150 opacity-100' : 'hover:scale-125 opacity-50'}`}
                 onClick={() => onDotClick(index)}
                 />
             );
