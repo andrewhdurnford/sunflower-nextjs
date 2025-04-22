@@ -47,6 +47,7 @@ const App: React.FC = () => {
   }, []);
 
   const expandFlower = () => {
+    if (!breatheEnabled) return;
     setBreatheEnabled(false);
     const message = document.getElementById("full-screen-message");
     const centerflower = document.getElementById("center-flower");
