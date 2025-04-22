@@ -243,7 +243,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                       href={company.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] hover:cursor-pointer text-dark-green"
+                      className="block w-fit text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] hover:cursor-pointer hover:underline text-dark-green"
                     >
                       <h3>{company.company}</h3>
                     </a>
