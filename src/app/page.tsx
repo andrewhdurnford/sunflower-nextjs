@@ -85,7 +85,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} isMobile={window.innerHeight > window.innerWidth} />
+      <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} isMobile={isMobile} />
       <ReactPageScroller
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
