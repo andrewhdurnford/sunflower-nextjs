@@ -19,10 +19,10 @@ interface TestimonialProps {
 const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   const quotes = [
     {
-        quote: "Quality is really what really sets Liu apart from other investors. Working with Liu was unique because she was extremely proactive. She was always trying to find ways to help, not just relying on me to think about what I needed. We had regular discussions on topics ranging from customer negotiations to internal operations to creating a standard around Iceberg.",
-        author: "Ryan Blue",
-        company: "Tabular (acquired by Databricks)",
-        link: "https://tabular.io/"
+      quote: "Quality is really what really sets Liu apart from other investors. Working with Liu was unique because she was extremely proactive. She was always trying to find ways to help, not just relying on me to think about what I needed. We had regular discussions on topics ranging from customer negotiations to internal operations to creating a standard around Iceberg.",
+      author: "Ryan Blue",
+      company: "Tabular (acquired by Databricks)",
+      link: "https://tabular.io/"
     },
     {
       quote: "Liu is the best kind of investor: she is technical, understands product, and can quickly understand the big picture. She's really well connected with top talent and investors. She'll help when she's needed and give you space to operate otherwise. Highly recommend working with her.",
@@ -37,28 +37,28 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://www.verkada.com/"
     },
     {
-        quote: "Liu invested in our seed and then doubled down in subsequent rounds. She helped us with initial positioning and messaging on our website and customer materials, discussing our key product use cases, and thinking through developer ubiquity.",
-        author: "Maxim Fateev",
-        company: "Temporal",
-        link: "https://temporal.io/"
+      quote: "Liu invested in our seed and then doubled down in multiple subsequent rounds. She helped us with initial positioning and messaging on our website and customer materials, discussing our key product use cases, and thinking through developer ubiquity.",
+      author: "Maxim Fateev",
+      company: "Temporal",
+      link: "https://temporal.io/"
     },
     {
-        quote: "Liu has been part of the Athelas journey since founding. She wrote the first check into Athelas through Dorm Room Fund, and she then helped champion and lead our seed round in 2016. She's seen us evolve the product surface area, refine GTM, and expand the team over the years.",
-        author: "Tanay Tandon",
-        company: "Athelas & Commure",
-        link: "https://www.commure.com/"
+      quote: "Liu has been part of the Athelas journey since founding. She wrote the first check into Athelas through Dorm Room Fund, and she then helped champion and lead our seed round in 2016. She's seen us evolve the product surface area, refine GTM, expand the team, and merge with Commure into a $6B+ healthcare infrastructure company.",
+      author: "Tanay Tandon",
+      company: "Athelas & Commure",
+      link: "https://www.commure.com/"
     },
     {
-        quote: "We really enjoyed working with Liu in the early years of Semgrep. She was always a thoughtful and insightful voice on early product and GTM questions in the painful pre-PMF days!",
-        author: "Isaac Evans",
-        company: "Semgrep",
-        link: "https://semgrep.dev/"
+      quote: "We really enjoyed working with Liu in the early years of Semgrep. She was always a thoughtful and insightful voice on early product and GTM questions in the painful pre-PMF days!",
+      author: "Isaac Evans",
+      company: "Semgrep",
+      link: "https://semgrep.dev/"
     },
     {
-        quote: "Liu was one of the first investors and believers in Hadrian. She helped us settle into Los Angeles, and guided us through Hadrian’s rapid growth, expansion, and fundraising journey.",
-        author: "Chris Power",
-        company: "Hadrian",
-        link: "https://www.hadrian.co/"
+      quote: "Liu was one of the first investors and believers in Hadrian. She helped us settle into Los Angeles, and guided us through Hadrian's rapid growth, expansion, and fundraising journey.",
+      author: "Chris Power",
+      company: "Hadrian",
+      link: "https://www.hadrian.co/"
     },
     {
       quote: "Liu is the most energetic investor I've ever met. We raised our seed round during Covid, and Liu was one of the first to commit to investing. She made more intros and was more engaged than anyone else - without her enthusiasm I don't know how we'd have closed the round!",
@@ -67,19 +67,19 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://posthog.com/"
     },
     {
-        quote: "Liu has been an invaluable investor for Warp, going way beyond just investing money, to investing a bunch of her time helping us with GTM, Growth, and Product. She brings deep expertise in the developer space, and we've learned a lot working with her. She is more willing and able than most investors to roll up her sleeves and help the leadership team operate.",
-        author: "Zach Lloyd",
-        company: "Warp",
-        link: "https://warp.dev/"
+      quote: "Liu has been an invaluable investor for Warp, going way beyond just investing money, to investing a bunch of her time helping us with GTM, Growth, and Product. She brings deep expertise in the developer space, and we've learned a lot working with her. She is more willing and able than most investors to roll up her sleeves and help the leadership team operate.",
+      author: "Zach Lloyd",
+      company: "Warp",
+      link: "https://warp.dev/"
     },
     {
-      quote: "Liu strikes the perfect balance of an early stage partner. She was one of the first to back us at the pre-seed, and she’s supported us consistently. She'll trail all your investor updates, ready to provide critical guidance immediately when called upon. Whether it's GTM, product, or just hard founder shit, she's got you.",
+      quote: "Liu strikes the perfect balance of an early stage partner. She was one of the first to back us at the pre-seed, and she's supported us consistently. She'll trail all your investor updates, ready to provide critical guidance immediately when called upon. Whether it's GTM, product, or just hard founder shit, she's got you.",
       author: "Jake Cooper",
       company: "Railway",
       link: "https://railway.app/"
     },
     {
-      quote: "Even before leading our pre-seed, Liu impressed us with her spot-on perspectives on strategy. From the onset, it was clear she took the time to thoroughly understand our business on a deeper level. We’ve gotten a lot of value from her advice on scalable GTM plans and ensuring we are focusing our efforts on the right ICP and partners.",
+      quote: "Even before leading our pre-seed, Liu impressed us with her spot-on perspectives on strategy. From the onset, it was clear she took the time to thoroughly understand our business on a deeper level. We've gotten a lot of value from her advice on scalable GTM plans and ensuring we are focusing our efforts on the right ICP and partners.",
       author: "Olivia Joslin",
       company: "Tollbit",
       link: "https://tollbit.com/"
@@ -91,22 +91,28 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://e2b.dev/"
     },
     {
-      quote: "Liu is fantastic to work with. She’s easy to talk to and strategically astute. She happily makes intros to her excellent network, and she’s been a tremendous value add at helping us with customer intros.",
+      quote: "Liu is fantastic to work with. She's easy to talk to and strategically astute. She happily makes intros to her excellent network, and she's been a tremendous value add at helping us with customer intros.",
       author: "Zach Long",
       company: "ConductorAI",
       link: "https://conductorai.co/"
     },
     {
-        quote: "Liu was one of the first investors we started working with at Knock. Not only was she an instrumental part of our early fundraising, she also helped introduce us to many potential customers. Even now, several years after her initial investment in Knock, Liu continues to respond to our investor updates, offering ways to help. I'm grateful she's been a part of our journey.",
-        author: "Sam Seely",
-        company: "Knock",
-        link: "https://knock.app/"
+      quote: "Liu was one of the first investors we started working with at Knock. Not only was she an instrumental part of our early fundraising, she also helped introduce us to many potential customers. Even now, several years after her initial investment in Knock, Liu continues to respond to our investor updates, offering ways to help. I'm grateful she's been a part of our journey.",
+      author: "Sam Seely",
+      company: "Knock",
+      link: "https://knock.app/"
     },
     {
-      quote: "Liu immediately understood our business because of the market work Sunflower had done previously, and they moved quickly with an investment. We are a company with European roots, and they opened their deep network of potential US customers and partners to us. They are real hustlers, willing to do ground work to help their founders succeed. They’ve also advised us on executive hiring and on expanding our team. Brilliant to have Sunflower with us!",
+      quote: "Liu immediately understood our business because of the market work Sunflower had done previously, and they moved quickly with an investment. We are a company with European roots, and they opened their deep network of potential US customers and partners to us. They are real hustlers, willing to do ground work to help their founders succeed. They've also advised us on executive hiring and on expanding our team. Brilliant to have Sunflower with us!",
       author: "Moritz Schiebold",
       company: "Rerun",
       link: "https://rerun.io/"
+    },
+    {
+      quote: "Liu has a deep understanding of open source and AI infra, and is very well connected to hires, customers, and partners in the space. She's a pleasure to work with and is an amazing resource for early-stage AI founders.",
+      author: "Charles Packer",
+      company: "Letta",
+      link: "https://www.letta.com/"
     },
     {
       quote: "Working with Liu has been one of the best decisions we have made! She has helped us on strategically planning out our roadmap, securing key hires, navigating partnerships, and building community and ecosystem.",
@@ -115,7 +121,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://comfy.org/"
     },
     {
-      quote: "Since the pre-seed, Liu has been a great resource for tldraw as a design technology company. She’s a familiar name in the industry, generous with introductions, and has delivered timely advice for our GTM, hiring, and financing strategy.",
+      quote: "Since the pre-seed, Liu has been a great resource for tldraw as a design technology company. She's a familiar name in the industry, generous with introductions, and has delivered timely advice for our GTM, hiring, and financing strategy.",
       author: "Steve Ruiz",
       company: "Tldraw",
       link: "https://tldraw.com/"
@@ -127,46 +133,22 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://tecton.ai/"
     },
     {
+      quote: "From our initial launch to our ultimate acquisition, Liu was with us every step of the way — working through problems, facilitating introductions, and helping us hone in on our next goals and targets. The very first time we met, we sat down in a coffee shop for an hour and meticulously walked through everything we’d done so far and how we were thinking about every facet of our business strategy. She’s an incredible thought partner who will consistently show up for you in the good times and the bad — one of the traits I now look for very closely when I meet potential new venture partners. Hands down the most helpful and engaged investor on our cap table.",
+      author: "Nicole Fitzgerald",
+      company: "AlpacaML (acquired by Captions)",
+      link: "https://www.axios.com/pro/media-deals/2024/11/13/captions-video-editing-app-alpacaml" 
+    },
+    {
       quote: "Liu has been a powerhouse of support since day one. Her impact on our company has been nothing short of transformative — a level of involvement that’s hard to replicate. From helping us find our first hires to shaping GTM strategy and supporting product launches, she’s consistently gone above and beyond at every stage. She's also available to her founders at almost all hours of the day.",
       author: "Elias Fizesan",
       company: "Canopy Labs",
       link: "https://canopylabs.ai/"
     },
     {
-      quote: "Working with Liu was an exceptional experience. Her strategic approach to GTM execution, combined with a focus on rapid expansion, was key in driving significant growth. Her ability to navigate fundraising rounds demonstrated strong leadership and commitment to success.",
+      quote: "Working with Liu has been an exceptional experience. Her strategic approach to GTM execution, combined with a focus on rapid expansion, was key in driving significant growth. Her ability to navigate fundraising rounds demonstrated strong leadership and commitment to success.",
       author: "Benjamin Labra",
       company: "Houm",
       link: "https://houm.com/"
-    },
-    {
-      quote: "Liu was the investor I spoke to most frequently. As a solo founder, I appreciated her being a sounding board. She joined customer calls, helped us figure out pricing and business model, and introduced us to and interviewed potential hires.",
-      author: "Alana Marzoev",
-      company: "ReadySet",
-      link: "https://readyset.io/"
-    },
-    {
-      quote: "Liu has been an incredible partner for Unkey. Whenever we need a sounding board on GTM strategy, Liu is ready to jump in. We see Liu as an extension of our team — she really helps drive our success and growth.",
-      author: "James Perkins",
-      company: "Unkey",
-      link: "https://unkey.com/"
-    },
-    {
-      quote: "Liu has been an invaluable partner to us. She is always readily available when we need her expertise, whether it's about hiring, product, or open source. She is sensitive to our time and proactively offers advice without pushing anything on us.",
-      author: "Peter Marton",
-      company: "OpenMeter",
-      link: "https://openmeter.io/"
-    },
-    {
-      quote: "Liu has made many an intro to her amazing network of executives, many of whom have made great advisors as we bootstrapped our GTM functions. Liu is always available but not overbearing — if you need help, she is just a text away.",
-      author: "Apurva Mehta",
-      company: "Responsive",
-      link: "https://www.responsive.dev/"
-    },
-    {
-      quote: "Liu is always accessible and genuinely understands the challenges of early stage companies. She has been crucial in helping us connect with the right customers and clearly define our target audience. Her insights and practical advice have been essential in refining our GTM strategy and product direction. Our sessions with her are focused and productive, and we tackle critical topics with depth.",
-      author: "Aamir Shakir",
-      company: "Mixedbread",
-      link: "https://mixedbread.ai/"
     }
   ];
 
