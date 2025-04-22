@@ -183,7 +183,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                 className="flex flex-row items-center justify-left font-bitter text-xs md:text-lg filter"
               >
                 <div
-                  className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
                     filter.current.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
                   }`}
                 >
@@ -208,7 +208,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                   className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
                 >
                   <div
-                    className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
+                    className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
                       filter.current.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
                     }`}
                   >
