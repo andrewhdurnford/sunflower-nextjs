@@ -42,6 +42,23 @@ const App: React.FC = () => {
     window.scrollTo(0, storedScrollTop);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    handleResize(); // Check on initial load
+    window.addEventListener("resize", handleResize); // Add event listener
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Clean up
+    };
+  }, []);
+
   const expandFlower = () => {
     setBreatheEnabled(false);
     const message = document.getElementById("full-screen-message");
