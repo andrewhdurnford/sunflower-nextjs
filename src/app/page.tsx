@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import {isMobile} from 'react-device-detect';
 import Image from "next/image";
 import PortfolioTable from "@/components/PortfolioTable";
 import Testimonials from "@/components/Testimonials";
 import ReactPageScroller from "react-page-scroller";
 import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
-import { isMobileDevice } from "@/libs/mobile";
 
 const App: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -16,7 +16,6 @@ const App: React.FC = () => {
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -32,7 +31,6 @@ const App: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-      setIsMobile(isMobileDevice());
     }, 500);
 
     const storedScrollTop = parseInt(
@@ -78,8 +76,8 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
         blockScrollDown={!scrollEnabled && !scrollDownEnabled}
-        onBeforePageScroll={isMobile ? beforePageChange : undefined}
-        pageOnChange={!isMobile ? beforePageChange : undefined}
+        onBeforePageScroll={beforePageChange}
+        // pageOnChange={!isMobile ? beforePageChange : undefined}
         renderAllPagesOnFirstRender={true}
       >
         <div
