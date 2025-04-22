@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import {isMobile} from 'react-device-detect';
 import Image from "next/image";
 import PortfolioTable from "@/components/PortfolioTable";
 import Testimonials from "@/components/Testimonials";
@@ -16,6 +15,7 @@ const App: React.FC = () => {
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
