@@ -18,7 +18,7 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, 
                 } else if (currentScreen === 0 && currentScreen !== index) {
                     return 'scale-100 hover:scale-125 opacity-20';
                 } else {
-                    return 'scale-100 hover:scale-125 opacity-40';
+                    return 'scale-100 hover:scale-125 opacity-50';
                 }
             })();
 
