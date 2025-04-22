@@ -108,6 +108,11 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       company: "Tecton"
     },
     {
+      quote: "Liu has been a powerhouse of support since day one. Her impact on our company has been nothing short of transformative — a level of involvement that’s hard to replicate. From helping us find our first hires to shaping GTM strategy and supporting product launches, she’s consistently gone above and beyond at every stage. She's also available to her founders at almost all hours of the day.",
+      author: "Elias Fizesan",
+      company: "Canopy Labs"
+    },
+    {
         quote: "Working with Liu was an exceptional experience. Her strategic approach to GTM execution, combined with a focus on rapid expansion, was key in driving significant growth. Her ability to navigate fundraising rounds demonstrated strong leadership and commitment to success.",
         author: "Benjamin Labra",
         company: "Houm"
