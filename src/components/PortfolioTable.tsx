@@ -245,7 +245,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                       rel="noopener noreferrer"
                       className="block w-fit text-dark-green px-2 align-top
                       text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] 
-                      hover:cursor-pointer hover:underline"
+                      hover:cursor-pointer hover:underline decoration-[1px]" 
                     >
                       <h3 className="min-w-[100px] align-top">{company.company}</h3>
                     </a>
