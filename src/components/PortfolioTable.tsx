@@ -33,7 +33,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Great Expectations', industry: 'Data', description: 'Open source data quality and collaboration', link: 'https://greatexpectations.io/' },
     { company: 'Hadrian', industry: 'Defense and Hardware', description: 'Manufacturing the future', link: 'https://www.hadrian.co/' },
     { company: 'Houm', industry: 'Fintech', description: 'Real estate marketplace for Latin America', link: 'https://www.houm.com/' },
-    { company: 'Knock', industry: 'Infra', description: 'Flexible, reliable notifications infrastructure', link: 'https://knock.app/' },
+    { company: 'Knock', industry: 'Developer', description: 'Flexible, reliable notifications infrastructure', link: 'https://knock.app/' },
     { company: 'Letta', industry: 'AI/ML', description: 'Long-term memory for AI agents', link: 'https://www.letta.com/' },
     { company: 'Monad', industry: 'Crypto', description: 'Extreme parallelized performance for EVM', link: 'https://www.monad.xyz/' },
     { company: 'Nebra', industry: 'Crypto', description: 'Universal proof aggregation that scales ZKP verification', link: 'https://www.nebra.one/' },
@@ -70,7 +70,10 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Pocket Protector', industry: 'Crypto', description: 'Discover, follow, and copy top traders', link: 'https://www.pocketprotector.xyz/' },
     { company: 'StrongDM', industry: 'Security', description: 'Zero trust privileged access', link: 'https://www.strongdm.com/' },
     { company: 'Pendulum', industry: 'Healthcare and Bio', description: 'Next-generation probiotics', link: 'https://pendulumlife.com/' },
-    { company: 'Rerun', industry: 'Data', description: 'The multimodal data stack', link: 'https://rerun.io/' }
+    { company: 'Rerun', industry: 'Data', description: 'The multimodal data stack', link: 'https://rerun.io/' },
+    { company: 'Omni', industry: 'Data', description: 'Next-generation business analytics', link: 'https://omni.co/' },
+    { company: 'Fillout', industry: 'Developer', description: 'Build any form, without code', link: 'http://fillout.com/' },
+    { company: 'Loyal', industry: 'Healthcare and Bio', description: 'Veterinary medicine for longevity', link: 'http://loyal.com/' }
   ].sort((a, b) => a.company.localeCompare(b.company));
   const filter = useRef({ filter: "All" });
   const [_, forceUpdate] = useState(0);
@@ -103,12 +106,12 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
         setTimeout(() => {
           setScrollUpEnabled(false)
           setScrollDownEnabled(true)
-        }, 1000);
+        }, 500);
       } else if (firstRect.top === tableRect.top) {
         setTimeout(() => {
           setScrollDownEnabled(false)
           setScrollUpEnabled(true)
-        }, 1000);
+        }, 500);
       } else {
         setScrollDownEnabled(false)
         setScrollUpEnabled(false)
@@ -177,10 +180,10 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                   setFilter("All");
                   changeTable("All");
                 }}
-                className="flex flex-row items-center justify-left font-bitter text-xs md:text-lg filter"
+                className="flex flex-row items-center justify-left font-bitter text-xs md:text-base filter"
               >
                 <div
-                  className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
                     filter.current.filter === "All" ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
                   }`}
                 >
@@ -202,10 +205,10 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                     }
         
                   }}
-                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
+                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-base filter"
                 >
                   <div
-                    className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 ${
+                    className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
                       filter.current.filter === industry ? "bg-offblack" : "bg-[#6D8A54] opacity-20"
                     }`}
                   >

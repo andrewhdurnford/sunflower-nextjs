@@ -28,9 +28,23 @@ const App: React.FC = () => {
     }
   }, [currentPage]);
 
+
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
+      const handleResize = () => {
+        if (window.innerWidth <= 768) {
+          setIsMobile(true);
+        } else {
+          setIsMobile(false);
+        }
+      };
+  
+      window.addEventListener("resize", handleResize); 
+  
+      return () => {
+        window.removeEventListener("resize", handleResize); 
+      };
     }, 500);
 
     const storedScrollTop = parseInt(
@@ -102,23 +116,10 @@ const App: React.FC = () => {
             </h2>
 
             <div
-              className={`flower flower-1 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-1.svg"
-                alt="Flower 1"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
               className={`flower flower-2 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-2.svg"
+                src="/images/flower-2.svg"
                 alt="Flower 2"
                 fill
                 quality={100}
@@ -129,7 +130,7 @@ const App: React.FC = () => {
               className={`flower flower-3 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-3.svg"
+                src="/images/flower-3.svg"
                 alt="Flower 3"
                 fill
                 quality={100}
@@ -142,7 +143,7 @@ const App: React.FC = () => {
               } hover:animate-spin`}
             >
               <Image
-                src="/images/outline/flower-5.svg"
+                src="/images/flower-5.svg"
                 alt="Flower 5"
                 fill
                 quality={100}
@@ -153,7 +154,7 @@ const App: React.FC = () => {
               className={`flower flower-11 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-11.svg"
+                src="/images/flower-11.svg"
                 alt="Flower 11"
                 fill
                 quality={100}
@@ -169,21 +170,8 @@ const App: React.FC = () => {
               }`}
             >
               <Image
-                src="/images/outline/flower-4.svg"
+                src="/images/flower-4.svg"
                 alt="Center Flower"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
-              className={`flower flower-6 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-6.svg"
-                alt="Flower 6"
                 fill
                 quality={100}
               />
@@ -195,21 +183,8 @@ const App: React.FC = () => {
               } hover:animate-spin`}
             >
               <Image
-                src="/images/outline/flower-7.svg"
+                src="/images/flower-7.svg"
                 alt="Flower 7"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
-              className={`flower flower-8 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-8.svg"
-                alt="Flower 8"
                 fill
                 quality={100}
               />
@@ -243,21 +218,8 @@ const App: React.FC = () => {
               className={`flower flower-12 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-12.svg"
+                src="/images/flower-12.svg"
                 alt="Flower 12"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
-              className={`flower flower-13 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-13.svg"
-                alt="Flower 13"
                 fill
                 quality={100}
               />
@@ -267,21 +229,8 @@ const App: React.FC = () => {
               className={`flower flower-14 ${loaded ? "" : "opacity-0"} grow`}
             >
               <Image
-                src="/images/outline/flower-14.svg"
+                src="/images/flower-14.svg"
                 alt="Flower 14"
-                fill
-                quality={100}
-              />
-            </div>
-
-            <div
-              className={`flower flower-15 ${
-                loaded ? "" : "opacity-0"
-              } hover:animate-spin`}
-            >
-              <Image
-                src="/images/flower-15.svg"
-                alt="Flower 15"
                 fill
                 quality={100}
               />
@@ -304,7 +253,7 @@ const App: React.FC = () => {
               } hover:animate-spin`}
             >
               <Image
-                src="/images/outline/flower-17.svg"
+                src="/images/flower-17.svg"
                 alt="Flower 17"
                 fill
                 quality={100}
@@ -333,15 +282,22 @@ const App: React.FC = () => {
         </div>
         <div
           id="statement2"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-20 xl:gap-28"
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
         >
-          <h2 className="font-bitter text-center w-4/5 md:text-[1.9vw] portrait:text-lg 
+          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl text-left w-4/5">Ethos</h1>
+          <h2 className="font-bitter text-sm xs:text-base md:text-[1.82vw] w-4/5  text-left
           leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
-            We partner with missionary founders who are indefatigable, decisive,
-            and self-aware. <br /> <br /> <br />
-            We forge highly personal, deep-rooted relationships
-            that stand the test of time. <br /> <br /> <br />
-            We develop distinct theses on markets and how they will unfold.
+            We partner with indefatigable missionary founders who are product artisans.
+            We forge highly personal, deep-rooted relationships well in advance of incorporation.
+            <br /> <br />
+            We are often the first check in. 
+            We invest in N of 1 category creators with technical moats and upstarts transforming legacy industries with novel GTM. 
+            <br /> <br />
+            We have more than a decade of inside stories and insights on B2B that cannot be found online. 
+            We nail market timing and develop distinct theses on markets. 
+            <br /> <br />
+            We work with founders in the way they want to work with us.
+            We proactively help them hone initial product, close early customers, and connect with sales and marketing advisors.
           </h2>
         </div>
         <div
@@ -357,7 +313,7 @@ const App: React.FC = () => {
         </div>
         <div
           id="testimonials"
-          className="bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
+          className="relative bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
         >
           <Testimonials setScrollEnabled={setScrollEnabled} />
           <Footer setCurrentPage={setCurrentPage} />
