@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import ReactPageScroller from "react-page-scroller";
 import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
+import {isMobile} from 'react-device-detect';
 
 const App: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -15,7 +16,6 @@ const App: React.FC = () => {
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -30,24 +30,14 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-    handleResize();
-
-    setTimeout(() => {
+    if (isMobile) {
       setLoaded(true);
-  
-      window.addEventListener("resize", handleResize); 
-      return () => {
-        window.removeEventListener("resize", handleResize); 
-      };
-    }, 500);
-
+    } else {
+      setTimeout(() => {
+        setLoaded(true);
+      }, 500);
+    }
+    
     const storedScrollTop = parseInt(
       localStorage.getItem("lastScrollTop") || "0",
       10
@@ -92,14 +82,14 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
         blockScrollDown={!scrollEnabled && !scrollDownEnabled}
-        onBeforePageScroll={beforePageChange} //FIXME: Mobile delay?
-        // pageOnChange={!isMobile ? beforePageChange : undefined}
+        onBeforePageScroll={isMobile ? beforePageChange: undefined}
+        pageOnChange={isMobile ? undefined: beforePageChange}
         renderAllPagesOnFirstRender={true}
       >
         <div
           id="hero"
           className={`hero w-full landscape:h-screen portrait:h-[calc(100dvh)] relative overflow-hidden bg-dark-green 
-                  flex portrait:flex-col justify-center portrait:items-center portrait:gap-10`}
+                  flex portrait:flex-col justify-center portrait:items-center portrait:gap-20`}
         >
           <h1
             className={`title font-arya font-bold text-offwhite transition-all duration-1000 w-11/12 portrait:text-center 
