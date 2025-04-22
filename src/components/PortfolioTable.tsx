@@ -148,13 +148,13 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
   return (
     <div className="w-4/5 h-screen flex flex-none justify-center items-center">
       <div className='w-full h-5/6 flex flex-col justify-center items-center gap-6 xl:gap-12 portrait:pb-24'>
-        <div className="w-full flex flex-row sm:flex-col sm:gap-6 xl:gap-12 justify-between sm:justify-center items-center">
+        <div className={`w-full flex sm:gap-6 xl:gap-12 justify-between ${isMobile ? 'items-center flex-row' : 'justify-center  flex-col'}`}>
           <div className="flex flex-row justify-between items-center w-full">
             <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none portrait:text-left">Portfolio</h1>
           </div>
-          <div className="sm:w-full pl-1">
+          <div className="pl-1">
             {/* Dropdown for portrait devices */}
-            <div className="block sm:hidden pt-1">
+            <div className={`${isMobile ? 'block' : 'hidden'} pt-1`}>
               <select
                 id="industrySelect"
                 onChange={(e) => {
@@ -173,7 +173,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
               </select>
             </div>
             {/* Button group for landscape devices */}
-            <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 md:gap-4">
+            <div className={`${isMobile ? 'hidden' : 'flex'} flex-wrap items-center justify-start gap-2 md:gap-4`}>
               <button
                 id="All"
                 onClick={() => {
