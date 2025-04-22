@@ -238,22 +238,26 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                     if (index === displayCompanies.length - 1) lastRowRef.current = el;
                   }}
                 >
-                  <td className="font-bitter font-normal">
+                  <td className="font-bitter font-normal align-top">
                     <a
                       href={company.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-fit text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] hover:cursor-pointer hover:underline text-dark-green"
+                      className="block w-fit text-dark-green px-2 align-top
+                      text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] 
+                      hover:cursor-pointer hover:underline"
                     >
-                      <h3>{company.company}</h3>
+                      <h3 className="min-w-[100px] align-top">{company.company}</h3>
                     </a>
                   </td>
-                  <td className="text-dark-green px-2 sm:px-4 font-bitter font-light text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
+                  <td className="text-dark-green font-bitter font-light px-2 align-top
+                  text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
                     <h3>{company.description}</h3>
                   </td>
                   {filter.current.filter === "All" && (
                     <td
-                      className="text-dark-green px-2 sm:px-4 font-bitter-italic font-light hidden sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
+                      className="text-dark-green font-bitter-italic font-light hidden px-2 align-top
+                      sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
                     >
                       <h3>{company.industry}</h3>
                     </td>
