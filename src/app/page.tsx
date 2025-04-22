@@ -308,18 +308,17 @@ const App: React.FC = () => {
           className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
         >
           <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl text-left w-4/5">Support</h1>
-            <h2 className="font-bitter text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-left w-4/5">Tactically, we help companies...</h2>
-            <div className="flex flex-col lg:flex-row w-4/5 lg:gap-6
-            font-bitter text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-left text-dark-green
-            leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed">
-              <ul className="list-disc pl-10">
+            <h2 className="font-bitter text-dark-green text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-left w-4/5 pt-2 md:pt-4">Tactically, we help companies...</h2>
+            <div className="flex flex-col lg:flex-row w-4/5 lg:gap-6 font-bitter text-left text-dark-green
+            text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl leading-loose sm:leading-loose md:leading-loose lg:leading-loose xl:leading-loose">
+              <ul className="list-disc pl-6 md:pl-8 lg:pl-10 md:w-2/3 lg:w-1/2">
               <li>refine product offerings</li>
               <li>close design partners</li>
               <li>develop growth strategies</li>
               <li>sharpen brand positioning</li>
               <li>scale sales and marketing via our advisor network</li>
               </ul>
-              <ul className="list-disc pl-10">
+              <ul className="list-disc pl-6 md:pl-8 lg:pl-10 md:w-2/3 lg:w-1/2">
               <li>craft customer materials and website content</li>
               <li>establish pricing models</li>
               <li>recruit top engineers</li>
