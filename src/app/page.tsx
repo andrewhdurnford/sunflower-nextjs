@@ -31,10 +31,14 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
-    setTimeout(() => {
+    if (isMobile) {
       setLoaded(true);
-    }, 500);
-
+    } else {
+      setTimeout(() => {
+        setLoaded(true);
+      }, 500);
+    }
+    
     const storedScrollTop = parseInt(
       localStorage.getItem("lastScrollTop") || "0",
       10
