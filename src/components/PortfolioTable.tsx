@@ -180,7 +180,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                   setFilter("All");
                   changeTable("All");
                 }}
-                className="flex flex-row items-center justify-left font-bitter text-xs md:text-lg filter"
+                className="flex flex-row items-center justify-left font-bitter text-xs md:text-base filter"
               >
                 <div
                   className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
@@ -205,7 +205,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                     }
         
                   }}
-                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-lg filter"
+                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-base filter"
                 >
                   <div
                     className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
