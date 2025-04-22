@@ -134,6 +134,8 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
     }
   ];
 
+  const [leftHover, setLeftHover] = useState(false);
+  const [rightHover, setRightHover] = useState(false);
   const [isSwiped, setIsSwiped] = useState(false);
   const testimonialRef = useRef<HTMLDivElement>(null);
 
@@ -178,9 +180,13 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none w-8 h-8 sm:w-12 sm:h-12" data-glide-dir="<">
-            <button className="arrow-container">
+            <button 
+              className="arrow-container"
+              onMouseEnter={() => setLeftHover(true)}
+              onMouseLeave={() => setLeftHover(false)}
+            >
               <Image
-                src="/images/left-arrow.svg"
+                src={leftHover ? "/images/left-light.svg" : "/images/left-dark.svg"}
                 alt="left arrow"
                 width={100} 
                 height={100} 
@@ -189,9 +195,13 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
             </button>
           </div>
           <div className="glide__arrow--right w-8 h-8 sm:w-12 sm:h-12" data-glide-dir=">">
-            <button className="arrow-container">
+            <button 
+              className="arrow-container"
+              onMouseEnter={() => setRightHover(true)}
+              onMouseLeave={() => setRightHover(false)}
+            >
               <Image
-                src="/images/right-arrow.svg"
+                src={rightHover ? "/images/right-light.svg" : "/images/right-dark.svg"}
                 alt="right arrow"
                 width={100}
                 height={100}
