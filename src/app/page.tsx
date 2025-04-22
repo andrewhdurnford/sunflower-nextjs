@@ -91,7 +91,7 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
         blockScrollDown={!scrollEnabled && !scrollDownEnabled}
-        onBeforePageScroll={beforePageChange}
+        onBeforePageScroll={beforePageChange} //FIXME: Mobile delay?
         // pageOnChange={!isMobile ? beforePageChange : undefined}
         renderAllPagesOnFirstRender={true}
       >
