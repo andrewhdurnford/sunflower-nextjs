@@ -8,6 +8,7 @@ import ReactPageScroller from "react-page-scroller";
 import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
 import {isMobile} from 'react-device-detect';
+import { before } from "node:test";
 
 const App: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -82,8 +83,7 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
         blockScrollDown={!scrollEnabled && !scrollDownEnabled}
-        onBeforePageScroll={isMobile ? beforePageChange: undefined}
-        pageOnChange={isMobile ? undefined: beforePageChange}
+        onBeforePageScroll={beforePageChange}
         renderAllPagesOnFirstRender={true}
       >
         <div
