@@ -7,7 +7,6 @@ import Testimonials from "@/components/Testimonials";
 import ReactPageScroller from "react-page-scroller";
 import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
-import { isMobileDevice } from "@/libs/mobile";
 
 const App: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -29,10 +28,23 @@ const App: React.FC = () => {
     }
   }, [currentPage]);
 
+
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-      setIsMobile(isMobileDevice());
+      const handleResize = () => {
+        if (window.innerWidth <= 768) {
+          setIsMobile(true);
+        } else {
+          setIsMobile(false);
+        }
+      };
+  
+      window.addEventListener("resize", handleResize); 
+  
+      return () => {
+        window.removeEventListener("resize", handleResize); 
+      };
     }, 500);
 
     const storedScrollTop = parseInt(
@@ -40,23 +52,6 @@ const App: React.FC = () => {
       10
     );
     window.scrollTo(0, storedScrollTop);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-
-    handleResize(); // Check on initial load
-    window.addEventListener("resize", handleResize); // Add event listener
-
-    return () => {
-      window.removeEventListener("resize", handleResize); // Clean up
-    };
   }, []);
 
   const expandFlower = () => {
@@ -95,8 +90,8 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
         blockScrollDown={!scrollEnabled && !scrollDownEnabled}
-        onBeforePageScroll={isMobile ? beforePageChange : undefined}
-        pageOnChange={!isMobile ? beforePageChange : undefined}
+        onBeforePageScroll={beforePageChange}
+        // pageOnChange={!isMobile ? beforePageChange : undefined}
         renderAllPagesOnFirstRender={true}
       >
         <div
