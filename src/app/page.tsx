@@ -296,7 +296,7 @@ const App: React.FC = () => {
             We have more than a decade of inside stories and insights on B2B that cannot be found online. 
             We nail market timing and develop distinct theses on markets. 
             <br /> <br />
-            We work with founders the way they want to work with us. 
+            We work with founders in the way they want to work with us.
             We proactively help them hone initial product, close early customers, and connect with sales and marketing advisors.
           </h2>
         </div>
