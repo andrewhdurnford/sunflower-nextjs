@@ -181,15 +181,25 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none w-8 h-8 sm:w-12 sm:h-12" data-glide-dir="<">
             <button 
-              className="arrow-container"
+              className="arrow-container transform transition-transform duration-300"
               onMouseEnter={() => setLeftHover(true)}
               onMouseLeave={() => setLeftHover(false)}
+              onClick={(e) => {
+                const button = e.currentTarget;
+                button.classList.add('scale-95');
+                button.classList.add('opacity-50');
+                setTimeout(() => {
+                  button.classList.remove('scale-95');
+                  button.classList.remove('opacity-50');
+                }, 300);
+              }}
             >
               <Image
-                src={leftHover ? "/images/left-light.svg" : "/images/left-dark.svg"}
+                className={`transition-opacity transition-scale duration-300 opacity-100`}
+                src="/images/left-dark.svg"
                 alt="left arrow"
-                width={100} 
-                height={100} 
+                width={100}
+                height={100}
                 quality={100}
               />
             </button>
@@ -199,9 +209,19 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               className="arrow-container"
               onMouseEnter={() => setRightHover(true)}
               onMouseLeave={() => setRightHover(false)}
+              onClick={(e) => {
+                const button = e.currentTarget;
+                button.classList.add('scale-95');
+                button.classList.add('opacity-50');
+                setTimeout(() => {
+                  button.classList.remove('opacity-50');
+                  button.classList.remove('scale-95');
+                }, 300);
+              }}
             >
               <Image
-                src={rightHover ? "/images/right-light.svg" : "/images/right-dark.svg"}
+                className={`transition-opacity transition-scale duration-300 opacity-100`}
+                src="/images/right-dark.svg"
                 alt="right arrow"
                 width={100}
                 height={100}
