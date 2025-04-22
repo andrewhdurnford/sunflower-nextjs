@@ -11,10 +11,10 @@ interface PortfolioTableProps {
   setScrollEnabled: (enabled: boolean) => void;
   setScrollUpEnabled: (enabled: boolean) => void;
   setScrollDownEnabled: (enabled: boolean) => void;
-  currentPage: number;
+  isMobile: boolean;
 }
 
-const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled, currentPage }) => {
+const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setScrollUpEnabled, setScrollDownEnabled, isMobile }) => {
   const companies = [
     { company: 'Accrue Savings', industry: 'Fintech', description: 'Save now, buy later', link: 'https://www.accruesavings.com/' },
     { company: 'AgentSync', industry: 'Fintech', description: 'Automating insurance compliance', link: 'https://agentsync.io/' },
@@ -220,7 +220,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
             </div>
           </div>
         </div>
-        <div className="flex-grow flex flex-col w-full max-h-[60vh] sm:max-h-[70vh] overflow-y-auto custom-scrollbar"
+        <div className={`flex-grow flex flex-col w-full max-h-[60vh] sm:max-h-[70vh] overflow-y-auto ${isMobile ? 'mobile' : 'custom-scrollbar'}`}
           onMouseEnter={() => setScrollEnabled(false)}
           onMouseLeave={() => setScrollEnabled(true)}
           onTouchStart={() => setScrollEnabled(false)}
