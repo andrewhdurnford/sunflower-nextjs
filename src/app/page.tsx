@@ -317,7 +317,7 @@ const App: React.FC = () => {
           className="relative bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
         >
           <Testimonials setScrollEnabled={setScrollEnabled} />
-          <Footer setCurrentPage={setCurrentPage} />
+          <Footer />
         </div>
       </ReactPageScroller>
     </>
