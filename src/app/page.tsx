@@ -313,6 +313,24 @@ const App: React.FC = () => {
           />
         </div>
         <div
+          id="support"
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
+        >
+          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl text-left w-4/5">Support</h1>
+            <ul className="font-bitter text-sm xs:text-base md:text-3xl w-4/5 text-left leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
+            <li className="text-4xl font-semibold mb-2">Tactically, we help companies...</li>
+            <li>refine product offerings</li>
+            <li>close design partners</li>
+            <li>develop growth strategies</li>
+            <li>sharpen brand positioning</li>
+            <li>scale sales and marketing via our advisor network</li>
+            <li>craft customer materials and website content</li>
+            <li>establish pricing models</li>
+            <li>recruit top engineers</li>
+            <li>orchestrate fundraises</li>
+            </ul>
+        </div>
+        <div
           id="testimonials"
           className="relative bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
         >
