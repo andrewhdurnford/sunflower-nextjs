@@ -25,7 +25,7 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, 
             return (
                 <img
                 key={`${isMobile}-${index}`}
-                src={'/images/dot.svg'}
+                src={currentScreen === 0 ? '/images/dot1.svg' : '/images/dot2.svg'}
                 alt={`dot ${index}`}
                 className={`dot ${dotClass} transition-all duration-300 hover:cursor-pointer`}
                 onClick={() => onDotClick(index)}
