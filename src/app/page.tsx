@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import ReactPageScroller from "react-page-scroller";
 import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
+import {isMobile} from 'react-device-detect';
 
 const App: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -15,7 +16,7 @@ const App: React.FC = () => {
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -30,22 +31,8 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-    handleResize();
-
     setTimeout(() => {
       setLoaded(true);
-  
-      window.addEventListener("resize", handleResize); 
-      return () => {
-        window.removeEventListener("resize", handleResize); 
-      };
     }, 500);
 
     const storedScrollTop = parseInt(
@@ -91,8 +78,8 @@ const App: React.FC = () => {
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
         blockScrollDown={!scrollEnabled && !scrollDownEnabled}
-        onBeforePageScroll={beforePageChange} //FIXME: Mobile delay?
-        // pageOnChange={!isMobile ? beforePageChange : undefined}
+        onBeforePageScroll={isMobile ? beforePageChange: undefined}
+        pageOnChange={isMobile ? undefined: beforePageChange}
         renderAllPagesOnFirstRender={true}
       >
         <div
