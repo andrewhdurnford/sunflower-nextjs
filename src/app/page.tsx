@@ -261,7 +261,7 @@ const App: React.FC = () => {
             <img
               src="/images/sunflower-logo.svg"
               alt="Sunflower Capital Logo"
-              className={`h-24 sm:h-28 w-auto logoflower`}
+              className={`h-14 sm:h-16 w-auto logoflower`}
             />
             <div className="w-5/6 lg:w-[92%] font-bitter text-dark-green text-center">
               <h2
