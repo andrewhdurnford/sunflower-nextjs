@@ -42,7 +42,6 @@ const App: React.FC = () => {
   }, [currentPage]);
 
   useEffect(() => {
-    console.log('yabadabadoo')
     const handleResize = () => {
       setLg(window.innerWidth >= 1024);
     };
