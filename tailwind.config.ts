@@ -11,6 +11,7 @@ export default {
       'bitter-italic': ['Bitter-italic', 'system-ui']
     },
     fontSize: {
+      t2xl: ['72px', '72px'],
       txl: ['64px', '64px'],
       tlg: ['56px', '56px'],
       tmd: ['48px', '48px'],
@@ -56,6 +57,7 @@ export default {
       }
     },
     screens: {
+      '2xs': '375px',
       'xs': '425px',
       'sm': '640px',
       'md': '768px',

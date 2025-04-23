@@ -228,7 +228,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         `}>
           Founders
         </div>
-        <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
+        <div className={`glide__arrows gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000 hidden xs:flex`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none
           w-10 h-10 2xl:w-12 2xl:h-12
           " data-glide-dir="<">

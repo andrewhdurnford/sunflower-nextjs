@@ -124,8 +124,13 @@ opacity: 0.2;
   gap: 30px; 
   z-index: 1000;
 }
+
 .menu {
   z-index: 1000;
+}
+
+.menuitem {
+  transition-delay: 800ms;
 }
 
 @media (orientation: landscape) {    

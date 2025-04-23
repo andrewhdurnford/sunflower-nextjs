@@ -292,7 +292,7 @@ const App: React.FC = () => {
           <div className="flex flex-col items-center w-[85%] font-arya text-dark-green text-center">
               <h2
                 className={`text-left
-                  text-blg md:text-bxlg lg:text-bxlg xl:text-bxl  2xl:text-b2xl
+                  text-bsm xs:text-blg md:text-bxlg lg:text-bxlg xl:text-bxl  2xl:text-b2xl
               `}>
                 Sunflower Capital partners at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.
               </h2>
