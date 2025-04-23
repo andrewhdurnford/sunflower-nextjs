@@ -286,8 +286,8 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
             <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
-              <h3 className="font-bitter text-base 
-              lg:text-bsm lg:leading-md xl:text-bmd xl:leading-lg
+              <h3 className="font-bitter
+              xl:text-bmd xl:leading-lg
               ">
               &ldquo;{quote.quote}&rdquo;
               </h3>

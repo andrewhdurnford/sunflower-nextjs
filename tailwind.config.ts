@@ -14,6 +14,7 @@ export default {
       tlg: ['64px', '64px'],
       tmd: ['48px', '48px'],
       tsm: ['36px', '36px'],
+      bxl: ['84px', '126px'],
       blg: ['36px', '54px'],
       bmd: ['32px', '48px'],
       bsm: ['28px', '42px'],

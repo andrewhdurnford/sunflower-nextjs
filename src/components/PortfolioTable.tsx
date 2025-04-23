@@ -148,9 +148,15 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
   return (
     <div className="w-4/5 h-screen flex flex-none justify-center items-center">
       <div className='w-full h-5/6 flex flex-col justify-center items-center gap-6 xl:gap-12 portrait:pb-24'>
-        <div className={`w-full flex gap-6 xl:gap-12 justify-between ${isMobile ? 'items-center flex-row' : 'justify-center  flex-col'}`}>
+        <div className={`w-full flex justify-between ${isMobile ? 'items-center flex-row' : 'justify-center  flex-col'}
+         gap-6 xl:gap-12
+        `}>
           <div className="flex flex-row justify-between items-center w-full">
-            <h1 className="font-arya text-dark-green text-title leading-none portrait:text-left">Portfolio</h1>
+            <h1 className="font-arya text-dark-green text-left
+            xl:text-tlg
+            ">
+              Portfolio
+            </h1>
           </div>
           <div className="pl-1">
             {/* Dropdown for portrait devices */}
@@ -243,22 +249,22 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                       href={company.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-fit text-dark-green pr-2 align-top
-                      text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] 
-                      hover:cursor-pointer hover:underline decoration-[1px]" 
-                    >
+                      className="block w-fit text-dark-green pr-2 align-top hover:cursor-pointer hover:underline decoration-[1px]
+                      xl:text-bmd
+                    ">
                       <h3 className="min-w-[100px] align-top">{company.company}</h3>
                     </a>
                   </td>
                   <td className="text-dark-green font-bitter font-light px-2 align-top
-                  text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
+                  xl:text-bxs xl:leading-lg 
+                  ">
                     <h3>{company.description}</h3>
                   </td>
                   {filter.current.filter === "All" && (
                     <td
-                      className="text-dark-green font-bitter-italic font-light hidden px-2 align-top
-                      sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
-                    >
+                      className="text-dark-green font-bitter-italic font-light hidden px-2 align-top sm:table-cell 
+                      xl:text-bxs xl:leading-lg 
+                    ">
                       <h3>{company.industry}</h3>
                     </td>
                   )}

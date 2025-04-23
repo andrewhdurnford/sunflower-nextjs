@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     const year = today.getFullYear();
 
     return (
-        <div className="absolute bottom-0 left-0 w-full">
+        // <div className="absolute bottom-0 left-0 w-full">
             <div className="flex flex-row justify-center items-center w-full gap-6 h-20 xl:h-24 bg-offwhite px-4 sm:px-8" id="footer">
                 <div className="flex items-center space-x-4 text-center">
                     <h1  className="font-bitter text-dark-green text-xxs">
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        // </div>
     );
 };
 
