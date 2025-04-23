@@ -288,25 +288,25 @@ const App: React.FC = () => {
                         </h1>
                         <div className="flex flex-col font-bitter text-dark-green text-left
                         gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
-                        text-b4xs lg:text-bxs
+                        text-b5xs lg:text-bxs
               ">
               <h3>
-                <span className="font-semibold xs:text-b3xs">We often write the first check to visionaries who act with urgency.</span> <br />
+                <span className="font-semibold xs:text-b4xs">We often write the first check to visionaries who act with urgency.</span> <br />
                 We back founders with original insights, technical acumen, and insatiable ambition.
                 Well before their founder journeys begin, we build deep-rooted, long-term relationships with product artisans who build with intention.
               </h3>
               <h3>
-                <span className="font-semibold xs:text-b3xs">We partner with emerging category-defining leaders that endure.</span> <br />
+                <span className="font-semibold xs:text-b4xs">We partner with emerging category-defining leaders that endure.</span> <br />
                 We invest in N-of-1 companies that marry defensible technology with novel go-to-market.
                 Many create new markets or reimagine legacy industries through robust software, delightful UX, and superior incentives.  
               </h3>
               <h3>
-                <span className="font-semibold xs:text-b3xs">We operate with the lens of over a decade of hard-earned experience.</span> <br />
+                <span className="font-semibold xs:text-b4xs">We operate with the lens of over a decade of hard-earned experience.</span> <br />
                 We bring the kind of context, case studies, and inside stories that don&apos;t exist online. 
                 We don&apos;t chase consensus. We develop independent theses, move with conviction, and nail market timing.
               </h3>
               <h3>
-                <span className="font-semibold xs:text-b3xs">We work on founders&apos; terms, not ours. </span> <br />
+                <span className="font-semibold xs:text-b4xs">We work on founders&apos; terms, not ours. </span> <br />
                 Every founding team is unique. From day one, we proactively sow the seeds for our companies to blossom. 
                 We help founders find product-market fit, hire world-class talent, and grow to their first few million in quality recurring revenue. 
               </h3>
