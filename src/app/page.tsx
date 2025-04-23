@@ -302,11 +302,11 @@ const App: React.FC = () => {
               </h3>
               <h3>
                 <span className="font-semibold xs:text-b3xs">We operate with the lens of over a decade of hard-earned experience.</span> <br />
-                We bring the kind of context, case studies, and inside stories that don't exist online. 
-                We don't chase consensus. We develop independent theses, move with conviction, and nail market timing.
+                We bring the kind of context, case studies, and inside stories that don&apos;t exist online. 
+                We don&apos;t chase consensus. We develop independent theses, move with conviction, and nail market timing.
               </h3>
               <h3>
-                <span className="font-semibold xs:text-b3xs">We work on founders' terms, not ours. </span> <br />
+                <span className="font-semibold xs:text-b3xs">We work on founders&apos; terms, not ours. </span> <br />
                 Every founding team is unique. From day one, we proactively sow the seeds for our companies to blossom. 
                 We help founders find product-market fit, hire world-class talent, and grow to their first few million in quality recurring revenue. 
               </h3>
