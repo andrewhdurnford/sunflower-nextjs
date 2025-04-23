@@ -186,7 +186,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                   setFilter("All");
                   changeTable("All");
                 }}
-                className="flex flex-row items-center justify-left font-bitter text-xs md:text-base 2xl:text-lg filter"
+                className="flex flex-row items-center justify-left font-bitter text-b4xs 2xl:text-b2xs filter"
               >
                 <div
                   className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
@@ -211,7 +211,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                     }
         
                   }}
-                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-base 2xl:text-lg filter"
+                  className="flex flex-row items-center justify-center font-bitter text-b4xs 2xl:text-b2xs filter"
                 >
                   <div
                     className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
@@ -226,7 +226,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
             </div>
           </div>
         </div>
-        <div className={`flex-grow flex flex-col w-full max-h-[60vh] sm:max-h-[70vh] overflow-y-auto ${isMobile ? 'mobile' : 'custom-scrollbar'}`}
+        <div className={`flex flex-col w-full h-[60vh] sm:h-[70vh] overflow-y-auto ${isMobile ? 'mobile' : 'custom-scrollbar'}`}
           onMouseEnter={() => setScrollEnabled(false)}
           onMouseLeave={() => setScrollEnabled(true)}
           onTouchStart={() => setScrollEnabled(false)}
@@ -234,7 +234,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
           ref={tableBodyRef}
         >
           <table className="min-w-full border-collapse">
-            <tbody className="font-bitter-italic text-sm sm:text-xl md:text-2xl" id="table-body">
+            <tbody id="table-body">
               {displayCompanies.map((company, index) => (
                 <tr
                   key={company.company}
@@ -244,12 +244,14 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                     if (index === displayCompanies.length - 1) lastRowRef.current = el;
                   }}
                 >
-                  <td className="font-bitter font-normal align-top">
+                  <td className="font-bitter font-normal align-top
+                  w-[117px] xs:w-[122px] md:w-[162px] lg:w-[234px] xl:w-[244px] 2xl:w-[390px]
+                  ">
                     <a
                       href={company.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-fit text-dark-green pr-2 align-top hover:cursor-pointer hover:underline decoration-[1px]
+                      className="block text-dark-green pr-2 align-top hover:cursor-pointer hover:underline decoration-[1px]
                       text-b4xs md:text-b3xs lg:text-bxs 2xl:text-bmd
                     ">
                       <h3 className="min-w-[100px] align-top">{company.company}</h3>
