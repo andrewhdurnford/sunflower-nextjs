@@ -92,7 +92,7 @@ const App: React.FC = () => {
                   flex portrait:flex-col justify-center portrait:items-center portrait:gap-20`}
         >
           <h1
-            className={`title font-arya font-bold text-offwhite transition-all duration-1000 w-11/12 portrait:text-center 
+            className={`title font-arya font-bold text-offwhite transition-[top] duration-1000 w-11/12 portrait:text-center 
             ${loaded ? "top-0" : "-top-full"}`}
           >
             SUNFLOWER <br /> CAPITAL
