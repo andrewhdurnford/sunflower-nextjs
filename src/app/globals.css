@@ -106,7 +106,7 @@ opacity: 0.2;
 }
 
 .breathe {
-  animation: breathe 3s ease-in-out infinite; /* Adjust timing as needed */
+  animation: breathe 3s ease-in-out infinite; 
 }
 
 .dot-container {

@@ -150,7 +150,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
       <div className='w-full h-5/6 flex flex-col justify-center items-center gap-6 xl:gap-12 portrait:pb-24'>
         <div className={`w-full flex gap-6 xl:gap-12 justify-between ${isMobile ? 'items-center flex-row' : 'justify-center  flex-col'}`}>
           <div className="flex flex-row justify-between items-center w-full">
-            <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none portrait:text-left">Portfolio</h1>
+            <h1 className="font-arya text-dark-green text-title leading-none portrait:text-left">Portfolio</h1>
           </div>
           <div className="pl-1">
             {/* Dropdown for portrait devices */}

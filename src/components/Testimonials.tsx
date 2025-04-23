@@ -223,7 +223,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
       <div className='w-4/5 flex gap-6 justify-between items-center'>
-        <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none text-left`}>
+        <div className={`w-full font-arya text-dark-green text-tmd lg:text-tlg leading-none text-left`}>
           Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
@@ -276,7 +276,6 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
             </button>
           </div>
         </div>
-        {/* <div className={`landscape:hidden text-dark-green font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div> */}
       </div>
 
       <div className={`glide__track w-4/5 transition-opacity duration-1000`} 
@@ -287,10 +286,14 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
             <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
-              <h3 className="font-bitter text-base md:text-xl xl:text-2xl w-full text-left sm:leading-extra-loose md:leading-extra-loose lg:leading-extra-loose xl:leading-extra-loose">
+              <h3 className="font-bitter text-base 
+              lg:text-bsm lg:leading-md xl:text-bmd xl:leading-lg
+              ">
               &ldquo;{quote.quote}&rdquo;
               </h3>
-              <div className="flex flex-col font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full gap-2">
+              <div className="flex flex-col font-bitter text-dark-green text-left w-full gap-2
+              lg:text-bsm lg:leading-md xl:text-bmd xl:leading-md 
+              ">
               <h3 className='font-semibold'>{quote.author}</h3>
               <a href={quote.link} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-[1px] hover:cursor-pointer block w-fit font-bitter-italic">
                 <h3 className="font-bitter-italic">{quote.company}</h3>
