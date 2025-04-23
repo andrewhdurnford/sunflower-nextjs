@@ -21,8 +21,13 @@ export default {
       blg: ['36px', '54px'],
       bmd: ['32px', '48px'],
       bsm: ['28px', '42px'],
+      bxsm: ['26px', '39px'],
       bxs: ['24px', '36px'],
-      b2xs: ['18px', '27px'],
+      b2xs: ['20px', '30px'],
+      b3xs: ['18px', '27px'],
+      b34xs: ['16px', '24px'],
+      b4xs: ['14px', '21px'],
+      b5xs: ['12px', '18px'],
     },
     lineHeight: {
       'sm': '1',
@@ -51,6 +56,7 @@ export default {
       }
     },
     screens: {
+      'xs': '425px',
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',

@@ -277,7 +277,7 @@ const App: React.FC = () => {
           </h1>
           <div className="flex flex-col font-bitter text-dark-green text-left w-[85%] 
           gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
-          text-b2xs lg:text-bxs xl:text-bmd 2xl:text-blg
+          text-b4xs xs:text-b3xs lg:text-bxs xl:text-bmd 2xl:text-blg
             ">
             <h3>We partner with relentless missionary founders who are skilled product artisans. We forge highly personal, deep-rooted relationships well in advance of incorporation.</h3>
             <h3>We are often the first check. We invest in N of 1 category creators with technical moats and upstarts transforming legacy industries with novel go-to-market.</h3>
@@ -301,46 +301,51 @@ const App: React.FC = () => {
           className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
         >
           <h1 className="font-arya text-dark-green w-[85%] text-left
-          xl:text-txl
+          text-tmd xl:text-tlg 2xl:text-txl
           ">
             Support
           </h1>
             <h2 className="font-bitter text-dark-green w-[85%] text-left 
-              xl:text-blg xl:leading-md
+              md:text-b3xs xl:text-bxsm 2xl:text-blg 2xl:leading-md leading-lg
             ">
               There&apos;s <span className="font-bitter-italic">no standard playbook</span> for success - 
               our team and global network of world-class operators, domain experts, founders, and customers get involved where and when it matters the most.
             </h2>
-            <div className="flex flex-col lg:flex-row w-[85%] font-bitter text-left text-dark-green
-              xl:gap-12
-              xl:text-bmd xl:leading-xl
-            ">
-              <div className="flex w-1/2
-              xl:gap-12
-              ">
-                <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full">
-                  &nbsp;
-                </div>
-                <div>
-                  Refine early product and define roadmap <br />
-                  Close initial design partners <br />
-                  Scale sales and marketing teams <br />
-                  Develop growth and DevRel strategies <br />
-                  Recruit top-tier engineers <br />
-                </div>
+            <div className="flex w-[85%] gap-6">
+              <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full block lg:hidden">
+                &nbsp;
               </div>
-              <div className="flex w-1/2
-              xl:gap-12
+              <div className="flex flex-col lg:flex-row w-full font-bitter text-left text-dark-green
+                lg:gap-8 xl:gap-10 2xl:gap-12
+                text-b5xs xs:text-b4xs md:text-b34xs xl:text-bxs 2xl:text-bmd leading-xl xs:leading-xl md:leading-xl lg:leading-xl xl:leading-xl 2xl:leading-xl 
               ">
-                <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full">
-                  &nbsp;
+                <div className="flex lg:w-1/2
+                lg:gap-8 xl:gap-10 2xl:gap-12
+                ">
+                  <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full  hidden lg:block">
+                    &nbsp;
+                  </div>
+                  <div>
+                    Refine early product and define roadmap <br />
+                    Close initial design partners <br />
+                    Scale sales and marketing teams <br />
+                    Develop growth and DevRel strategies <br />
+                    Recruit top-tier engineers <br />
+                  </div>
                 </div>
-                <div>
-                  Sharpen brand positioning and messaging <br />
-                  Craft customer collateral and website content <br />
-                  Establish monetization and pricing models <br />
-                  Negotiate contracts and form partnerships  <br />
-                  Orchestrate funding rounds and media launches  <br />
+                <div className="flex lg:w-1/2
+                lg:gap-8 xl:gap-10 2xl:gap-12
+                ">
+                  <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full hidden lg:block">
+                    &nbsp;
+                  </div>
+                  <div>
+                    Sharpen brand positioning and messaging <br />
+                    Craft customer collateral and website content <br />
+                    Establish monetization and pricing models <br />
+                    Negotiate contracts and form partnerships  <br />
+                    Orchestrate funding rounds and media launches  <br />
+                  </div>
                 </div>
               </div>
             </div>

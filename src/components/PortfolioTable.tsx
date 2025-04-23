@@ -153,7 +153,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
         `}>
           <div className="flex flex-row justify-between items-center w-full">
             <h1 className="font-arya text-dark-green text-left
-            xl:text-txl
+            text-tmd xl:text-tlg 2xl:text-txl
             ">
               Portfolio
             </h1>
@@ -250,20 +250,20 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-fit text-dark-green pr-2 align-top hover:cursor-pointer hover:underline decoration-[1px]
-                      xl:text-bmd
+                      text-b4xs md:text-b3xs lg:text-bxs 2xl:text-bmd
                     ">
                       <h3 className="min-w-[100px] align-top">{company.company}</h3>
                     </a>
                   </td>
                   <td className="text-dark-green font-bitter font-light px-2 align-top
-                  xl:text-bxs xl:leading-lg 
+                  text-b5xs md:text-b3xs xl:text-b2xs 2xl:text-bxs 2xl:leading-lg 
                   ">
                     <h3>{company.description}</h3>
                   </td>
                   {filter.current.filter === "All" && (
                     <td
-                      className="text-dark-green font-bitter-italic font-light hidden px-2 align-top sm:table-cell 
-                      xl:text-bxs xl:leading-lg 
+                      className="text-dark-green font-bitter-italic font-light hidden px-2 align-top xl:table-cell 
+                      xl:text-b2xs 2xl:text-bxs 2xl:leading-lg 
                     ">
                       <h3>{company.industry}</h3>
                     </td>

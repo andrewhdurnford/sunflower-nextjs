@@ -223,11 +223,15 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
       <div className='w-4/5 flex gap-6 justify-between items-center'>
-        <div className={`w-full font-arya text-dark-green text-tmd lg:text-txl leading-none text-left`}>
+        <div className={`w-full font-arya text-dark-green text-tmd leading-none text-left
+          lg:text-tmd xl:text-tlg 2xl:text-txl   
+        `}>
           Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
-          <div className="glide__arrow--left font-semibold font-bitter leading-none w-8 h-8 sm:w-12 sm:h-12" data-glide-dir="<">
+          <div className="glide__arrow--left font-semibold font-bitter leading-none
+          w-10 h-10 2xl:w-12 2xl:h-12
+          " data-glide-dir=">">
             <button 
               id="left-arrow"
               className="arrow-container transform transition-transform duration-300"
@@ -251,7 +255,9 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               />
             </button>
           </div>
-          <div className="glide__arrow--right w-8 h-8 sm:w-12 sm:h-12" data-glide-dir=">">
+          <div className="glide__arrow--right 
+          w-10 h-10 2xl:w-12 2xl:h-12
+          " data-glide-dir=">">
             <button 
               id="right-arrow"
               className="arrow-container"
@@ -285,15 +291,15 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       >
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
-            <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
+            <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6
+              md:text-b2xs lg:text-bxs xl:text-bsm 2xl:text-bmd
+            ">
               <h3 className="font-bitter
-              xl:text-bmd xl:leading-lg
+                md:leading-lg lg:leading-lg xl:leading-lg 2xl:leading-lg
               ">
               &ldquo;{quote.quote}&rdquo;
               </h3>
-              <div className="flex flex-col font-bitter text-dark-green text-left w-full gap-2
-              xl:text-bmd xl:leading-md 
-              ">
+              <div className="flex flex-col font-bitter text-dark-green text-left w-full gap-2">
               <h3 className='font-semibold'>{quote.author}</h3>
               <a href={quote.link} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-[1px] hover:cursor-pointer block w-fit font-bitter-italic">
                 <h3 className="font-bitter-italic">{quote.company}</h3>
