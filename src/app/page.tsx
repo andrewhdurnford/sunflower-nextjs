@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
 import {isMobile} from 'react-device-detect';
 import { before } from "node:test";
+import Ethos from "@/components/Ethos";
 
 const App: React.FC = () => {
   const today = new Date();
@@ -20,7 +21,7 @@ const App: React.FC = () => {
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
   const [mobile, setMobile] = useState(true);
-
+  const [lg, setLg] = useState(false);
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
@@ -34,7 +35,11 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
+    const handleResize = () => {
+      setLg(window.innerWidth >= 1024);
+    };
     setMobile(isMobile);
+    setLg(window.innerWidth >= 1024);
     if (isMobile) {
       setLoaded(true);
     } else {
@@ -42,6 +47,12 @@ const App: React.FC = () => {
         setLoaded(true);
       }, 500);
     }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const expandFlower = () => {
@@ -266,23 +277,42 @@ const App: React.FC = () => {
         </div>
         <div
           id="statement2"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden 
-          gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
-        ">
-          <h1 className="font-arya text-dark-green w-[85%] text-left
-          text-tmd xl:text-tlg 2xl:text-txl
-          ">
-          Ethos
-          </h1>
-          <div className="flex flex-col font-bitter text-dark-green text-left w-[85%] 
-          gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
-          text-b4xs xs:text-b3xs lg:text-bxs xl:text-bmd 2xl:text-blg
-            ">
-            <h3>We partner with relentless missionary founders who are skilled product artisans. We forge highly personal, deep-rooted relationships well in advance of incorporation.</h3>
-            <h3>We are often the first check. We invest in N of 1 category creators with technical moats and upstarts transforming legacy industries with novel go-to-market.</h3>
-            <h3>We have more than a decade of inside stories and firsthand experience that cannot be found online. We nail market timing and develop distinct theses on markets.</h3>
-            <h3>We collaborate with founders on their terms. From day one, we proactively help them build category-defining companies – finding product-market fit, growing to the first few million in quality recurring revenue, and hiring world-class talent.</h3>
-          </div>
+          className={`h-[calc(100dvh)] w-full flex flex-col items-center justify-center overflow-hidden bg-offwhite`}>
+            {lg && <Ethos />}
+            {!lg &&           
+            <div className="w-[85%] flex flex-col gap-6">
+              <h1 className="font-arya text-dark-green text-left
+                        text-tmd
+                        ">
+                        Ethos
+                        </h1>
+                        <div className="flex flex-col font-bitter text-dark-green text-left
+                        gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
+                        text-b4xs lg:text-bxs
+              ">
+              <h3>
+                <span className="font-semibold xs:text-b3xs">We often write the first check to visionaries who act with urgency.</span> <br />
+                We back founders with original insights, technical acumen, and insatiable ambition.
+                Well before their founder journeys begin, we build deep-rooted, long-term relationships with product artisans who build with intention.
+              </h3>
+              <h3>
+                <span className="font-semibold xs:text-b3xs">We partner with emerging category-defining leaders that endure.</span> <br />
+                We invest in N-of-1 companies that marry defensible technology with novel go-to-market.
+                Many create new markets or reimagine legacy industries through robust software, delightful UX, and superior incentives.  
+              </h3>
+              <h3>
+                <span className="font-semibold xs:text-b3xs">We operate with the lens of over a decade of hard-earned experience.</span> <br />
+                We bring the kind of context, case studies, and inside stories that don't exist online. 
+                We don't chase consensus. We develop independent theses, move with conviction, and nail market timing.
+              </h3>
+              <h3>
+                <span className="font-semibold xs:text-b3xs">We work on founders' terms, not ours. </span> <br />
+                Every founding team is unique. From day one, we proactively sow the seeds for our companies to blossom. 
+                We help founders find product-market fit, hire world-class talent, and grow to their first few million in quality recurring revenue. 
+              </h3>
+                        </div>
+            </div>
+          }
         </div>
         <div
           id="portfolio"
