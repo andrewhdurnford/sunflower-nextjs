@@ -342,8 +342,8 @@ const App: React.FC = () => {
             </h2>
             <div className="flex w-[85%] gap-6">
               <div className="flex flex-row w-full font-bitter text-left text-dark-green
-                lg:gap-8 xl:gap-10 2xl:gap-12
-                text-b5xs xs:text-b4xs md:text-bxs 2xl:text-bmd leading-xl xs:leading-xl md:leading-xl lg:leading-xl xl:leading-xl 2xl:leading-xl 
+                gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
+                text-b5xs md:text-b4xs 2xl:text-bmd leading-xl xs:leading-xl md:leading-xl lg:leading-xl xl:leading-xl 2xl:leading-xl 
               ">
                 <div className="flex flex-col  items-center w-1/2">
                   <div className="2xl:translate-y-10 xl:translate-y-8 lg:translate-y-6 md:translate-y-4
