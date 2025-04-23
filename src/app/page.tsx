@@ -400,7 +400,7 @@ const App: React.FC = () => {
                 &nbsp;
               </div>
               <div className="flex flex-col lg:flex-row w-full font-bitter text-left text-dark-green
-                text-b5xs xs:text-b4xs
+                text-b5xs xs:text-b4xs leading-xl
               ">
                 <div className="flex">
                   <div>
