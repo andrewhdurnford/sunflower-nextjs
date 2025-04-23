@@ -10,12 +10,12 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, 
     const totalScreens = 7;
 
     return (
-        <div className="dot-container flex gap-2">
+        <div className={`dot-container flex gap-2 p-4 rounded-full transition-all duration-1000 ${currentScreen === 0 || currentScreen === 6 ? 'bg-dark-green' : ''}`}>
             {Array.from({ length: totalScreens }).map((_, index) => {
             const dotClass = (() => {
                 if (currentScreen === index) {
                     return 'scale-150 opacity-100';
-                } else if (currentScreen === 0 && currentScreen !== index) {
+                } else if ((currentScreen === 0 || currentScreen === 6) && currentScreen !== index) {
                     return 'scale-100 hover:scale-125 opacity-20';
                 } else {
                     return 'scale-100 hover:scale-125 opacity-50';
@@ -25,7 +25,7 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, 
             return (
                 <img
                 key={`${isMobile}-${index}`}
-                src={currentScreen === 0 ? '/images/dot1.svg' : '/images/dot2.svg'}
+                src={(currentScreen === 0 || currentScreen === 6) ? '/images/dot1.svg' : '/images/dot2.svg'}
                 alt={`dot ${index}`}
                 className={`dot ${dotClass} ${isMobile ? 'hidden' : ''} transition-all duration-300 hover:cursor-pointer`}
                 onClick={() => onDotClick(index)}
