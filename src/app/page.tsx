@@ -346,9 +346,14 @@ const App: React.FC = () => {
                 text-b5xs md:text-b4xs 2xl:text-bmd leading-xl xs:leading-xl md:leading-xl lg:leading-xl xl:leading-xl 2xl:leading-xl 
               ">
                 <div className="flex flex-col  items-center w-1/2">
-                  <div className="2xl:translate-y-10 xl:translate-y-8 lg:translate-y-6 md:translate-y-4
-                  w-11/12 text-center bg-dark-green rounded-full text-offwhite">Product & Growth</div>
-                  <div className="flex w-full bg-dark-green bg-opacity-10 rounded-md p-4 pt-10">
+                  <div className="2xl:translate-y-10 lg:translate-y-6 md:translate-y-4
+                  w-11/12 text-center bg-dark-green rounded-full text-offwhite
+                  lg:text-bsm
+                  ">Product & Growth</div>
+                  <div className="flex w-full bg-dark-green bg-opacity-10 rounded-md p-4 pt-10
+                  lg:text-b34xs lg:leading-xl
+                  xl:text-bxs xl:leading-xl
+                  ">
                     Refine early product and define roadmap <br />
                     Close initial design partners <br />
                     Scale sales and marketing teams <br />
@@ -357,9 +362,14 @@ const App: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex flex-col  items-center w-1/2">
-                <div className="2xl:translate-y-10 xl:translate-y-8 lg:translate-y-6 md:translate-y-4
-                w-11/12 text-center bg-dark-green rounded-full text-offwhite">Go-to-Market & Branding</div>
-                  <div className="flex w-full bg-dark-green bg-opacity-10 rounded-md p-4 pt-10">
+                <div className="2xl:translate-y-10 lg:translate-y-6 md:translate-y-4
+                w-11/12 text-center bg-dark-green rounded-full text-offwhite
+                lg:text-bsm
+                ">Go-to-Market & Branding</div>
+                  <div className="flex w-full bg-dark-green bg-opacity-10 rounded-md p-4 pt-10
+                  lg:text-b34xs lg:leading-xl
+                  xl:text-bxs xl:leading-xl
+                  ">
                     Sharpen brand positioning and messaging <br />
                     Craft customer collateral and website content <br />
                     Establish monetization and pricing models <br />
