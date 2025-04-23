@@ -233,11 +233,12 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
           ref={tableBodyRef}
         >
           <table className="min-w-full border-collapse">
-            <tbody id="table-body">
+            <tbody className='gap-3' id="table-body">
               {displayCompanies.map((company, index) => (
                 <tr
                   key={company.company}
-                  className="relative h-12 sm:h-16 landscape:custom-border-row table-row transition-all duration-300"
+                  className="relative h-12 sm:h-16 landscape:custom-border-row table-row transition-all duration-300 rounded-lg hover:bg-dark-green hover:bg-opacity-10 
+                  "
                   ref={(el) => {
                     if (index === 0) firstRowRef.current = el;
                     if (index === displayCompanies.length - 1) lastRowRef.current = el;

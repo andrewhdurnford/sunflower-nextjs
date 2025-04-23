@@ -11,23 +11,13 @@ import {isMobile} from 'react-device-detect';
 import { before } from "node:test";
 
 const App: React.FC = () => {
-  const PathIndex: Record<string, number> = {
-    "": 0,
-    "mission": 1,
-    "ethos": 2,
-    "portfolio": 3,
-    "support": 4,
-    "founders": 5,
-    "subscribe": 6,
-    "contact": 7,
-  };  
-
   const [loaded, setLoaded] = useState(false);
   const [scrollEnabled, setScrollEnabled] = useState(true);
   const [scrollUpEnabled, setScrollUpEnabled] = useState(true);
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
+  const [mobile, setMobile] = useState(true);
 
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -42,6 +32,7 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
+    setMobile(isMobile);
     if (isMobile) {
       setLoaded(true);
     } else {
@@ -49,9 +40,6 @@ const App: React.FC = () => {
         setLoaded(true);
       }, 500);
     }
-    
-    const path = window.location.pathname;
-    setCurrentPage(PathIndex[path] || 0);
   }, []);
 
   const expandFlower = () => {
@@ -86,7 +74,8 @@ const App: React.FC = () => {
 
   return (
     <>
-      <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} isMobile={isMobile} />
+      {!mobile &&
+        <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} isMobile={isMobile} />}
       <ReactPageScroller
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
@@ -417,10 +406,13 @@ const App: React.FC = () => {
                           </span>
                       </div>
                   </a>
+                  <h1  className="font-bitter text-offwhite text-sm sm:text-base lg:text-lg xl:text-xl">
+                        © Sunflower Capital 2025
+                  </h1>
                 </div>
             </div>
         </div>
-        <Footer />
+        {!mobile && <Footer />}
         </div>
       </ReactPageScroller>
     </>
