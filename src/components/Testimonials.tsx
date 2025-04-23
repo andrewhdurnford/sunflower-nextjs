@@ -243,7 +243,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
             >
               <Image
                 className={`transition-opacity transition-scale duration-300 opacity-100`}
-                src="/images/left-dark.svg"
+                src="/images/left.svg"
                 alt="left arrow"
                 width={100}
                 height={100}
@@ -267,7 +267,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
             >
               <Image
                 className="transition-opacity transition-scale duration-300 opacity-100"
-                src="/images/right-dark.svg"
+                src="/images/right.svg"
                 alt="right arrow"
                 width={100}
                 height={100}
@@ -292,7 +292,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
               &ldquo;{quote.quote}&rdquo;
               </h3>
               <div className="flex flex-col font-bitter text-dark-green text-left w-full gap-2
-              lg:text-bsm lg:leading-md xl:text-bmd xl:leading-md 
+              xl:text-bmd xl:leading-md 
               ">
               <h3 className='font-semibold'>{quote.author}</h3>
               <a href={quote.link} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-[1px] hover:cursor-pointer block w-fit font-bitter-italic">

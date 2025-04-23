@@ -26,7 +26,6 @@ export default {
       'md': '1.5',
       'lg': '2',
       'xl': '2.5',
-      '12': '3rem',
     },
     colors: {
       'offwhite': '#FFF9DE',

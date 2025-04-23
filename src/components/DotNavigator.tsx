@@ -7,7 +7,7 @@ interface DotNavigatorProps {
 }
 
 const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, isMobile }) => {
-    const totalScreens = 6;
+    const totalScreens = 7;
 
     return (
         <div className="dot-container flex gap-2">

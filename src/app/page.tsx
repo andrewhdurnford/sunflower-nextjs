@@ -254,29 +254,29 @@ const App: React.FC = () => {
         </div>
         <div
           id="statement1"
-          className={`h-[calc(100dvh)] w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-10 xl:gap-14 bg-offwhite`}
+          className={`h-[calc(100dvh)] w-full flex flex-col items-center justify-center overflow-hidden bg-offwhite`}
         >
-          <div className="flex flex-col items-center">
-            <div className="w-[91%] font-arya text-dark-green text-center">
+          <div className="flex flex-col items-center w-[85%] font-arya text-dark-green text-center">
               <h2
                 className={`text-left
                   text-2xl xl:text-bxl
               `}>
                 Sunflower Capital partners at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.
               </h2>
-            </div>
           </div>
         </div>
         <div
           id="statement2"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
-        >
-          <h1 className="font-arya text-dark-green w-4/5 text-left
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden 
+          xl:gap-12
+        ">
+          <h1 className="font-arya text-dark-green w-[85%] text-left
           xl:text-tlg
           ">
           Ethos
           </h1>
-          <div className="flex flex-col font-bitter text-dark-green text-left w-4/5 xl:gap-12
+          <div className="flex flex-col font-bitter text-dark-green text-left w-[85%] 
+          xl:gap-12
           xl:text-blg
             ">
             <h3>We partner with relentless missionary founders who are skilled product artisans. We forge highly personal, deep-rooted relationships well in advance of incorporation.</h3>
@@ -300,33 +300,62 @@ const App: React.FC = () => {
           id="support"
           className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
         >
-          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl text-left w-4/5">Support</h1>
-            <h2 className="font-bitter text-dark-green text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-left w-4/5 pt-2 md:pt-4">Tactically, we help companies...</h2>
-            <div className="flex flex-col lg:flex-row w-4/5 lg:gap-6 font-bitter text-left text-dark-green
-            text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl leading-loose sm:leading-loose md:leading-loose lg:leading-loose xl:leading-loose">
-              <ul className="list-disc pl-6 md:pl-8 lg:pl-10 md:w-2/3 lg:w-1/2">
-              <li>refine product offerings</li>
-              <li>close design partners</li>
-              <li>develop growth strategies</li>
-              <li>sharpen brand positioning</li>
-              <li>scale sales and marketing via our advisor network</li>
-              </ul>
-              <ul className="list-disc pl-6 md:pl-8 lg:pl-10 md:w-2/3 lg:w-1/2">
-              <li>craft customer materials and website content</li>
-              <li>establish pricing models</li>
-              <li>recruit top engineers</li>
-              <li>orchestrate fundraises</li>
-              </ul>
+          <h1 className="font-arya text-dark-green w-[85%] text-left
+          xl:text-tlg
+          ">
+            Support
+          </h1>
+            <h2 className="font-bitter text-dark-green w-[85%] text-left 
+              xl:text-blg xl:leading-md
+            ">
+              There's <span className="font-bitter-italic">no standard playbook</span> for success - 
+              our team and global network of world-class operators, domain experts, founders, and customers get involved where and when it matters the most.
+            </h2>
+            <div className="flex flex-col lg:flex-row w-[85%] font-bitter text-left text-dark-green
+              xl:gap-12
+              xl:text-bmd xl:leading-xl
+            ">
+              <div className="flex w-1/2
+              xl:gap-12
+              ">
+                <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full">
+                  &nbsp;
+                </div>
+                <div>
+                  Refine early product and define roadmap <br />
+                  Close initial design partners <br />
+                  Scale sales and marketing teams <br />
+                  Develop growth and DevRel strategies <br />
+                  Recruit top-tier engineers <br />
+                </div>
+              </div>
+              <div className="flex w-1/2
+              xl:gap-12
+              ">
+                <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full">
+                  &nbsp;
+                </div>
+                <div>
+                  Sharpen brand positioning and messaging <br />
+                  Craft customer collateral and website content <br />
+                  Establish monetization and pricing models <br />
+                  Negotiate contracts and form partnerships  <br />
+                  Orchestrate funding rounds and media launches  <br />
+                </div>
+              </div>
             </div>
         </div>
         <div
           id="testimonials"
           className="relative bg-offwhite text-dark-green w-full min-h-[calc(100dvh)] flex flex-col overflow-hidden"
         >
-          <div className="absolute inset-0 flex flex-col items-center justify-center h-[calc(100dvh)] overflow-y-auto">
             <Testimonials setScrollEnabled={setScrollEnabled} />
-            <Footer /> 
-          </div>
+        </div>
+        <div
+          id="footer"
+          className="relative bg-dark-green w-full min-h-[calc(100dvh)] flex flex-col items-center justify-center overflow-hidden"
+        >
+          <Footer />
         </div>
       </ReactPageScroller>
     </>
