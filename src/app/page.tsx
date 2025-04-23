@@ -10,26 +10,19 @@ import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
 import {isMobile} from 'react-device-detect';
 import { before } from "node:test";
+import Ethos from "@/components/Ethos";
 
 const App: React.FC = () => {
-  const PathIndex: Record<string, number> = {
-    "": 0,
-    "mission": 1,
-    "ethos": 2,
-    "portfolio": 3,
-    "support": 4,
-    "founders": 5,
-    "subscribe": 6,
-    "contact": 7,
-  };  
-
+  const today = new Date();
+  const year = today.getFullYear();
   const [loaded, setLoaded] = useState(false);
   const [scrollEnabled, setScrollEnabled] = useState(true);
   const [scrollUpEnabled, setScrollUpEnabled] = useState(true);
   const [scrollDownEnabled, setScrollDownEnabled] = useState(true);
   const [breatheEnabled, setBreatheEnabled] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-
+  const [mobile, setMobile] = useState(true);
+  const [lg, setLg] = useState(false);
   const beforePageChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
@@ -43,6 +36,11 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
+    const handleResize = () => {
+      setLg(window.innerWidth >= 1024);
+    };
+    setMobile(isMobile);
+    setLg(window.innerWidth >= 1024);
     if (isMobile) {
       setLoaded(true);
     } else {
@@ -50,9 +48,12 @@ const App: React.FC = () => {
         setLoaded(true);
       }, 500);
     }
-    
-    const path = window.location.pathname;
-    setCurrentPage(PathIndex[path] || 0);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const expandFlower = () => {
@@ -87,7 +88,8 @@ const App: React.FC = () => {
 
   return (
     <>
-      <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} isMobile={isMobile} />
+      {!mobile &&
+        <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} isMobile={isMobile} />}
       <ReactPageScroller
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 
@@ -276,23 +278,42 @@ const App: React.FC = () => {
         </div>
         <div
           id="statement2"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden 
-          gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
-        ">
-          <h1 className="font-arya text-dark-green w-[85%] text-left
-          text-tmd xl:text-tlg 2xl:text-txl
-          ">
-          Ethos
-          </h1>
-          <div className="flex flex-col font-bitter text-dark-green text-left w-[85%] 
-          gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
-          text-b4xs xs:text-b3xs lg:text-bxs xl:text-bmd 2xl:text-blg
-            ">
-            <h3>We partner with relentless missionary founders who are skilled product artisans. We forge highly personal, deep-rooted relationships well in advance of incorporation.</h3>
-            <h3>We are often the first check. We invest in N of 1 category creators with technical moats and upstarts transforming legacy industries with novel go-to-market.</h3>
-            <h3>We have more than a decade of inside stories and firsthand experience that cannot be found online. We nail market timing and develop distinct theses on markets.</h3>
-            <h3>We collaborate with founders on their terms. From day one, we proactively help them build category-defining companies – finding product-market fit, growing to the first few million in quality recurring revenue, and hiring world-class talent.</h3>
-          </div>
+          className={`h-[calc(100dvh)] w-full flex flex-col items-center justify-center overflow-hidden bg-offwhite`}>
+            {lg && <Ethos />}
+            {!lg &&           
+            <div className="w-[85%] flex flex-col gap-6">
+              <h1 className="font-arya text-dark-green text-left
+                        text-tmd
+                        ">
+                        Ethos
+                        </h1>
+                        <div className="flex flex-col font-bitter text-dark-green text-left
+                        gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
+                        text-b5xs lg:text-bxs
+              ">
+              <h3>
+                <span className="font-semibold xs:text-b4xs">We often write the first check to visionaries who act with urgency.</span> <br />
+                We back founders with original insights, technical acumen, and insatiable ambition.
+                Well before their founder journeys begin, we build deep-rooted, long-term relationships with product artisans who build with intention.
+              </h3>
+              <h3>
+                <span className="font-semibold xs:text-b4xs">We partner with emerging category-defining leaders that endure.</span> <br />
+                We invest in N-of-1 companies that marry defensible technology with novel go-to-market.
+                Many create new markets or reimagine legacy industries through robust software, delightful UX, and superior incentives.  
+              </h3>
+              <h3>
+                <span className="font-semibold xs:text-b4xs">We operate with the lens of over a decade of hard-earned experience.</span> <br />
+                We bring the kind of context, case studies, and inside stories that don&apos;t exist online. 
+                We don&apos;t chase consensus. We develop independent theses, move with conviction, and nail market timing.
+              </h3>
+              <h3>
+                <span className="font-semibold xs:text-b4xs">We work on founders&apos; terms, not ours. </span> <br />
+                Every founding team is unique. From day one, we proactively sow the seeds for our companies to blossom. 
+                We help founders find product-market fit, hire world-class talent, and grow to their first few million in quality recurring revenue. 
+              </h3>
+                        </div>
+            </div>
+          }
         </div>
         <div
           id="portfolio"
@@ -304,60 +325,6 @@ const App: React.FC = () => {
             setScrollDownEnabled={setScrollDownEnabled}
             isMobile={isMobile}
           />
-        </div>
-        <div
-          id="support"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
-        >
-          <h1 className="font-arya text-dark-green w-[85%] text-left
-          text-tmd xl:text-tlg 2xl:text-txl
-          ">
-            Support
-          </h1>
-            <h2 className="font-bitter text-dark-green w-[85%] text-left 
-              md:text-b3xs xl:text-bxsm 2xl:text-blg 2xl:leading-md leading-lg
-            ">
-              There&apos;s <span className="font-bitter-italic">no standard playbook</span> for success - 
-              our team and global network of world-class operators, domain experts, founders, and customers get involved where and when it matters the most.
-            </h2>
-            <div className="flex w-[85%] gap-6">
-              <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full block lg:hidden">
-                &nbsp;
-              </div>
-              <div className="flex flex-col lg:flex-row w-full font-bitter text-left text-dark-green
-                lg:gap-8 xl:gap-10 2xl:gap-12
-                text-b5xs xs:text-b4xs md:text-b34xs xl:text-bxs 2xl:text-bmd leading-xl xs:leading-xl md:leading-xl lg:leading-xl xl:leading-xl 2xl:leading-xl 
-              ">
-                <div className="flex lg:w-1/2
-                lg:gap-8 xl:gap-10 2xl:gap-12
-                ">
-                  <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full  hidden lg:block">
-                    &nbsp;
-                  </div>
-                  <div>
-                    Refine early product and define roadmap <br />
-                    Close initial design partners <br />
-                    Scale sales and marketing teams <br />
-                    Develop growth and DevRel strategies <br />
-                    Recruit top-tier engineers <br />
-                  </div>
-                </div>
-                <div className="flex lg:w-1/2
-                lg:gap-8 xl:gap-10 2xl:gap-12
-                ">
-                  <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full hidden lg:block">
-                    &nbsp;
-                  </div>
-                  <div>
-                    Sharpen brand positioning and messaging <br />
-                    Craft customer collateral and website content <br />
-                    Establish monetization and pricing models <br />
-                    Negotiate contracts and form partnerships  <br />
-                    Orchestrate funding rounds and media launches  <br />
-                  </div>
-                </div>
-              </div>
-            </div>
         </div>
         <div
           id="testimonials"
@@ -380,7 +347,7 @@ const App: React.FC = () => {
                       ">
                       Contact
                   </h1>
-                  <a href="https://www.linkedin.com/in/liujiang1/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/company/sunflowercapital/" target="_blank" rel="noopener noreferrer">
                       <div className='flex flex-row
                       gap-3 md:gap-6
                       '>
@@ -418,10 +385,13 @@ const App: React.FC = () => {
                           </span>
                       </div>
                   </a>
+                  {mobile && <h1  className="font-bitter-italic text-offwhite">
+                        © Sunflower Capital {year}
+                  </h1>}
                 </div>
             </div>
         </div>
-        <Footer />
+        {!mobile && <Footer />}
         </div>
       </ReactPageScroller>
     </>

@@ -19,22 +19,28 @@ interface TestimonialProps {
 const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   const quotes = [
     {
-      quote: "Quality is really what really sets Liu apart from other investors. Working with Liu was unique because she was extremely proactive. She was always trying to find ways to help, not just relying on me to think about what I needed. We had regular discussions on topics ranging from customer negotiations to internal operations to creating a standard around Iceberg.",
+      quote: "Quality is really what really sets Liu apart from other investors. Working with Liu was unique because she was extremely proactive. She was my first call, and she was always trying to find ways to help, not just relying on me to think about what I needed. We had regular discussions on diverse topics ranging from hiring, scaling internal operations, securing early customers, negotiating contracts, monetization, evangelizing open source, creating a standard around Iceberg, and more.",
       author: "Ryan Blue",
       company: "Tabular (acquired by Databricks)",
       link: "https://tabular.io/"
     },
     {
-      quote: "Liu is the best kind of investor: she is technical, understands product, and can quickly understand the big picture. She's really well connected with top talent and investors. She'll help when she's needed and give you space to operate otherwise. Highly recommend working with her.",
+      quote: "Liu is the best kind of investor: she is technical, understands product deeply, and can quickly understand the big picture. She's really well connected with top talent and investors. She'll help when she's needed and give you space to operate otherwise. Highly recommend working with her.",
       author: "Kareem Amin",
       company: "Clay",
       link: "https://clay.com/"
     },
     {
-      quote: "Liu had early conviction in Verkada. Her ability to quickly immerse herself in new markets is a real differentiator amongst early stage investors. I was very impressed by her deep knowledge of our industry, which led to insightful and strategic questions coupled with tailored advice and direction.",
+      quote: "Liu had a uniquely early conviction in Verkada. Her ability to quickly immerse herself in new markets is a real differentiator amongst early stage investors. I was very impressed by her deep knowledge of our industry, which led to insightful and strategic questions coupled with tailored advice and direction.",
       author: "Raj Misra",
       company: "Verkada",
       link: "https://www.verkada.com/"
+    },
+    {
+      quote: "Liu has been part of the Athelas journey since founding. She wrote the first check into Athelas through Dorm Room Fund, and she later helped champion and lead our seed round in 2016. She's seen us evolve the product surface area, refine GTM, expand the team, and merge with Commure into a $6B+ healthcare infrastructure company.",
+      author: "Tanay Tandon",
+      company: "Athelas & Commure",
+      link: "https://www.commure.com/"
     },
     {
       quote: "Liu invested in our seed and then doubled down in multiple subsequent rounds. She helped us with initial positioning and messaging on our website and customer materials, discussing our key product use cases, and thinking through developer ubiquity.",
@@ -43,31 +49,25 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://temporal.io/"
     },
     {
-      quote: "Liu has been part of the Athelas journey since founding. She wrote the first check into Athelas through Dorm Room Fund, and she then helped champion and lead our seed round in 2016. She's seen us evolve the product surface area, refine GTM, expand the team, and merge with Commure into a $6B+ healthcare infrastructure company.",
-      author: "Tanay Tandon",
-      company: "Athelas & Commure",
-      link: "https://www.commure.com/"
-    },
-    {
-      quote: "We really enjoyed working with Liu in the early years of Semgrep. She was always a thoughtful and insightful voice on early product and GTM questions in the painful pre-PMF days!",
-      author: "Isaac Evans",
-      company: "Semgrep",
-      link: "https://semgrep.dev/"
-    },
-    {
-      quote: "Liu was one of the first investors and believers in Hadrian. She helped us settle into Los Angeles, and guided us through Hadrian's rapid growth, expansion, and fundraising journey.",
+      quote: "Liu was one of the first investors and believers in Hadrian. She helped us settle into Los Angeles, and she guided us through Hadrian's rapid growth, expansion, and fundraising journey.",
       author: "Chris Power",
       company: "Hadrian",
       link: "https://www.hadrian.co/"
     },
     {
-      quote: "Liu is the most energetic investor I've ever met. We raised our seed round during Covid, and Liu was one of the first to commit to investing. She made more intros and was more engaged than anyone else - without her enthusiasm I don't know how we'd have closed the round!",
+      quote: "Liu is the most energetic investor I've ever met. We raised our seed round during COVID, and Liu was one of the first to commit to investing. She made more intros and was more engaged than anyone else - without her enthusiasm I don't know how we'd have closed the round!",
       author: "James Hawkins",
       company: "Posthog",
       link: "https://posthog.com/"
     },
     {
-      quote: "Liu has been an invaluable investor for Warp, going way beyond just investing money, to investing a bunch of her time helping us with GTM, Growth, and Product. She brings deep expertise in the developer space, and we've learned a lot working with her. She is more willing and able than most investors to roll up her sleeves and help the leadership team operate.",
+      quote: "We really enjoyed working with Liu in the early years of Semgrep. She was always a thoughtful and insightful voice inside and outside the boardroom on early product and GTM questions in the painful pre-PMF days!",
+      author: "Isaac Evans",
+      company: "Semgrep",
+      link: "https://semgrep.dev/"
+    },
+    {
+      quote: "Liu has been an invaluable investor for Warp, going way beyond just investing money. She invested a bunch of her time helping us with GTM, Growth, and Product. She brings deep expertise in the developer space, and we've learned a lot working with her. She is more willing and able than most investors to roll up her sleeves and help the leadership team operate.",
       author: "Zach Lloyd",
       company: "Warp",
       link: "https://warp.dev/"
@@ -91,7 +91,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://e2b.dev/"
     },
     {
-      quote: "Liu is fantastic to work with. She's easy to talk to and strategically astute. She happily makes intros to her excellent network, and she's been a tremendous value add at helping us with customer intros.",
+      quote: "Liu is fantastic to work with. She’s easy to talk to and strategically astute. She happily makes intros to her excellent network, and she’s been a tremendous value add in helping us with customer intros. She also helped orchestrate our Series A, and she is highly trusted by later stage investors.",
       author: "Zach Long",
       company: "ConductorAI",
       link: "https://conductorai.co/"
@@ -103,7 +103,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://knock.app/"
     },
     {
-      quote: "Liu immediately understood our business because of the market work Sunflower had done previously, and they moved quickly with an investment. We are a company with European roots, and they opened their deep network of potential US customers and partners to us. They are real hustlers, willing to do ground work to help their founders succeed. They've also advised us on executive hiring and on expanding our team. Brilliant to have Sunflower with us!",
+      quote: "Liu immediately understood our business because of the market work Sunflower had done previously, and they moved quickly with an investment. We are a company with European roots, and they opened their deep network of potential U.S. customers and partners to us. They are real hustlers, willing to do ground work to help their founders succeed. They've also advised us on executive hiring and on expanding our team. Brilliant to have Sunflower with us!",
       author: "Moritz Schiebold",
       company: "Rerun",
       link: "https://rerun.io/"
@@ -127,7 +127,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://tldraw.com/"
     },
     {
-      quote: "Liu built a close relationship with us while we were still at Uber building Michelangelo. She had the conviction to colead our seed and Series A, and she was pivotal in helping us hire our early team and close our first few marquee customers.",
+      quote: "Liu built a close relationship with us while we were still at Uber building Michelangelo. She had the conviction to co-lead our seed and Series A, and she was pivotal in helping us hire our early team and close our first few marquee customers.",
       author: "Kevin Stumpf",
       company: "Tecton",
       link: "https://tecton.ai/"
@@ -231,7 +231,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
           <div className="glide__arrow--left font-semibold font-bitter leading-none
           w-10 h-10 2xl:w-12 2xl:h-12
-          " data-glide-dir=">">
+          " data-glide-dir="<">
             <button 
               id="left-arrow"
               className="arrow-container transform transition-transform duration-300"

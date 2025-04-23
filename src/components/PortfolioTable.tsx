@@ -67,11 +67,11 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Rerun', industry: 'Data', description: 'The multimodal data stack', link: 'https://rerun.io/' },
     { company: 'Omni', industry: 'Data', description: 'Next-generation business analytics', link: 'https://omni.co/' },
     { company: 'Fillout', industry: 'Developer', description: 'Build any form, without code', link: 'http://fillout.com/' },
-    { company: 'Lilt', industry: 'AI/ML', description: 'The AI platform for enterprise translation.', link: 'https://lilt.com/' },         
-    { company: 'Waldo', industry: 'AI/ML', description: 'Become an expert in seconds.', link: 'https://www.waldo.fyi/' },    
-    { company: 'Flock Homes', industry: 'Fintech', description: 'Retire from being a landlord.', link: 'https://flockhomes.com/' },  
-    { company: 'Turnkey', industry: 'Crypto', description: 'Secure, flexible, and scalable key management infrastructure.', link: 'https://www.turnkey.com/' },        
-    { company: 'VoidZero', industry: 'Developer', description: 'Unified toolchain for Javascript.', link: 'https://voidzero.dev/' },          
+    { company: 'Lilt', industry: 'AI/ML', description: 'The AI platform for enterprise translation', link: 'https://lilt.com/' },         
+    { company: 'Waldo', industry: 'AI/ML', description: 'Become an expert in seconds', link: 'https://www.waldo.fyi/' },    
+    { company: 'Flock Homes', industry: 'Fintech', description: 'Retire from being a landlord', link: 'https://flockhomes.com/' },  
+    { company: 'Turnkey', industry: 'Crypto', description: 'Secure, flexible, and scalable key management infrastructure', link: 'https://www.turnkey.com/' },        
+    { company: 'VoidZero', industry: 'Developer', description: 'Unified toolchain for Javascript', link: 'https://voidzero.dev/' },          
     { company: 'Loyal', industry: 'Healthcare & Bio', description: 'Veterinary medicine for longevity', link: 'http://loyal.com/' }
   ].sort((a, b) => a.company.localeCompare(b.company));
   const filter = useRef({ filter: "All" });
@@ -233,11 +233,12 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
           ref={tableBodyRef}
         >
           <table className="min-w-full border-collapse">
-            <tbody id="table-body">
+            <tbody className='gap-3' id="table-body">
               {displayCompanies.map((company, index) => (
                 <tr
                   key={company.company}
-                  className="relative h-12 sm:h-16 landscape:custom-border-row table-row transition-all duration-300"
+                  className="relative h-12 sm:h-16 landscape:custom-border-row table-row transition-all duration-300 rounded-lg hover:bg-dark-green hover:bg-opacity-10 
+                  "
                   ref={(el) => {
                     if (index === 0) firstRowRef.current = el;
                     if (index === displayCompanies.length - 1) lastRowRef.current = el;
