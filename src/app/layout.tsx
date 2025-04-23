@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
 import { Analytics } from '@vercel/analytics/next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: "Sunflower Capital",
@@ -94,6 +95,7 @@ export default function RootLayout({
           {children}
           <Analytics />
         </main>
+        <GoogleAnalytics gaId="G-SR59L3T5LT" />
       </body>
     </html>
   );
