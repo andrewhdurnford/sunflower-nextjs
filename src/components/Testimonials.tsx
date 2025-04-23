@@ -127,19 +127,19 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
       link: "https://tldraw.com/"
     },
     {
-      quote: "Liu built a relationship with us while we were still at Uber building Michelangelo. She had the conviction to colead our seed and Series A, and she was pivotal in helping us hire our early team and close our first few marquee customers.",
+      quote: "Liu built a close relationship with us while we were still at Uber building Michelangelo. She had the conviction to colead our seed and Series A, and she was pivotal in helping us hire our early team and close our first few marquee customers.",
       author: "Kevin Stumpf",
       company: "Tecton",
       link: "https://tecton.ai/"
     },
     {
-      quote: "From our initial launch to our ultimate acquisition, Liu was with us every step of the way — working through problems, facilitating introductions, and helping us hone in on our next goals and targets. The very first time we met, we sat down in a coffee shop for an hour and meticulously walked through everything we’d done so far and how we were thinking about every facet of our business strategy. She’s an incredible thought partner who will consistently show up for you in the good times and the bad — one of the traits I now look for very closely when I meet potential new venture partners. Hands down the most helpful and engaged investor on our cap table.",
+      quote: "From our initial launch to our ultimate acquisition, Liu was with us every step of the way - working through problems, facilitating intros, and helping us hone in on our goals. The first time we met, we sat down in a coffee shop and meticulously discussed our progress and every facet of our business strategy. She's an incredible thought partner who will consistently show up for you in the good times and the bad — one of the traits I now look for very closely when I meet VCs. Hands down the most helpful and engaged investor on our cap table.",
       author: "Nicole Fitzgerald",
       company: "AlpacaML (acquired by Captions)",
       link: "https://www.axios.com/pro/media-deals/2024/11/13/captions-video-editing-app-alpacaml" 
     },
     {
-      quote: "Liu has been a powerhouse of support since day one. Her impact on our company has been nothing short of transformative — a level of involvement that’s hard to replicate. From helping us find our first hires to shaping GTM strategy and supporting product launches, she’s consistently gone above and beyond at every stage. She's also available to her founders at almost all hours of the day.",
+      quote: "Liu has been a powerhouse of support since day one. Her impact on our company has been nothing short of transformative — a level of involvement that's hard to replicate. From helping us find our first hires to shaping GTM strategy and supporting product launches, she's consistently gone above and beyond at every stage. She's also available to her founders at almost all hours of the day.",
       author: "Elias Fizesan",
       company: "Canopy Labs",
       link: "https://canopylabs.ai/"
@@ -223,7 +223,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
       <div className='w-4/5 flex gap-6 justify-between items-center'>
-        <div className={`w-full font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none text-left`}>
+        <div className={`w-full font-arya text-dark-green text-tmd lg:text-tlg leading-none text-left`}>
           Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">
@@ -276,7 +276,6 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
             </button>
           </div>
         </div>
-        {/* <div className={`landscape:hidden text-dark-green font-bitter transition-opacity duration-500 ${isSwiped ? 'opacity-0' : 'opacity-100'}`}>Swipe to see more →</div> */}
       </div>
 
       <div className={`glide__track w-4/5 transition-opacity duration-1000`} 
@@ -287,12 +286,16 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
         <ul className="glide__slides">
           {quotes.map((quote, index) => (
             <li key={index} className="glide__slide flex flex-col justify-center items-center gap-6">
-              <h3 className="font-bitter text-base md:text-xl xl:text-2xl w-full text-left sm:leading-extra-loose md:leading-extra-loose lg:leading-extra-loose xl:leading-extra-loose">
+              <h3 className="font-bitter
+              xl:text-bmd xl:leading-lg
+              ">
               &ldquo;{quote.quote}&rdquo;
               </h3>
-              <div className="flex flex-col font-bitter text-base sm:text-xl md:text-2xl text-dark-green text-left w-full gap-2">
+              <div className="flex flex-col font-bitter text-dark-green text-left w-full gap-2
+              lg:text-bsm lg:leading-md xl:text-bmd xl:leading-md 
+              ">
               <h3 className='font-semibold'>{quote.author}</h3>
-              <a href={quote.link} target="_blank" rel="noopener noreferrer" className="hover:underline hover:cursor-pointer block w-fit font-bitter-italic">
+              <a href={quote.link} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-[1px] hover:cursor-pointer block w-fit font-bitter-italic">
                 <h3 className="font-bitter-italic">{quote.company}</h3>
               </a>
               </div>
