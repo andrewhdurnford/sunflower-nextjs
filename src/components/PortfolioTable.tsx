@@ -67,7 +67,6 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
     { company: 'Rerun', industry: 'Data', description: 'The multimodal data stack', link: 'https://rerun.io/' },
     { company: 'Omni', industry: 'Data', description: 'Next-generation business analytics', link: 'https://omni.co/' },
     { company: 'Fillout', industry: 'Developer', description: 'Build any form, without code', link: 'http://fillout.com/' },
-    { company: 'Canopy Labs', industry: 'AI/ML', description: 'Digital humans indistinguishable from real humans.', link: 'https://www.canopylabs.ai/' },
     { company: 'Lilt', industry: 'AI/ML', description: 'The AI platform for enterprise translation.', link: 'https://lilt.com/' },         
     { company: 'Waldo', industry: 'AI/ML', description: 'Become an expert in seconds.', link: 'https://www.waldo.fyi/' },    
     { company: 'Flock Homes', industry: 'Fintech', description: 'Retire from being a landlord.', link: 'https://flockhomes.com/' },  
