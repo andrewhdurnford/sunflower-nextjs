@@ -11,6 +11,8 @@ import {isMobile} from 'react-device-detect';
 import { before } from "node:test";
 
 const App: React.FC = () => {
+  const today = new Date();
+  const year = today.getFullYear();
   const [loaded, setLoaded] = useState(false);
   const [scrollEnabled, setScrollEnabled] = useState(true);
   const [scrollUpEnabled, setScrollUpEnabled] = useState(true);
@@ -293,7 +295,52 @@ const App: React.FC = () => {
             isMobile={isMobile}
           />
         </div>
-        <div
+        {!mobile && <div
+          id="support"
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden"
+        >
+          <h1 className="font-arya text-dark-green w-[85%] text-left pb-6 xl:pb-12
+          text-tmd xl:text-tlg 2xl:text-txl
+          ">
+            Support
+          </h1>
+            <h2 className="font-bitter text-dark-green w-[85%] text-left xl:pb-3
+              md:text-b3xs xl:text-bxsm 2xl:text-blg 2xl:leading-md leading-lg
+            ">
+              There&apos;s <span className="font-bitter-italic">no standard playbook</span> for success - 
+              our team and global network of world-class operators, domain experts, founders, and customers get involved where and when it matters the most.
+            </h2>
+            <div className="flex w-[85%] gap-6">
+              <div className="flex flex-row w-full font-bitter text-left text-dark-green
+                lg:gap-8 xl:gap-10 2xl:gap-12
+                text-b5xs xs:text-b4xs md:text-bxs 2xl:text-bmd leading-xl xs:leading-xl md:leading-xl lg:leading-xl xl:leading-xl 2xl:leading-xl 
+              ">
+                <div className="flex flex-col  items-center w-1/2">
+                  <div className="2xl:translate-y-10 xl:translate-y-8 lg:translate-y-6 md:translate-y-4
+                  w-11/12 text-center bg-dark-green rounded-full text-offwhite">Product & Growth</div>
+                  <div className="flex w-full bg-dark-green bg-opacity-10 rounded-md p-4 pt-10">
+                    Refine early product and define roadmap <br />
+                    Close initial design partners <br />
+                    Scale sales and marketing teams <br />
+                    Develop growth and DevRel strategies <br />
+                    Recruit top-tier engineers <br />
+                  </div>
+                </div>
+                <div className="flex flex-col  items-center w-1/2">
+                <div className="2xl:translate-y-10 xl:translate-y-8 lg:translate-y-6 md:translate-y-4
+                w-11/12 text-center bg-dark-green rounded-full text-offwhite">Go-to-Market & Branding</div>
+                  <div className="flex w-full bg-dark-green bg-opacity-10 rounded-md p-4 pt-10">
+                    Sharpen brand positioning and messaging <br />
+                    Craft customer collateral and website content <br />
+                    Establish monetization and pricing models <br />
+                    Negotiate contracts and form partnerships  <br />
+                    Orchestrate funding rounds and media launches  <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>}
+        {mobile &&         <div
           id="support"
           className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
         >
@@ -313,30 +360,15 @@ const App: React.FC = () => {
                 &nbsp;
               </div>
               <div className="flex flex-col lg:flex-row w-full font-bitter text-left text-dark-green
-                lg:gap-8 xl:gap-10 2xl:gap-12
-                text-b5xs xs:text-b4xs md:text-b34xs xl:text-bxs 2xl:text-bmd leading-xl xs:leading-xl md:leading-xl lg:leading-xl xl:leading-xl 2xl:leading-xl 
+                text-b5xs xs:text-b4xs
               ">
-                <div className="flex lg:w-1/2
-                lg:gap-8 xl:gap-10 2xl:gap-12
-                ">
-                  <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full  hidden lg:block">
-                    &nbsp;
-                  </div>
+                <div className="flex">
                   <div>
                     Refine early product and define roadmap <br />
                     Close initial design partners <br />
                     Scale sales and marketing teams <br />
                     Develop growth and DevRel strategies <br />
                     Recruit top-tier engineers <br />
-                  </div>
-                </div>
-                <div className="flex lg:w-1/2
-                lg:gap-8 xl:gap-10 2xl:gap-12
-                ">
-                  <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full hidden lg:block">
-                    &nbsp;
-                  </div>
-                  <div>
                     Sharpen brand positioning and messaging <br />
                     Craft customer collateral and website content <br />
                     Establish monetization and pricing models <br />
@@ -346,7 +378,7 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
-        </div>
+        </div>}
         <div
           id="testimonials"
           className="relative bg-offwhite text-dark-green w-full min-h-[calc(100dvh)] flex flex-col overflow-hidden"
@@ -368,7 +400,7 @@ const App: React.FC = () => {
                       ">
                       Contact
                   </h1>
-                  <a href="https://www.linkedin.com/in/liujiang1/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/company/sunflowercapital/" target="_blank" rel="noopener noreferrer">
                       <div className='flex flex-row
                       gap-3 md:gap-6
                       '>
@@ -406,9 +438,9 @@ const App: React.FC = () => {
                           </span>
                       </div>
                   </a>
-                  <h1  className="font-bitter text-offwhite text-sm sm:text-base lg:text-lg xl:text-xl">
-                        © Sunflower Capital 2025
-                  </h1>
+                  {mobile && <h1  className="font-bitter-italic text-offwhite">
+                        © Sunflower Capital {year}
+                  </h1>}
                 </div>
             </div>
         </div>
