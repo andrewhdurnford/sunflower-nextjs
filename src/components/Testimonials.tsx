@@ -223,7 +223,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ setScrollEnabled }) => {
   return (
     <div className="glide flex flex-col flex-grow items-center justify-center w-full bg-offwhite text-dark-green gap-6 xl:gap-12">
       <div className='w-4/5 flex gap-6 justify-between items-center'>
-        <div className={`w-full font-arya text-dark-green text-tmd lg:text-tlg leading-none text-left`}>
+        <div className={`w-full font-arya text-dark-green text-tmd lg:text-txl leading-none text-left`}>
           Founders
         </div>
         <div className={`glide__arrows flex gap-3 lg:gap-6 items-center justify-center transition-opacity duration-1000`} data-glide-el="controls">

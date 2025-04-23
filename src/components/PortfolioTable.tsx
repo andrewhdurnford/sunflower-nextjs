@@ -153,7 +153,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
         `}>
           <div className="flex flex-row justify-between items-center w-full">
             <h1 className="font-arya text-dark-green text-left
-            xl:text-tlg
+            xl:text-txl
             ">
               Portfolio
             </h1>

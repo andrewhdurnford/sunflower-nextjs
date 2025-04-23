@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             <div className='w-[46.5%] flex flex-col
             xl:gap-12'>
                 <h1 className="font-arya text-offwhite text-left 
-                xl:text-tlg
+                xl:text-txl
                 ">
                     Subscribe
                 </h1>
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             xl:gap-12
             '>
                 <h1 className="font-arya text-offwhite text-left 
-                    xl:text-tlg
+                    xl:text-txl
                     ">
                     Contact
                 </h1>

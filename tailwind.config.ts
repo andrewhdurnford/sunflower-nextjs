@@ -11,10 +11,13 @@ export default {
       'bitter-italic': ['Bitter-italic', 'system-ui']
     },
     fontSize: {
-      tlg: ['64px', '64px'],
+      txl: ['64px', '64px'],
+      tlg: ['56px', '56px'],
       tmd: ['48px', '48px'],
       tsm: ['36px', '36px'],
-      bxl: ['84px', '126px'],
+      b2xl: ['84px', '126px'],
+      bxl: ['64px', '96px'],
+      bxlg: ['46px', '69px'],
       blg: ['36px', '54px'],
       bmd: ['32px', '48px'],
       bsm: ['28px', '42px'],
@@ -48,7 +51,6 @@ export default {
       }
     },
     screens: {
-      'xs': '375px',
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
