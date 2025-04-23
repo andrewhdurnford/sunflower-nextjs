@@ -51,7 +51,7 @@ const Menu: React.FC<MenuProps> = ({ currentPage, setCurrentPage }) => {
                 ${active ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
             `}>
                 <div 
-                    className="fixed top-6 right-6 w-24 h-24 rounded-full flex items-center justify-center z-20 transition-colors duration-300
+                    className="fixed top-0 right-0 xs:top-6 xs:right-6 w-24 h-24 rounded-full flex items-center justify-center z-20 transition-colors duration-300
                     "
                     onClick={() => setActive(!active)}
                     >
