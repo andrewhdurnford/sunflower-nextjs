@@ -7,7 +7,7 @@ interface DotNavigatorProps {
 }
 
 const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, isMobile }) => {
-    const totalScreens = 5;
+    const totalScreens = 7;
 
     return (
         <div className="dot-container flex gap-2">
@@ -27,7 +27,7 @@ const DotNavigator: React.FC<DotNavigatorProps> = ({ currentScreen, onDotClick, 
                 key={`${isMobile}-${index}`}
                 src={currentScreen === 0 ? '/images/dot1.svg' : '/images/dot2.svg'}
                 alt={`dot ${index}`}
-                className={`dot ${dotClass} transition-all duration-300 hover:cursor-pointer`}
+                className={`dot ${dotClass} ${isMobile ? 'hidden' : ''} transition-all duration-300 hover:cursor-pointer`}
                 onClick={() => onDotClick(index)}
                 />
             );

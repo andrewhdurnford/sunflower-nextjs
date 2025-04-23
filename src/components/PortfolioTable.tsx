@@ -148,9 +148,15 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
   return (
     <div className="w-4/5 h-screen flex flex-none justify-center items-center">
       <div className='w-full h-5/6 flex flex-col justify-center items-center gap-6 xl:gap-12 portrait:pb-24'>
-        <div className={`w-full flex gap-6 xl:gap-12 justify-between ${isMobile ? 'items-center flex-row' : 'justify-center  flex-col'}`}>
+        <div className={`w-full flex justify-between ${isMobile ? 'items-center flex-row' : 'justify-center  flex-col'}
+         gap-6 xl:gap-12
+        `}>
           <div className="flex flex-row justify-between items-center w-full">
-            <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl leading-none portrait:text-left">Portfolio</h1>
+            <h1 className="font-arya text-dark-green text-left
+            text-tmd xl:text-tlg 2xl:text-txl
+            ">
+              Portfolio
+            </h1>
           </div>
           <div className="pl-1">
             {/* Dropdown for portrait devices */}
@@ -180,7 +186,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                   setFilter("All");
                   changeTable("All");
                 }}
-                className="flex flex-row items-center justify-left font-bitter text-xs md:text-base 2xl:text-lg filter"
+                className="flex flex-row items-center justify-left font-bitter text-b4xs 2xl:text-b2xs filter"
               >
                 <div
                   className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
@@ -205,7 +211,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                     }
         
                   }}
-                  className="flex flex-row items-center justify-center font-bitter text-xs md:text-base 2xl:text-lg filter"
+                  className="flex flex-row items-center justify-center font-bitter text-b4xs 2xl:text-b2xs filter"
                 >
                   <div
                     className={`w-2 h-2 sm:w-3 sm:h-3 mr-2 sm:mr-3 rounded-sm ${
@@ -220,7 +226,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
             </div>
           </div>
         </div>
-        <div className={`flex-grow flex flex-col w-full max-h-[60vh] sm:max-h-[70vh] overflow-y-auto ${isMobile ? 'mobile' : 'custom-scrollbar'}`}
+        <div className={`flex flex-col w-full h-[60vh] sm:h-[70vh] overflow-y-auto ${isMobile ? 'mobile' : 'custom-scrollbar'}`}
           onMouseEnter={() => setScrollEnabled(false)}
           onMouseLeave={() => setScrollEnabled(true)}
           onTouchStart={() => setScrollEnabled(false)}
@@ -228,7 +234,7 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
           ref={tableBodyRef}
         >
           <table className="min-w-full border-collapse">
-            <tbody className="font-bitter-italic text-sm sm:text-xl md:text-2xl" id="table-body">
+            <tbody id="table-body">
               {displayCompanies.map((company, index) => (
                 <tr
                   key={company.company}
@@ -238,27 +244,29 @@ const PortfolioTable: React.FC<PortfolioTableProps> = ({ setScrollEnabled, setSc
                     if (index === displayCompanies.length - 1) lastRowRef.current = el;
                   }}
                 >
-                  <td className="font-bitter font-normal align-top">
+                  <td className="font-bitter font-normal align-top
+                  w-[117px] xs:w-[122px] md:w-[162px] lg:w-[234px] xl:w-[244px] 2xl:w-[390px]
+                  ">
                     <a
                       href={company.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-fit text-dark-green pr-2 align-top
-                      text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.75rem] 
-                      hover:cursor-pointer hover:underline decoration-[1px]" 
-                    >
+                      className="block text-dark-green pr-2 align-top hover:cursor-pointer hover:underline decoration-[1px]
+                      text-b4xs md:text-b3xs lg:text-bxs 2xl:text-bmd
+                    ">
                       <h3 className="min-w-[100px] align-top">{company.company}</h3>
                     </a>
                   </td>
                   <td className="text-dark-green font-bitter font-light px-2 align-top
-                  text-xxs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">
+                  text-b5xs md:text-b3xs xl:text-b2xs 2xl:text-bxs 2xl:leading-lg 
+                  ">
                     <h3>{company.description}</h3>
                   </td>
                   {filter.current.filter === "All" && (
                     <td
-                      className="text-dark-green font-bitter-italic font-light hidden px-2 align-top
-                      sm:table-cell sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
-                    >
+                      className="text-dark-green font-bitter-italic font-light hidden px-2 align-top xl:table-cell 
+                      xl:text-b2xs 2xl:text-bxs 2xl:leading-lg 
+                    ">
                       <h3>{company.industry}</h3>
                     </td>
                   )}

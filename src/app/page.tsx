@@ -11,6 +11,17 @@ import {isMobile} from 'react-device-detect';
 import { before } from "node:test";
 
 const App: React.FC = () => {
+  const PathIndex: Record<string, number> = {
+    "": 0,
+    "mission": 1,
+    "ethos": 2,
+    "portfolio": 3,
+    "support": 4,
+    "founders": 5,
+    "subscribe": 6,
+    "contact": 7,
+  };  
+
   const [loaded, setLoaded] = useState(false);
   const [scrollEnabled, setScrollEnabled] = useState(true);
   const [scrollUpEnabled, setScrollUpEnabled] = useState(true);
@@ -39,11 +50,8 @@ const App: React.FC = () => {
       }, 500);
     }
     
-    const storedScrollTop = parseInt(
-      localStorage.getItem("lastScrollTop") || "0",
-      10
-    );
-    window.scrollTo(0, storedScrollTop);
+    const path = window.location.pathname;
+    setCurrentPage(PathIndex[path] || 0);
   }, []);
 
   const expandFlower = () => {
@@ -86,7 +94,7 @@ const App: React.FC = () => {
         onBeforePageScroll={beforePageChange}
         renderAllPagesOnFirstRender={true}
       >
-         <div
+        <div
           id="hero"
           className={`hero w-full landscape:h-screen portrait:h-[calc(100dvh)] relative overflow-hidden bg-dark-green 
                   flex portrait:flex-col justify-center portrait:items-center portrait:gap-20`}
@@ -102,7 +110,6 @@ const App: React.FC = () => {
             <h2
               id="full-screen-message"
               className="z-10 fixed inset-0 flex items-center justify-center font-arya text-dark-green font-bold text-[6vw] opacity-0 transition-opacity duration-1000"
-              // bg-[#ffe27c]
             >
               From Seed to Sunflower
             </h2>
@@ -255,42 +262,36 @@ const App: React.FC = () => {
         </div>
         <div
           id="statement1"
-          className={`h-[calc(100dvh)] w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-24 gap-10 xl:gap-14 bg-offwhite`}
+          className={`h-[calc(100dvh)] w-full flex flex-col items-center justify-center overflow-hidden bg-offwhite`}
         >
-          <div className="flex flex-col items-center gap-5 lg:gap-8">
-            <img
-              src="/images/sunflower-logo.svg"
-              alt="Sunflower Capital Logo"
-              className={`h-16 sm:h-20 w-auto logoflower`}
-            />
-            <div className="w-5/6 lg:w-[92%] font-bitter text-dark-green text-center">
+          <div className="flex flex-col items-center w-[85%] font-arya text-dark-green text-center">
               <h2
-                className={`text-2xl md:text-[3.04vw] leading-loose sm:leading-loose lg:leading-loose xl:leading-loose`}
-              >
-                We partner at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.
+                className={`text-left
+                  text-blg md:text-bxlg lg:text-bxlg xl:text-bxl  2xl:text-b2xl
+              `}>
+                Sunflower Capital partners at the earliest stage with companies building foundational infrastructure for modern enterprises, critical industries, and the physical world.
               </h2>
-            </div>
           </div>
         </div>
         <div
           id="statement2"
-          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
-        >
-          <h1 className="font-arya text-dark-green text-5xl sm:text-6xl lg:text-7xl text-left w-4/5">Ethos</h1>
-          <h2 className="font-bitter text-sm xs:text-base md:text-[1.82vw] w-4/5  text-left
-          leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed text-dark-green">
-            We partner with indefatigable missionary founders who are product artisans.
-            We forge highly personal, deep-rooted relationships well in advance of incorporation.
-            <br /> <br />
-            We are often the first check in. 
-            We invest in N of 1 category creators with technical moats and upstarts transforming legacy industries with novel GTM. 
-            <br /> <br />
-            We have more than a decade of inside stories and insights on B2B that cannot be found online. 
-            We nail market timing and develop distinct theses on markets. 
-            <br /> <br />
-            We collaborate with founders on their terms. 
-            We proactively help them find product-market fit, reach their first few million in ARR, and build category-defining companies.
-          </h2>
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden 
+          gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
+        ">
+          <h1 className="font-arya text-dark-green w-[85%] text-left
+          text-tmd xl:text-tlg 2xl:text-txl
+          ">
+          Ethos
+          </h1>
+          <div className="flex flex-col font-bitter text-dark-green text-left w-[85%] 
+          gap-6 lg:gap-8 xl:gap-10 2xl:gap-12
+          text-b4xs xs:text-b3xs lg:text-bxs xl:text-bmd 2xl:text-blg
+            ">
+            <h3>We partner with relentless missionary founders who are skilled product artisans. We forge highly personal, deep-rooted relationships well in advance of incorporation.</h3>
+            <h3>We are often the first check. We invest in N of 1 category creators with technical moats and upstarts transforming legacy industries with novel go-to-market.</h3>
+            <h3>We have more than a decade of inside stories and firsthand experience that cannot be found online. We nail market timing and develop distinct theses on markets.</h3>
+            <h3>We collaborate with founders on their terms. From day one, we proactively help them build category-defining companies – finding product-market fit, growing to the first few million in quality recurring revenue, and hiring world-class talent.</h3>
+          </div>
         </div>
         <div
           id="portfolio"
@@ -304,11 +305,122 @@ const App: React.FC = () => {
           />
         </div>
         <div
-          id="testimonials"
-          className="relative bg-offwhite text-dark-green w-full h-[calc(100dvh)] flex flex-col overflow-hidden"
+          id="support"
+          className="h-[calc(100dvh)] w-full bg-offwhite flex flex-col items-center justify-center overflow-hidden gap-6 xl:gap-12"
         >
-          <Testimonials setScrollEnabled={setScrollEnabled} />
-          <Footer />
+          <h1 className="font-arya text-dark-green w-[85%] text-left
+          text-tmd xl:text-tlg 2xl:text-txl
+          ">
+            Support
+          </h1>
+            <h2 className="font-bitter text-dark-green w-[85%] text-left 
+              md:text-b3xs xl:text-bxsm 2xl:text-blg 2xl:leading-md leading-lg
+            ">
+              There&apos;s <span className="font-bitter-italic">no standard playbook</span> for success - 
+              our team and global network of world-class operators, domain experts, founders, and customers get involved where and when it matters the most.
+            </h2>
+            <div className="flex w-[85%] gap-6">
+              <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full block lg:hidden">
+                &nbsp;
+              </div>
+              <div className="flex flex-col lg:flex-row w-full font-bitter text-left text-dark-green
+                lg:gap-8 xl:gap-10 2xl:gap-12
+                text-b5xs xs:text-b4xs md:text-b34xs xl:text-bxs 2xl:text-bmd leading-xl xs:leading-xl md:leading-xl lg:leading-xl xl:leading-xl 2xl:leading-xl 
+              ">
+                <div className="flex lg:w-1/2
+                lg:gap-8 xl:gap-10 2xl:gap-12
+                ">
+                  <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full  hidden lg:block">
+                    &nbsp;
+                  </div>
+                  <div>
+                    Refine early product and define roadmap <br />
+                    Close initial design partners <br />
+                    Scale sales and marketing teams <br />
+                    Develop growth and DevRel strategies <br />
+                    Recruit top-tier engineers <br />
+                  </div>
+                </div>
+                <div className="flex lg:w-1/2
+                lg:gap-8 xl:gap-10 2xl:gap-12
+                ">
+                  <div className="w-2.5 bg-dark-green opacity-20 h-full rounded-full hidden lg:block">
+                    &nbsp;
+                  </div>
+                  <div>
+                    Sharpen brand positioning and messaging <br />
+                    Craft customer collateral and website content <br />
+                    Establish monetization and pricing models <br />
+                    Negotiate contracts and form partnerships  <br />
+                    Orchestrate funding rounds and media launches  <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div
+          id="testimonials"
+          className="relative bg-offwhite text-dark-green w-full min-h-[calc(100dvh)] flex flex-col overflow-hidden"
+        >
+            <Testimonials setScrollEnabled={setScrollEnabled} />
+        </div>
+        <div
+          id="footer"
+          className="relative bg-dark-green bg-contain bg-bottom md:bg-center md:bg-auto bg-[url('/images/footer-bgm.svg')] md:bg-[url('/images/footer-bg.svg')] bg-no-repeat w-full min-h-[calc(100dvh)] flex flex-col items-center justify-center overflow-hidden"
+        >
+                  <div className="flex flex-col justify-start items-center w-[85%] min-h-[calc(100dvh)]
+        gap-32
+        " id="footer">
+            <div className='w-[85%] flex flex-col pt-36 
+            '>
+                <div className="flex flex-col w-fit h-fit bg-dark-green md:bg-none rounded-md gap-6 md:gap-12 p-4">
+                  <h1 className="font-arya text-offwhite text-left
+                      text-tmd md:text-txl
+                      ">
+                      Contact
+                  </h1>
+                  <a href="https://www.linkedin.com/in/liujiang1/" target="_blank" rel="noopener noreferrer">
+                      <div className='flex flex-row
+                      gap-3 md:gap-6
+                      '>
+                          <Image
+                              src="/images/linkedin.svg"
+                              alt="Connect with Sunflower Capital on LinkedIn"
+                              width={18}
+                              height={18}
+                              className="hover:opacity-80 transition-opacity duration-300
+                              h-6 w-6 md:h-12 md:w-12
+                          "/>
+                          <span className="text-offwhite font-bitter hover:cursor-pointer hover:underline decoration-[1px]
+                          text-bsxm md:text-blg
+                          ">
+                              Sunflower Capital
+                          </span>
+                      </div>
+                  </a>
+                  <a href="https://sunflowercapital.substack.com/" target="_blank" rel="noopener noreferrer">
+                      <div className='flex flex-row
+                      gap-3 md:gap-6
+                      '>
+                          <Image
+                              src="/images/email.svg"
+                              alt="Subscribe to our newsletter"
+                              width={18}
+                              height={18}
+                              className="hover:opacity-80 transition-opacity duration-30
+                              h-6 w-6 md:h-12 md:w-12
+                          "/>
+                          <span className="text-offwhite font-bitter hover:cursor-pointer hover:underline decoration-[1px]
+                          text-bsxm md:text-blg
+                          ">
+                              Subscribe to our newsletter
+                          </span>
+                      </div>
+                  </a>
+                </div>
+            </div>
+        </div>
+        <Footer />
         </div>
       </ReactPageScroller>
     </>
