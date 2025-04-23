@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import DotNavigator from "@/components/DotNavigator";
 import {isMobile} from 'react-device-detect';
 import Ethos from "@/components/Ethos";
+import Menu from "@/components/Menu";
 
 const slugToPageMap: Record<string, number> = {
   '/mission': 1,
@@ -109,7 +110,8 @@ const App: React.FC = () => {
   return (
     <>
       {!mobile &&
-        <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} isMobile={isMobile} />}
+      <DotNavigator currentScreen={currentPage} onDotClick={beforePageChange} isMobile={isMobile} />}
+      {mobile && <Menu currentPage={currentPage} setCurrentPage={setCurrentPage} />}
       <ReactPageScroller
         customPageNumber={currentPage}
         blockScrollUp={!scrollEnabled && !scrollUpEnabled} 

@@ -124,6 +124,9 @@ opacity: 0.2;
   gap: 30px; 
   z-index: 1000;
 }
+.menu {
+  z-index: 1000;
+}
 
 @media (orientation: landscape) {    
   @media (max-aspect-ratio: 2.05) {    
